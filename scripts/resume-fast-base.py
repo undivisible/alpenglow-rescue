@@ -38,9 +38,11 @@ def owned_usage():
             layer+=int(checked(['docker','inspect','--size','--format','{{.SizeRw}}',cid]))
             current=docker_free(cid)
             available=current if available is None else min(available,current)
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as exc:
             # A --rm container can finish between ps, inspect and exec.
             if cid in checked(['docker','ps','-q','--filter','label='+monitor.LABEL]).split():
+                if exc.returncode != 127 or exc.cmd[:2] != ['docker','exec']:
+                    raise
                 # APK can temporarily replace BusyBox/df during an upgrade.
                 # A fresh immutable read-only container measures the same
                 # Docker backing filesystem; never reuse a stale reading.
