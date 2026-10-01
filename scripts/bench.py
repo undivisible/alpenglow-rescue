@@ -7,9 +7,13 @@ import os
 from pathlib import Path
 import select
 import socket
+import shutil
 import subprocess
 import threading
 import time
+
+if shutil.disk_usage('.').free < 40 * 1024**3:
+    raise SystemExit('Stop: less than 40 GiB host headroom')
 
 parser = argparse.ArgumentParser()
 parser.add_argument('iso', type=Path)

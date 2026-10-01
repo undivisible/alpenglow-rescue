@@ -2,7 +2,7 @@
 
 Keep the Alpenglow submodule pinned. Do not import uncommitted files from other
 checkouts. Build in this project's `build/`, with at most two jobs/CPUs. Check
-host and container disk headroom before large work; stop below 20 GiB free.
+host and container disk headroom before large work; stop below 40 GiB free.
 
 Never mount host disks, flash USB media, enroll authentication, start a remote
 root shell, publish binaries, or post announcements as part of build/tests.

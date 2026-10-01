@@ -21,18 +21,25 @@ The Alpenglow submodule is pinned to `2214bc159355522bbebc61e8e90ca78933a8e1ac`.
 Alpenglow-derived sources and this project use MPL-2.0. Image components retain
 their own licenses; Omarchy Rescue's MIT attribution is in `licenses/`.
 
-Full build, when adequate host and container headroom is available:
+Validate the actual pinned fast base after its disk budget is established
+and at least 40 GiB host/container reserve remains:
 
 ```sh
 git submodule update --init
-sh scripts/build-toybox.sh
+python3 scripts/prepare-fast-base.py --check
 sh scripts/build.sh
 python3 scripts/test-recipes.py
 ```
 
-The source submodule is unchanged. Core packaging uses Alpenglow's shared
+The source submodule is unchanged. The measured historical core used Alpenglow's shared
 rootfs assembly and Limine ISO layout, signed Alpine APK bootstrap with its
-dependency solver, dinit, musl, toybox and oksh. The normal Oil bootstrap is
-not yet used. The partial host packaging recipe is `scripts/pack-core-native.sh`;
+dependency solver, dinit, musl, toybox and oksh. The normal Oil bootstrap was
+not used. The default recipe now targets the actual Alpenglow fast base;
+that corrected base has not been built or integrated with rescue payloads.
+See [exact provenance and fast-path correction](docs/provenance-and-fast-path.md). The partial host packaging recipe is `scripts/pack-core-native.sh`;
 it requires workspace-local xorriso and Limine tools described in the report.
 Never interpret that partial artifact as a complete upstream equivalent.
+
+Task-owned staging and packaging intermediates were removed after preserving
+small manifests, logs and both measured ISOs. Details and exact paths are in
+[evidence/cleanup-20261001.json](evidence/cleanup-20261001.json).

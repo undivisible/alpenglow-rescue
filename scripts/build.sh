@@ -1,12 +1,5 @@
 #!/bin/sh
+# Default development path: the actual pinned Alpenglow fast base.
+# Rescue payload integration is still pending; this is not a rescue ISO.
 set -eu
-cd "$(dirname "$0")/.."
-free_kb=$(df -Pk . | awk 'END {print $4}')
-[ "$free_kb" -ge 20971520 ] || { echo 'Stop: less than 20 GiB host headroom' >&2; exit 1; }
-[ "$(git -C vendor/alpenglow rev-parse HEAD)" = 2214bc159355522bbebc61e8e90ca78933a8e1ac ]
-mkdir -p build
-docker run --rm --cpus=2 --pids-limit=512 --platform linux/amd64 \
-  -e CARGO_BUILD_JOBS=2 -e MAKEFLAGS=-j2 \
-  -v "$PWD:/project" -w /project \
-  alpine:3.23@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0 \
-  sh scripts/build-container.sh
+exec sh "$(dirname "$0")/build-fast-base.sh"

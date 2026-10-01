@@ -4,9 +4,13 @@ import base64
 import hashlib
 import io
 import json
+import shutil
 from pathlib import Path
 import tarfile
 import urllib.request
+
+if shutil.disk_usage('.').free < 40 * 1024**3:
+    raise SystemExit('Stop: less than 40 GiB host headroom')
 
 pins = json.loads(Path('pins.json').read_text())
 root = Path('build/rootfs')

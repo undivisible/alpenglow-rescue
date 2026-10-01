@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 cd "$(dirname "$0")/.."
-[ "$(df -Pk . | awk 'END {print $4}')" -ge 20971520 ]
+[ "$(df -Pk . | awk 'END {print $4}')" -ge 41943040 ]
 mkdir -p build/native build/downloads build/evidence
 docker run --rm --cpus=2 --pids-limit=128 --platform linux/amd64 \
   -v "$PWD:/project" -w /project \

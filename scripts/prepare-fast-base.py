@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+"""Adapt pinned fast-build orchestration in a generated copy; leave vendor intact."""
+import argparse
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import tarfile
+
+root = Path(__file__).resolve().parents[1]
+source = root / 'vendor/alpenglow'
+pins = json.loads((root / 'pins.json').read_text())
+parser = argparse.ArgumentParser()
+parser.add_argument('--check', action='store_true', help='validate edits in memory only')
+args = parser.parse_args()
+assert subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip() == pins['alpenglow']
+paths = ['scripts/boot-native.sh', 'system/backends/appliance/scripts/build-kernel-fast.sh']
+adapted = {}
+for name in paths:
+    text = (source / name).read_text()
+    if name == paths[0]:
+        line = next(line for line in text.splitlines() if line.startswith('NPROC='))
+        text = text.replace(line, 'NPROC="2"', 1)
+        # Same header-order correction used in the measured toybox build.
+        text = text.replace('make -j$(nproc) LDFLAGS="-static"', 'CPUS=2 make -j2 CFLAGS="-D_GNU_SOURCE -include string.h" LDFLAGS="-static"')
+    text = text.replace('$(nproc)', '2').replace('zstd -6 -T0', 'zstd -6 -T2')
+    text = text.replace('docker run --rm --platform', 'docker run --rm --cpus=2 --pids-limit=512 --platform')
+    text = text.replace('alpine:3.21 sh', 'alpine:3.21@' + pins['fast_toolchain']['alpine_3_21'] + ' sh')
+    text = text.replace('debian:bookworm-slim sh', 'debian:bookworm-slim@' + pins['fast_toolchain']['debian_bookworm_slim'] + ' sh')
+    # Every container checks both its writable layer and task artifact mount.
+    container_guard = r"""    for rescue_path in / /out; do
+      [ "$(df -Pk "$rescue_path" | awk "END {print \$4}")" -ge 41943040 ] || exit 1
+    done
+"""
+    text = text.replace("sh -c '\n", "sh -c '\n" + container_guard)
+    assert '$(nproc)' not in text and '-T0' not in text
+    assert '--cpus=2' in text and '41943040' in text
+    subprocess.run(['sh', '-n'], input=text, text=True, check=True)
+    adapted[name] = text
+
+if args.check:
+    print('pinned Alpenglow fast recipe adaptation: passed (no files or build created)')
+else:
+    if shutil.disk_usage(root).free < 42 * 1024**3:
+        raise SystemExit('Stop: need 40 GiB reserve plus 2 GiB build allowance')
+    dest = root / 'build/fast-source'
+    # Reuse only our own source export; never delete another checkout or WIP.
+    if dest.exists():
+        assert (dest / '.source-pin').read_text().strip() == pins['alpenglow']
+    else:
+        dest.mkdir(parents=True)
+        process = subprocess.Popen(['git', '-C', str(source), 'archive', pins['alpenglow']], stdout=subprocess.PIPE)
+        with tarfile.open(fileobj=process.stdout, mode='r|') as archive:
+            archive.extractall(dest, filter='data')
+        if process.wait() != 0:
+            raise SystemExit('source export failed')
+    (dest / '.source-pin').write_text(pins['alpenglow'] + '\n')
+    for name, text in adapted.items():
+        (dest / name).write_text(text)
+    (root / 'build/evidence').mkdir(parents=True, exist_ok=True)
+    (root / 'build/evidence/fast-recipe-adaptation.json').write_text(json.dumps({
+        'source': pins['alpenglow'],
+        'purpose': 'upstream fast base validation; rescue integration pending',
+        'adapted_file_sha256': {name:hashlib.sha256(text.encode()).hexdigest() for name,text in adapted.items()},
+    }, indent=2) + '\n')
+    print(dest)

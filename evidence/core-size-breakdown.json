@@ -1,0 +1,208 @@
+{
+  "units": "APK installed size bytes; du allocated KiB",
+  "components_du_kib": "751036\tbuild/rootfs/lib/firmware\n132924\tbuild/rootfs/lib/modules\n187528\tbuild/rootfs/usr/bin\n102548\tbuild/rootfs/usr/lib\n58020\tbuild/rootfs/usr/share\n",
+  "largest_packages": [
+    {
+      "name": "linux-firmware-qcom",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "182230772"
+    },
+    {
+      "name": "linux-lts",
+      "version": "6.18.54-r0",
+      "license": "GPL-2.0-only",
+      "source": "linux-lts",
+      "url": "https://www.kernel.org",
+      "size": "150677193"
+    },
+    {
+      "name": "linux-firmware-nvidia",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "108571319"
+    },
+    {
+      "name": "linux-firmware-intel",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "106729002"
+    },
+    {
+      "name": "rclone",
+      "version": "1.72.1-r4",
+      "license": "MIT",
+      "source": "rclone",
+      "url": "https://rclone.org/",
+      "size": "105040120"
+    },
+    {
+      "name": "linux-firmware-mellanox",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "93752967"
+    },
+    {
+      "name": "linux-firmware-mrvl",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "81010777"
+    },
+    {
+      "name": "restic",
+      "version": "0.18.1-r7",
+      "license": "BSD-2-Clause",
+      "source": "restic",
+      "url": "https://restic.net/",
+      "size": "48080392"
+    },
+    {
+      "name": "perl",
+      "version": "5.42.2-r0",
+      "license": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+      "source": "perl",
+      "url": "https://www.perl.org/",
+      "size": "40225349"
+    },
+    {
+      "name": "linux-firmware-amdgpu",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "27290947"
+    },
+    {
+      "name": "linux-firmware-mediatek",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "26359287"
+    },
+    {
+      "name": "linux-firmware-ath11k",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "25540887"
+    },
+    {
+      "name": "python3",
+      "version": "3.12.14-r0",
+      "license": "PSF-2.0",
+      "source": "python3",
+      "url": "https://www.python.org/",
+      "size": "24009437"
+    },
+    {
+      "name": "neovim",
+      "version": "0.11.7-r0",
+      "license": "Apache-2.0 AND Vim",
+      "source": "neovim",
+      "url": "https://neovim.io/",
+      "size": "19600415"
+    },
+    {
+      "name": "nmap",
+      "version": "7.97-r0",
+      "license": "custom",
+      "source": "nmap",
+      "url": "https://nmap.org",
+      "size": "13214602"
+    },
+    {
+      "name": "python3-pycache-pyc0",
+      "version": "3.12.14-r0",
+      "license": "PSF-2.0",
+      "source": "python3",
+      "url": "https://www.python.org/",
+      "size": "10765413"
+    },
+    {
+      "name": "linux-firmware-qed",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "10589304"
+    },
+    {
+      "name": "linux-firmware-ath12k",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "10002817"
+    },
+    {
+      "name": "linux-firmware-i915",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "9724822"
+    },
+    {
+      "name": "linux-firmware-ath10k",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "9178520"
+    },
+    {
+      "name": "linux-firmware-brcm",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "8194826"
+    },
+    {
+      "name": "git",
+      "version": "2.52.0-r0",
+      "license": "GPL-2.0-only",
+      "source": "git",
+      "url": "https://www.git-scm.com/",
+      "size": "6837094"
+    },
+    {
+      "name": "linux-firmware-netronome",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "5681449"
+    },
+    {
+      "name": "linux-firmware-dpaa2",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "5615374"
+    },
+    {
+      "name": "linux-firmware-other",
+      "version": "20251125-r1",
+      "license": "custom",
+      "source": "linux-firmware",
+      "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+      "size": "5608081"
+    }
+  ],
+  "firmware_package_bytes": 762089168,
+  "kernel_package_bytes": 150677193
+}

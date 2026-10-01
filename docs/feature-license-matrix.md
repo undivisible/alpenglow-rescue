@@ -30,8 +30,9 @@ Those are upstream estimates, not this project's measurements.
 | Installer | optional full Omarchy installer | rescue only | No installer equivalent claimed |
 | BIOS / UEFI | both | Limine ISO packaging reused from Alpenglow | BSD-2-Clause; test separately |
 
-This is a development candidate, not a validated equivalent. `build/` retains
-the package database and exact version/license inventory. Every missing package
+This is a development candidate, not a validated equivalent. Small evidence
+under `build/evidence/` retains the package database and file manifest after
+the rebuildable staging tree was removed. Every missing package
 or failed smoke command must be listed in the measurement report. No binaries
 or releases are published without distribution review and verified claims.
 
@@ -43,3 +44,8 @@ limine repair CLI in the guest, snapper, bcachefs repair tools, kmscon, impala,
 phone handoff, mount automation and several convenience tools are not included.
 The host packager uses Limine to boot the ISO, which is distinct from shipping
 Limine repair tools inside the rescue guest. Current ISO size is over 500 MB.
+
+The measured prototype used Alpine LTS and an APK-populated RAM root, not
+Alpenglow FAST kernel/rootfs. The default build now selects native fast-base
+validation; rescue payload integration and essential driver restoration are
+pending. See `docs/provenance-and-fast-path.md` for exact lineage.

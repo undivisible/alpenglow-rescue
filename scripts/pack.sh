@@ -1,6 +1,7 @@
 #!/bin/sh
 # Reuse Alpenglow's Limine + xorriso release layout, without disk mounts or installer.
 set -eu
+[ "$(df -Pk . | awk 'END {print $4}')" -ge 41943040 ] || { echo 'Stop: less than 40 GiB headroom' >&2; exit 1; }
 mkdir -p build/iso-root/boot/limine build/limine build/evidence
 if [ ! -f build/limine/limine-bios-cd.bin ]; then
   curl -fL https://github.com/limine-bootloader/limine/releases/download/v12.4.0/limine-binary.tar.xz -o build/downloads/limine-12.4.0.tar.xz

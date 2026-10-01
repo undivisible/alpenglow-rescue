@@ -4,7 +4,7 @@ headroom() {
   for path in / /project; do
     free_kb=$(df -Pk "$path" | awk 'END {print $4}')
     echo "headroom $path: $free_kb KiB"
-    [ "$free_kb" -ge 20971520 ] || { echo 'Stop: less than 20 GiB headroom' >&2; exit 1; }
+    [ "$free_kb" -ge 41943040 ] || { echo 'Stop: less than 40 GiB headroom' >&2; exit 1; }
   done
 }
 headroom

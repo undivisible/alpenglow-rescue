@@ -84,8 +84,9 @@ Full container build stopped at 19,780,896 KiB free, below its 20 GiB reserve,
 before AI downloads and Oil compilation. After container exit its filesystem
 still reported 20,117,540 KiB. Host had enough room for bounded native core
 packaging; subsequent VM/memory pressure briefly reduced host free space below
-20 GiB. Large builds and VM runs were stopped. At report time free space is
-only about 20.3 GiB, too close to the reserve for new large work.
+20 GiB. Large builds and VM runs were stopped. The current policy is a
+**40 GiB reserve**; the earlier 20 GiB guards have been corrected. New large
+builds stay paused pending the real fast-path disk budget.
 
 Native packaging tools stayed in `build/native-tools/`: GNU xorriso
 1.5.6.pl02 source, compiled with `gmake MAKE=gmake -j2` and a workspace prefix,
@@ -102,8 +103,33 @@ read-only fixture tests, then collect three matched BIOS and UEFI trials.
 Any architecture-only firmware exclusions need an explicit coverage audit;
 do not remove essential rescue tools or supported drivers to win the size goal.
 
-GitHub identity `undivisible` and name availability were verified. Repository
-creation/source push was rejected by automatic approval review because it
-applied the original no-push restriction despite the later delegated repo
-request. Direct approval is pending; **no repository was created**. The tree
-contains only project files and a gitlink, not the full Alpenglow tree or WIP.
+## Source repository and cleanup checkpoint
+
+The private repository was successfully created and source pushed after the
+later user request superseded the original no-push restriction:
+https://github.com/undivisible/alpenglow-rescue (default branch `main`).
+Initial pushed source commit: `48d7e10c069e0d23a38fb6ef78ca025f53aa99e4`.
+No binary release or social post was created. The first creation attempt was
+rejected by review; one authorized same-route retry then succeeded.
+
+The user subsequently authorized task-owned rebuildable intermediate cleanup.
+No build/VM/container was active. Removed paths, size inventory and observed
+free-space bytes are in `evidence/cleanup-20261001.json`. The sole measured
+core ISO and official baseline were preserved, along with source/WIP/Git,
+small logs/manifests/checksums and raw benchmark evidence. The core ISO hash
+was checked before and after cleanup and still matches the table above.
+Deleted intermediate initramfs and kernel payloads remain inside that ISO.
+
+The eight removed paths represented **2,384,809,984 allocated bytes**, counting
+hardlinks once. Observed volume availability immediately before/after the
+removal was **34,613,784,576 / 34,848,399,360 bytes**. Shared APFS and another
+cleanup task affect physical space, so the observed delta is not an isolated
+measurement of this cleanup's physical reclamation. No unfamiliar data,
+Docker global cache, Trash, or other task outputs were touched.
+
+The measured prototype was not Alpenglow's fast image. Exact source/recipe
+provenance, component sizes and the corrected default fast-base route are in
+`docs/provenance-and-fast-path.md`. Only syntax/adaptation checks were run for
+the corrected route; no large rebuild or new boot benchmark was started.
+The manifest `recipe-file-sha256-built-core.json` preserves recipe hashes from
+the measured build; `recipe-file-sha256.json` describes the current sources.

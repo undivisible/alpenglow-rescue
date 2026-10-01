@@ -15,9 +15,11 @@ for path in root.glob('scripts/*.py'):
 packages = (root / 'packages.txt').read_text().splitlines()
 for essential in ('linux-lts', 'linux-firmware', 'btrfs-progs', 'cryptsetup', 'lvm2', 'mdadm', 'ddrescue', 'testdisk', 'iwd', 'tmux'):
     assert essential in packages, essential
-build = (root / 'scripts/build.sh').read_text()
+build = (root / 'scripts/build-hybrid.sh').read_text()
 assert '--cpus=2' in build and '--privileged' not in build
-assert '20971520' in build
+assert '41943040' in build
+assert 'build-fast-base.sh' in (root / 'scripts/build.sh').read_text()
+subprocess.run(['python3', str(root / 'scripts/prepare-fast-base.py'), '--check'], check=True)
 pack = (root / 'scripts/pack.sh').read_text()
 assert '-T2' in pack and 'bios-install' in pack and '--efi-boot' in pack
 print('recipe checks: passed')

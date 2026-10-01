@@ -1,0 +1,80 @@
+{
+  "scope": "task-15 rescue-project/build only",
+  "free_bytes_before": 20056104960,
+  "planned_removals": [
+    {
+      "path": "build/rootfs",
+      "unique_allocated_bytes": 1298411520,
+      "regular_file_bytes": 1268350601,
+      "regular_files": 13248
+    },
+    {
+      "path": "build/initramfs.cpio.zst",
+      "unique_allocated_bytes": 996495360,
+      "regular_file_bytes": 996492127,
+      "regular_files": 1
+    },
+    {
+      "path": "build/iso-root",
+      "unique_allocated_bytes": 18014208,
+      "regular_file_bytes": 18006177,
+      "regular_files": 5
+    },
+    {
+      "path": "build/native-tools",
+      "unique_allocated_bytes": 29655040,
+      "regular_file_bytes": 28421090,
+      "regular_files": 552
+    },
+    {
+      "path": "build/toybox-0.8.11",
+      "unique_allocated_bytes": 13840384,
+      "regular_file_bytes": 11857687,
+      "regular_files": 837
+    },
+    {
+      "path": "build/limine",
+      "unique_allocated_bytes": 5599232,
+      "regular_file_bytes": 5582659,
+      "regular_files": 15
+    },
+    {
+      "path": "build/downloads",
+      "unique_allocated_bytes": 7176192,
+      "regular_file_bytes": 7170151,
+      "regular_files": 3
+    },
+    {
+      "path": "build/native",
+      "unique_allocated_bytes": 15618048,
+      "regular_file_bytes": 15611352,
+      "regular_files": 3
+    }
+  ],
+  "unique_allocated_bytes_planned": 2384809984,
+  "preserved": [
+    "build/alpenglow-rescue-core-x86_64.iso",
+    "../baseline/",
+    "build/evidence/",
+    "build/bench/",
+    "all source, git and logs"
+  ],
+  "active_process_check": "ps found no qemu/build/xorriso jobs; docker ps recorded in cleanup execution output",
+  "free_bytes_immediately_before": 34613784576,
+  "removed_paths": [
+    "build/rootfs",
+    "build/initramfs.cpio.zst",
+    "build/iso-root",
+    "build/native-tools",
+    "build/toybox-0.8.11",
+    "build/limine",
+    "build/downloads",
+    "build/native"
+  ],
+  "free_bytes_after": 34848399360,
+  "observed_free_bytes_delta": 234614784,
+  "free_space_delta_caveat": "Shared APFS volume; other task activity can affect this delta. Task-owned removed allocated bytes are separately inventoried.",
+  "preserved_core_iso_sha256_after": "6fe574f213acaccbc8eb99ef2387e1dbeedbb512bcd0a1b3a04cfac14fb2f528",
+  "free_bytes_later_checkpoint": 42598400000,
+  "other_worker_note": "Parent reports separate cleanup reclaimed 21.6 GiB and left task15 untouched; task15 cleanup performed only listed paths."
+}
