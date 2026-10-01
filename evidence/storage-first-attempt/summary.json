@@ -1,0 +1,19 @@
+{
+  "run": 36873856455,
+  "source_commit": "f322c61b93720462a4d3a7f64ce0bcac12e74ead",
+  "result": "Storage kernel compiled; no ISO because packaging metadata path was root-owned",
+  "kernel_settings": "All requested storage fragment settings survived olddefconfig before successful bzImage compilation",
+  "build_duration_seconds": 571.277558155,
+  "max_additional_allocation_bytes": 3116215038,
+  "min_host_free_bytes": 88216104960,
+  "min_docker_free_bytes": 88209408000,
+  "build_artifact": 11169150279,
+  "build_archive_sha256": "3c138692e57b1bf59186bc5c161b6bcd6e8f0a120a10de23bfce3f15a14f83f8",
+  "uefi_diagnostic_artifact": 11169365117,
+  "uefi_archive_sha256": "6b04e6ffd0433fcc1acbb387e8594aae3de1683d3ea443c9d0b4ddcb58936a5c",
+  "rescue_capabilities_proved": [],
+  "uefi": "Previous base still no readiness in 30s on CI QEMU8.2.2 OVMF; serial text retained, screen remains in Actions artifact",
+  "uefi_screen_observed": "Limine PANIC: linux: Non-relocatable kernel could not be loaded at required address 0x100000",
+  "uefi_screen_inspection": "Verified 8742-byte artifact archive decoded in memory only; no screenshot saved locally",
+  "uefi_cause_scope": "Observed loader error on CI OVMF; exact ARM-host stall cause not independently inspected. New EFI/relocation runtime validation still pending."
+}

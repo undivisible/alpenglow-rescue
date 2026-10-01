@@ -1,0 +1,2112 @@
+{
+  "stage": "ci-fast-base",
+  "command": [
+    "sh",
+    "scripts/build-ci-fast-base.sh"
+  ],
+  "exit_code": 0,
+  "stopped_reason": null,
+  "cleanup_error": null,
+  "duration_seconds": 553.63497871,
+  "min_host_free_bytes": 88216231936,
+  "min_docker_free_bytes": 88216043520,
+  "max_additional_allocation_bytes": 3116153654,
+  "samples": [
+    {
+      "elapsed_seconds": 0.137301585000003,
+      "host_free_bytes": 91395944448,
+      "docker_free_bytes": 91395796992,
+      "source_allocated_bytes": 18825216,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 0
+    },
+    {
+      "elapsed_seconds": 2.13751155300001,
+      "host_free_bytes": 91306528768,
+      "docker_free_bytes": 91395796992,
+      "source_allocated_bytes": 18825216,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 0
+    },
+    {
+      "elapsed_seconds": 4.137734163000005,
+      "host_free_bytes": 91193294848,
+      "docker_free_bytes": 91395796992,
+      "source_allocated_bytes": 18825216,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 0
+    },
+    {
+      "elapsed_seconds": 6.13793659800001,
+      "host_free_bytes": 91192995840,
+      "docker_free_bytes": 91395796992,
+      "source_allocated_bytes": 18825216,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 0
+    },
+    {
+      "elapsed_seconds": 8.138161472000007,
+      "host_free_bytes": 91191758848,
+      "docker_free_bytes": 91395796992,
+      "source_allocated_bytes": 18825216,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 0
+    },
+    {
+      "elapsed_seconds": 10.313402693,
+      "host_free_bytes": 91191513088,
+      "docker_free_bytes": 91191488512,
+      "source_allocated_bytes": 18845696,
+      "owned_container_rw_bytes": 196411462,
+      "additional_allocation_bytes": 196431942
+    },
+    {
+      "elapsed_seconds": 12.313582353000001,
+      "host_free_bytes": 91191181312,
+      "docker_free_bytes": 91191488512,
+      "source_allocated_bytes": 18845696,
+      "owned_container_rw_bytes": 196411462,
+      "additional_allocation_bytes": 196431942
+    },
+    {
+      "elapsed_seconds": 14.313811084000008,
+      "host_free_bytes": 91190902784,
+      "docker_free_bytes": 91191488512,
+      "source_allocated_bytes": 18845696,
+      "owned_container_rw_bytes": 196411462,
+      "additional_allocation_bytes": 196431942
+    },
+    {
+      "elapsed_seconds": 16.31401766100001,
+      "host_free_bytes": 91190611968,
+      "docker_free_bytes": 91191488512,
+      "source_allocated_bytes": 18845696,
+      "owned_container_rw_bytes": 196411462,
+      "additional_allocation_bytes": 196431942
+    },
+    {
+      "elapsed_seconds": 18.314240955000002,
+      "host_free_bytes": 91190333440,
+      "docker_free_bytes": 91191488512,
+      "source_allocated_bytes": 18845696,
+      "owned_container_rw_bytes": 196411462,
+      "additional_allocation_bytes": 196431942
+    },
+    {
+      "elapsed_seconds": 20.421307002000006,
+      "host_free_bytes": 91354284032,
+      "docker_free_bytes": 91346833408,
+      "source_allocated_bytes": 19705856,
+      "owned_container_rw_bytes": 42803776,
+      "additional_allocation_bytes": 43684416
+    },
+    {
+      "elapsed_seconds": 22.421472921999992,
+      "host_free_bytes": 91141509120,
+      "docker_free_bytes": 91346833408,
+      "source_allocated_bytes": 19705856,
+      "owned_container_rw_bytes": 42803776,
+      "additional_allocation_bytes": 43684416
+    },
+    {
+      "elapsed_seconds": 24.421695220999993,
+      "host_free_bytes": 91137724416,
+      "docker_free_bytes": 91346833408,
+      "source_allocated_bytes": 19705856,
+      "owned_container_rw_bytes": 42803776,
+      "additional_allocation_bytes": 43684416
+    },
+    {
+      "elapsed_seconds": 26.42191679200002,
+      "host_free_bytes": 91136995328,
+      "docker_free_bytes": 91346833408,
+      "source_allocated_bytes": 19705856,
+      "owned_container_rw_bytes": 42803776,
+      "additional_allocation_bytes": 43684416
+    },
+    {
+      "elapsed_seconds": 28.422142097000005,
+      "host_free_bytes": 91134959616,
+      "docker_free_bytes": 91346833408,
+      "source_allocated_bytes": 19705856,
+      "owned_container_rw_bytes": 42803776,
+      "additional_allocation_bytes": 43684416
+    },
+    {
+      "elapsed_seconds": 30.594889066999997,
+      "host_free_bytes": 91134504960,
+      "docker_free_bytes": 91134492672,
+      "source_allocated_bytes": 19722240,
+      "owned_container_rw_bytes": 253753494,
+      "additional_allocation_bytes": 254650518
+    },
+    {
+      "elapsed_seconds": 32.595082034,
+      "host_free_bytes": 91131248640,
+      "docker_free_bytes": 91134492672,
+      "source_allocated_bytes": 19722240,
+      "owned_container_rw_bytes": 253753494,
+      "additional_allocation_bytes": 254650518
+    },
+    {
+      "elapsed_seconds": 34.595263681000006,
+      "host_free_bytes": 91360559104,
+      "docker_free_bytes": 91134492672,
+      "source_allocated_bytes": 19722240,
+      "owned_container_rw_bytes": 253753494,
+      "additional_allocation_bytes": 254650518
+    },
+    {
+      "elapsed_seconds": 36.595547748,
+      "host_free_bytes": 91342917632,
+      "docker_free_bytes": 91134492672,
+      "source_allocated_bytes": 19722240,
+      "owned_container_rw_bytes": 253753494,
+      "additional_allocation_bytes": 254650518
+    },
+    {
+      "elapsed_seconds": 38.59602332200001,
+      "host_free_bytes": 91310211072,
+      "docker_free_bytes": 91134492672,
+      "source_allocated_bytes": 19722240,
+      "owned_container_rw_bytes": 253753494,
+      "additional_allocation_bytes": 254650518
+    },
+    {
+      "elapsed_seconds": 40.749438782,
+      "host_free_bytes": 91245326336,
+      "docker_free_bytes": 91241058304,
+      "source_allocated_bytes": 125788160,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 106962944
+    },
+    {
+      "elapsed_seconds": 42.74961170200001,
+      "host_free_bytes": 91221229568,
+      "docker_free_bytes": 91241058304,
+      "source_allocated_bytes": 125788160,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 106962944
+    },
+    {
+      "elapsed_seconds": 44.749815348,
+      "host_free_bytes": 91084857344,
+      "docker_free_bytes": 91241058304,
+      "source_allocated_bytes": 125788160,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 106962944
+    },
+    {
+      "elapsed_seconds": 46.75000425000002,
+      "host_free_bytes": 91005976576,
+      "docker_free_bytes": 91241058304,
+      "source_allocated_bytes": 125788160,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 106962944
+    },
+    {
+      "elapsed_seconds": 48.750194617000005,
+      "host_free_bytes": 90906750976,
+      "docker_free_bytes": 91241058304,
+      "source_allocated_bytes": 125788160,
+      "owned_container_rw_bytes": 0,
+      "additional_allocation_bytes": 106962944
+    },
+    {
+      "elapsed_seconds": 51.167690678000014,
+      "host_free_bytes": 90780524544,
+      "docker_free_bytes": 90776363008,
+      "source_allocated_bytes": 129855488,
+      "owned_container_rw_bytes": 443557773,
+      "additional_allocation_bytes": 554588045
+    },
+    {
+      "elapsed_seconds": 53.16785801400002,
+      "host_free_bytes": 90710016000,
+      "docker_free_bytes": 90776363008,
+      "source_allocated_bytes": 129855488,
+      "owned_container_rw_bytes": 443557773,
+      "additional_allocation_bytes": 554588045
+    },
+    {
+      "elapsed_seconds": 55.16803304000001,
+      "host_free_bytes": 90705080320,
+      "docker_free_bytes": 90776363008,
+      "source_allocated_bytes": 129855488,
+      "owned_container_rw_bytes": 443557773,
+      "additional_allocation_bytes": 554588045
+    },
+    {
+      "elapsed_seconds": 57.168224998,
+      "host_free_bytes": 90660024320,
+      "docker_free_bytes": 90776363008,
+      "source_allocated_bytes": 129855488,
+      "owned_container_rw_bytes": 443557773,
+      "additional_allocation_bytes": 554588045
+    },
+    {
+      "elapsed_seconds": 59.168438871999996,
+      "host_free_bytes": 90335727616,
+      "docker_free_bytes": 90776363008,
+      "source_allocated_bytes": 129855488,
+      "owned_container_rw_bytes": 443557773,
+      "additional_allocation_bytes": 554588045
+    },
+    {
+      "elapsed_seconds": 61.490473248,
+      "host_free_bytes": 89747542016,
+      "docker_free_bytes": 89713905664,
+      "source_allocated_bytes": 288202752,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 671800118
+    },
+    {
+      "elapsed_seconds": 63.490661888000005,
+      "host_free_bytes": 89444671488,
+      "docker_free_bytes": 89713905664,
+      "source_allocated_bytes": 288202752,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 671800118
+    },
+    {
+      "elapsed_seconds": 65.49085331200001,
+      "host_free_bytes": 89187442688,
+      "docker_free_bytes": 89713905664,
+      "source_allocated_bytes": 288202752,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 671800118
+    },
+    {
+      "elapsed_seconds": 67.491061865,
+      "host_free_bytes": 89175977984,
+      "docker_free_bytes": 89713905664,
+      "source_allocated_bytes": 288202752,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 671800118
+    },
+    {
+      "elapsed_seconds": 69.49124950200002,
+      "host_free_bytes": 88921747456,
+      "docker_free_bytes": 89713905664,
+      "source_allocated_bytes": 288202752,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 671800118
+    },
+    {
+      "elapsed_seconds": 71.98072196500001,
+      "host_free_bytes": 88825765888,
+      "docker_free_bytes": 88825700352,
+      "source_allocated_bytes": 2123534336,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2507131702
+    },
+    {
+      "elapsed_seconds": 73.98091898300001,
+      "host_free_bytes": 88825163776,
+      "docker_free_bytes": 88825700352,
+      "source_allocated_bytes": 2123534336,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2507131702
+    },
+    {
+      "elapsed_seconds": 75.981117773,
+      "host_free_bytes": 88825225216,
+      "docker_free_bytes": 88825700352,
+      "source_allocated_bytes": 2123534336,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2507131702
+    },
+    {
+      "elapsed_seconds": 77.98132033800002,
+      "host_free_bytes": 88825225216,
+      "docker_free_bytes": 88825700352,
+      "source_allocated_bytes": 2123534336,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2507131702
+    },
+    {
+      "elapsed_seconds": 79.98152529200001,
+      "host_free_bytes": 88825090048,
+      "docker_free_bytes": 88825700352,
+      "source_allocated_bytes": 2123534336,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2507131702
+    },
+    {
+      "elapsed_seconds": 82.62024762300001,
+      "host_free_bytes": 88821084160,
+      "docker_free_bytes": 88820350976,
+      "source_allocated_bytes": 2128187392,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2511784758
+    },
+    {
+      "elapsed_seconds": 84.620691338,
+      "host_free_bytes": 88818749440,
+      "docker_free_bytes": 88820350976,
+      "source_allocated_bytes": 2128187392,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2511784758
+    },
+    {
+      "elapsed_seconds": 86.62089472600002,
+      "host_free_bytes": 88775757824,
+      "docker_free_bytes": 88820350976,
+      "source_allocated_bytes": 2128187392,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2511784758
+    },
+    {
+      "elapsed_seconds": 88.621132797,
+      "host_free_bytes": 88774955008,
+      "docker_free_bytes": 88820350976,
+      "source_allocated_bytes": 2128187392,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2511784758
+    },
+    {
+      "elapsed_seconds": 90.621381189,
+      "host_free_bytes": 88774316032,
+      "docker_free_bytes": 88820350976,
+      "source_allocated_bytes": 2128187392,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2511784758
+    },
+    {
+      "elapsed_seconds": 93.273680805,
+      "host_free_bytes": 88773615616,
+      "docker_free_bytes": 88773599232,
+      "source_allocated_bytes": 2175295488,
+      "owned_container_rw_bytes": 402545462,
+      "additional_allocation_bytes": 2559015734
+    },
+    {
+      "elapsed_seconds": 95.27386997900001,
+      "host_free_bytes": 88772952064,
+      "docker_free_bytes": 88773599232,
+      "source_allocated_bytes": 2175295488,
+      "owned_container_rw_bytes": 402545462,
+      "additional_allocation_bytes": 2559015734
+    },
+    {
+      "elapsed_seconds": 97.27408434900002,
+      "host_free_bytes": 88772128768,
+      "docker_free_bytes": 88773599232,
+      "source_allocated_bytes": 2175295488,
+      "owned_container_rw_bytes": 402545462,
+      "additional_allocation_bytes": 2559015734
+    },
+    {
+      "elapsed_seconds": 99.27430575100001,
+      "host_free_bytes": 88770842624,
+      "docker_free_bytes": 88773599232,
+      "source_allocated_bytes": 2175295488,
+      "owned_container_rw_bytes": 402545462,
+      "additional_allocation_bytes": 2559015734
+    },
+    {
+      "elapsed_seconds": 101.27454726600001,
+      "host_free_bytes": 88770011136,
+      "docker_free_bytes": 88773599232,
+      "source_allocated_bytes": 2175295488,
+      "owned_container_rw_bytes": 402545462,
+      "additional_allocation_bytes": 2559015734
+    },
+    {
+      "elapsed_seconds": 103.946281978,
+      "host_free_bytes": 88769216512,
+      "docker_free_bytes": 88769040384,
+      "source_allocated_bytes": 2180026368,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2563623734
+    },
+    {
+      "elapsed_seconds": 105.946488305,
+      "host_free_bytes": 88768176128,
+      "docker_free_bytes": 88769040384,
+      "source_allocated_bytes": 2180026368,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2563623734
+    },
+    {
+      "elapsed_seconds": 107.94669393500001,
+      "host_free_bytes": 88767447040,
+      "docker_free_bytes": 88769040384,
+      "source_allocated_bytes": 2180026368,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2563623734
+    },
+    {
+      "elapsed_seconds": 109.94691317500002,
+      "host_free_bytes": 88767119360,
+      "docker_free_bytes": 88769040384,
+      "source_allocated_bytes": 2180026368,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2563623734
+    },
+    {
+      "elapsed_seconds": 111.947135865,
+      "host_free_bytes": 88766279680,
+      "docker_free_bytes": 88769040384,
+      "source_allocated_bytes": 2180026368,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2563623734
+    },
+    {
+      "elapsed_seconds": 114.60013736800002,
+      "host_free_bytes": 88765456384,
+      "docker_free_bytes": 88765173760,
+      "source_allocated_bytes": 2183839744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2567437110
+    },
+    {
+      "elapsed_seconds": 116.600342216,
+      "host_free_bytes": 88764383232,
+      "docker_free_bytes": 88765173760,
+      "source_allocated_bytes": 2183839744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2567437110
+    },
+    {
+      "elapsed_seconds": 118.600563596,
+      "host_free_bytes": 88763645952,
+      "docker_free_bytes": 88765173760,
+      "source_allocated_bytes": 2183839744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2567437110
+    },
+    {
+      "elapsed_seconds": 120.600800405,
+      "host_free_bytes": 88762474496,
+      "docker_free_bytes": 88765173760,
+      "source_allocated_bytes": 2183839744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2567437110
+    },
+    {
+      "elapsed_seconds": 122.60101657999999,
+      "host_free_bytes": 88761716736,
+      "docker_free_bytes": 88765173760,
+      "source_allocated_bytes": 2183839744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2567437110
+    },
+    {
+      "elapsed_seconds": 125.14506521200002,
+      "host_free_bytes": 88760926208,
+      "docker_free_bytes": 88760762368,
+      "source_allocated_bytes": 2188288000,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2571885366
+    },
+    {
+      "elapsed_seconds": 127.14527290800001,
+      "host_free_bytes": 88760086528,
+      "docker_free_bytes": 88760762368,
+      "source_allocated_bytes": 2188288000,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2571885366
+    },
+    {
+      "elapsed_seconds": 129.145498853,
+      "host_free_bytes": 88759275520,
+      "docker_free_bytes": 88760762368,
+      "source_allocated_bytes": 2188288000,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2571885366
+    },
+    {
+      "elapsed_seconds": 131.145717684,
+      "host_free_bytes": 88758677504,
+      "docker_free_bytes": 88760762368,
+      "source_allocated_bytes": 2188288000,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2571885366
+    },
+    {
+      "elapsed_seconds": 133.145954413,
+      "host_free_bytes": 88757948416,
+      "docker_free_bytes": 88760762368,
+      "source_allocated_bytes": 2188288000,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2571885366
+    },
+    {
+      "elapsed_seconds": 135.724073501,
+      "host_free_bytes": 88757137408,
+      "docker_free_bytes": 88756969472,
+      "source_allocated_bytes": 2192044032,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2575641398
+    },
+    {
+      "elapsed_seconds": 137.724291747,
+      "host_free_bytes": 88756232192,
+      "docker_free_bytes": 88756969472,
+      "source_allocated_bytes": 2192044032,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2575641398
+    },
+    {
+      "elapsed_seconds": 139.724516123,
+      "host_free_bytes": 88755482624,
+      "docker_free_bytes": 88756969472,
+      "source_allocated_bytes": 2192044032,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2575641398
+    },
+    {
+      "elapsed_seconds": 141.72474379300002,
+      "host_free_bytes": 88754798592,
+      "docker_free_bytes": 88756969472,
+      "source_allocated_bytes": 2192044032,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2575641398
+    },
+    {
+      "elapsed_seconds": 143.724946375,
+      "host_free_bytes": 88753971200,
+      "docker_free_bytes": 88756969472,
+      "source_allocated_bytes": 2192044032,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2575641398
+    },
+    {
+      "elapsed_seconds": 146.38706088,
+      "host_free_bytes": 88753283072,
+      "docker_free_bytes": 88753090560,
+      "source_allocated_bytes": 2195918848,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2579516214
+    },
+    {
+      "elapsed_seconds": 148.38727486300002,
+      "host_free_bytes": 88752312320,
+      "docker_free_bytes": 88753090560,
+      "source_allocated_bytes": 2195918848,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2579516214
+    },
+    {
+      "elapsed_seconds": 150.38747772,
+      "host_free_bytes": 88751378432,
+      "docker_free_bytes": 88753090560,
+      "source_allocated_bytes": 2195918848,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2579516214
+    },
+    {
+      "elapsed_seconds": 152.38769868100002,
+      "host_free_bytes": 88750419968,
+      "docker_free_bytes": 88753090560,
+      "source_allocated_bytes": 2195918848,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2579516214
+    },
+    {
+      "elapsed_seconds": 154.38792902900002,
+      "host_free_bytes": 88749809664,
+      "docker_free_bytes": 88753090560,
+      "source_allocated_bytes": 2195918848,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2579516214
+    },
+    {
+      "elapsed_seconds": 157.036169427,
+      "host_free_bytes": 88749076480,
+      "docker_free_bytes": 88748892160,
+      "source_allocated_bytes": 2200104960,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2583702326
+    },
+    {
+      "elapsed_seconds": 159.03637117200003,
+      "host_free_bytes": 88748253184,
+      "docker_free_bytes": 88748892160,
+      "source_allocated_bytes": 2200104960,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2583702326
+    },
+    {
+      "elapsed_seconds": 161.03660043600001,
+      "host_free_bytes": 88747565056,
+      "docker_free_bytes": 88748892160,
+      "source_allocated_bytes": 2200104960,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2583702326
+    },
+    {
+      "elapsed_seconds": 163.03684823100002,
+      "host_free_bytes": 88746803200,
+      "docker_free_bytes": 88748892160,
+      "source_allocated_bytes": 2200104960,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2583702326
+    },
+    {
+      "elapsed_seconds": 165.03708287900002,
+      "host_free_bytes": 88746164224,
+      "docker_free_bytes": 88748892160,
+      "source_allocated_bytes": 2200104960,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2583702326
+    },
+    {
+      "elapsed_seconds": 167.691885888,
+      "host_free_bytes": 88745390080,
+      "docker_free_bytes": 88745242624,
+      "source_allocated_bytes": 2203787264,
+      "owned_container_rw_bytes": 402524982,
+      "additional_allocation_bytes": 2587487030
+    },
+    {
+      "elapsed_seconds": 169.69210596,
+      "host_free_bytes": 88744611840,
+      "docker_free_bytes": 88745242624,
+      "source_allocated_bytes": 2203787264,
+      "owned_container_rw_bytes": 402524982,
+      "additional_allocation_bytes": 2587487030
+    },
+    {
+      "elapsed_seconds": 171.69233442900003,
+      "host_free_bytes": 88743976960,
+      "docker_free_bytes": 88745242624,
+      "source_allocated_bytes": 2203787264,
+      "owned_container_rw_bytes": 402524982,
+      "additional_allocation_bytes": 2587487030
+    },
+    {
+      "elapsed_seconds": 173.69256072000002,
+      "host_free_bytes": 88743362560,
+      "docker_free_bytes": 88745242624,
+      "source_allocated_bytes": 2203787264,
+      "owned_container_rw_bytes": 402524982,
+      "additional_allocation_bytes": 2587487030
+    },
+    {
+      "elapsed_seconds": 175.69280168,
+      "host_free_bytes": 88742780928,
+      "docker_free_bytes": 88745242624,
+      "source_allocated_bytes": 2203787264,
+      "owned_container_rw_bytes": 402524982,
+      "additional_allocation_bytes": 2587487030
+    },
+    {
+      "elapsed_seconds": 178.26971928400002,
+      "host_free_bytes": 88742162432,
+      "docker_free_bytes": 88742051840,
+      "source_allocated_bytes": 2206851072,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2590481206
+    },
+    {
+      "elapsed_seconds": 180.269916712,
+      "host_free_bytes": 88741527552,
+      "docker_free_bytes": 88742051840,
+      "source_allocated_bytes": 2206851072,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2590481206
+    },
+    {
+      "elapsed_seconds": 182.27014744899998,
+      "host_free_bytes": 88741048320,
+      "docker_free_bytes": 88742051840,
+      "source_allocated_bytes": 2206851072,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2590481206
+    },
+    {
+      "elapsed_seconds": 184.27038367199998,
+      "host_free_bytes": 88740487168,
+      "docker_free_bytes": 88742051840,
+      "source_allocated_bytes": 2206851072,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2590481206
+    },
+    {
+      "elapsed_seconds": 186.27063548900003,
+      "host_free_bytes": 88739999744,
+      "docker_free_bytes": 88742051840,
+      "source_allocated_bytes": 2206851072,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2590481206
+    },
+    {
+      "elapsed_seconds": 188.91083146200003,
+      "host_free_bytes": 88739340288,
+      "docker_free_bytes": 88739201024,
+      "source_allocated_bytes": 2209701888,
+      "owned_container_rw_bytes": 402606902,
+      "additional_allocation_bytes": 2593483574
+    },
+    {
+      "elapsed_seconds": 190.91104984100002,
+      "host_free_bytes": 88738582528,
+      "docker_free_bytes": 88739201024,
+      "source_allocated_bytes": 2209701888,
+      "owned_container_rw_bytes": 402606902,
+      "additional_allocation_bytes": 2593483574
+    },
+    {
+      "elapsed_seconds": 192.91126692400002,
+      "host_free_bytes": 88737837056,
+      "docker_free_bytes": 88739201024,
+      "source_allocated_bytes": 2209701888,
+      "owned_container_rw_bytes": 402606902,
+      "additional_allocation_bytes": 2593483574
+    },
+    {
+      "elapsed_seconds": 194.91149277099998,
+      "host_free_bytes": 88737153024,
+      "docker_free_bytes": 88739201024,
+      "source_allocated_bytes": 2209701888,
+      "owned_container_rw_bytes": 402606902,
+      "additional_allocation_bytes": 2593483574
+    },
+    {
+      "elapsed_seconds": 196.911699306,
+      "host_free_bytes": 88736337920,
+      "docker_free_bytes": 88739201024,
+      "source_allocated_bytes": 2209701888,
+      "owned_container_rw_bytes": 402606902,
+      "additional_allocation_bytes": 2593483574
+    },
+    {
+      "elapsed_seconds": 199.556805452,
+      "host_free_bytes": 88735723520,
+      "docker_free_bytes": 88735551488,
+      "source_allocated_bytes": 2213474304,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2597071670
+    },
+    {
+      "elapsed_seconds": 201.557010065,
+      "host_free_bytes": 88734818304,
+      "docker_free_bytes": 88735551488,
+      "source_allocated_bytes": 2213474304,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2597071670
+    },
+    {
+      "elapsed_seconds": 203.55723631,
+      "host_free_bytes": 88734015488,
+      "docker_free_bytes": 88735551488,
+      "source_allocated_bytes": 2213474304,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2597071670
+    },
+    {
+      "elapsed_seconds": 205.557443332,
+      "host_free_bytes": 88733388800,
+      "docker_free_bytes": 88735551488,
+      "source_allocated_bytes": 2213474304,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2597071670
+    },
+    {
+      "elapsed_seconds": 207.55767805300002,
+      "host_free_bytes": 88732741632,
+      "docker_free_bytes": 88735551488,
+      "source_allocated_bytes": 2213474304,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2597071670
+    },
+    {
+      "elapsed_seconds": 210.208674691,
+      "host_free_bytes": 88732098560,
+      "docker_free_bytes": 88731942912,
+      "source_allocated_bytes": 2217119744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2600717110
+    },
+    {
+      "elapsed_seconds": 212.208898901,
+      "host_free_bytes": 88731299840,
+      "docker_free_bytes": 88731942912,
+      "source_allocated_bytes": 2217119744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2600717110
+    },
+    {
+      "elapsed_seconds": 214.20912002699998,
+      "host_free_bytes": 88730562560,
+      "docker_free_bytes": 88731942912,
+      "source_allocated_bytes": 2217119744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2600717110
+    },
+    {
+      "elapsed_seconds": 216.20935676599998,
+      "host_free_bytes": 88729985024,
+      "docker_free_bytes": 88731942912,
+      "source_allocated_bytes": 2217119744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2600717110
+    },
+    {
+      "elapsed_seconds": 218.209593202,
+      "host_free_bytes": 88729341952,
+      "docker_free_bytes": 88731942912,
+      "source_allocated_bytes": 2217119744,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2600717110
+    },
+    {
+      "elapsed_seconds": 220.789916345,
+      "host_free_bytes": 88728748032,
+      "docker_free_bytes": 88728641536,
+      "source_allocated_bytes": 2220351488,
+      "owned_container_rw_bytes": 402492214,
+      "additional_allocation_bytes": 2604018486
+    },
+    {
+      "elapsed_seconds": 222.790134406,
+      "host_free_bytes": 88727949312,
+      "docker_free_bytes": 88728641536,
+      "source_allocated_bytes": 2220351488,
+      "owned_container_rw_bytes": 402492214,
+      "additional_allocation_bytes": 2604018486
+    },
+    {
+      "elapsed_seconds": 224.79037785600002,
+      "host_free_bytes": 88727314432,
+      "docker_free_bytes": 88728641536,
+      "source_allocated_bytes": 2220351488,
+      "owned_container_rw_bytes": 402492214,
+      "additional_allocation_bytes": 2604018486
+    },
+    {
+      "elapsed_seconds": 226.79060282,
+      "host_free_bytes": 88726659072,
+      "docker_free_bytes": 88728641536,
+      "source_allocated_bytes": 2220351488,
+      "owned_container_rw_bytes": 402492214,
+      "additional_allocation_bytes": 2604018486
+    },
+    {
+      "elapsed_seconds": 228.79084302400003,
+      "host_free_bytes": 88726081536,
+      "docker_free_bytes": 88728641536,
+      "source_allocated_bytes": 2220351488,
+      "owned_container_rw_bytes": 402492214,
+      "additional_allocation_bytes": 2604018486
+    },
+    {
+      "elapsed_seconds": 231.32625409399998,
+      "host_free_bytes": 88725467136,
+      "docker_free_bytes": 88725295104,
+      "source_allocated_bytes": 2223579136,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2607176502
+    },
+    {
+      "elapsed_seconds": 233.326473309,
+      "host_free_bytes": 88724549632,
+      "docker_free_bytes": 88725295104,
+      "source_allocated_bytes": 2223579136,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2607176502
+    },
+    {
+      "elapsed_seconds": 235.326717739,
+      "host_free_bytes": 88723931136,
+      "docker_free_bytes": 88725295104,
+      "source_allocated_bytes": 2223579136,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2607176502
+    },
+    {
+      "elapsed_seconds": 237.32696151,
+      "host_free_bytes": 88723214336,
+      "docker_free_bytes": 88725295104,
+      "source_allocated_bytes": 2223579136,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2607176502
+    },
+    {
+      "elapsed_seconds": 239.32716385999998,
+      "host_free_bytes": 88722538496,
+      "docker_free_bytes": 88725295104,
+      "source_allocated_bytes": 2223579136,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2607176502
+    },
+    {
+      "elapsed_seconds": 241.91063193500003,
+      "host_free_bytes": 88721969152,
+      "docker_free_bytes": 88721805312,
+      "source_allocated_bytes": 2227032064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2610629430
+    },
+    {
+      "elapsed_seconds": 243.91085451700002,
+      "host_free_bytes": 88720924672,
+      "docker_free_bytes": 88721805312,
+      "source_allocated_bytes": 2227032064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2610629430
+    },
+    {
+      "elapsed_seconds": 245.911063345,
+      "host_free_bytes": 88720015360,
+      "docker_free_bytes": 88721805312,
+      "source_allocated_bytes": 2227032064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2610629430
+    },
+    {
+      "elapsed_seconds": 247.91128467800002,
+      "host_free_bytes": 88719241216,
+      "docker_free_bytes": 88721805312,
+      "source_allocated_bytes": 2227032064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2610629430
+    },
+    {
+      "elapsed_seconds": 249.91151097099998,
+      "host_free_bytes": 88718565376,
+      "docker_free_bytes": 88721805312,
+      "source_allocated_bytes": 2227032064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2610629430
+    },
+    {
+      "elapsed_seconds": 252.491224166,
+      "host_free_bytes": 88717950976,
+      "docker_free_bytes": 88718053376,
+      "source_allocated_bytes": 2230611968,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2614209334
+    },
+    {
+      "elapsed_seconds": 254.491445118,
+      "host_free_bytes": 88717668352,
+      "docker_free_bytes": 88718053376,
+      "source_allocated_bytes": 2230611968,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2614209334
+    },
+    {
+      "elapsed_seconds": 256.491694144,
+      "host_free_bytes": 88717225984,
+      "docker_free_bytes": 88718053376,
+      "source_allocated_bytes": 2230611968,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2614209334
+    },
+    {
+      "elapsed_seconds": 258.491921406,
+      "host_free_bytes": 88716488704,
+      "docker_free_bytes": 88718053376,
+      "source_allocated_bytes": 2230611968,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2614209334
+    },
+    {
+      "elapsed_seconds": 260.49215548,
+      "host_free_bytes": 88716656640,
+      "docker_free_bytes": 88718053376,
+      "source_allocated_bytes": 2230611968,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2614209334
+    },
+    {
+      "elapsed_seconds": 263.12625677,
+      "host_free_bytes": 88716177408,
+      "docker_free_bytes": 88716124160,
+      "source_allocated_bytes": 2232664064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2616261430
+    },
+    {
+      "elapsed_seconds": 265.126483113,
+      "host_free_bytes": 88715620352,
+      "docker_free_bytes": 88716124160,
+      "source_allocated_bytes": 2232664064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2616261430
+    },
+    {
+      "elapsed_seconds": 267.12671522700003,
+      "host_free_bytes": 88714878976,
+      "docker_free_bytes": 88716124160,
+      "source_allocated_bytes": 2232664064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2616261430
+    },
+    {
+      "elapsed_seconds": 269.126922276,
+      "host_free_bytes": 88713793536,
+      "docker_free_bytes": 88716124160,
+      "source_allocated_bytes": 2232664064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2616261430
+    },
+    {
+      "elapsed_seconds": 271.127151124,
+      "host_free_bytes": 88712998912,
+      "docker_free_bytes": 88716124160,
+      "source_allocated_bytes": 2232664064,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2616261430
+    },
+    {
+      "elapsed_seconds": 273.69383733300003,
+      "host_free_bytes": 88712265728,
+      "docker_free_bytes": 88712081408,
+      "source_allocated_bytes": 2236710912,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2620308278
+    },
+    {
+      "elapsed_seconds": 275.69411871200003,
+      "host_free_bytes": 88711290880,
+      "docker_free_bytes": 88712081408,
+      "source_allocated_bytes": 2236710912,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2620308278
+    },
+    {
+      "elapsed_seconds": 277.694354076,
+      "host_free_bytes": 88710635520,
+      "docker_free_bytes": 88712081408,
+      "source_allocated_bytes": 2236710912,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2620308278
+    },
+    {
+      "elapsed_seconds": 279.694585823,
+      "host_free_bytes": 88710094848,
+      "docker_free_bytes": 88712081408,
+      "source_allocated_bytes": 2236710912,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2620308278
+    },
+    {
+      "elapsed_seconds": 281.69483750300003,
+      "host_free_bytes": 88709398528,
+      "docker_free_bytes": 88712081408,
+      "source_allocated_bytes": 2236710912,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2620308278
+    },
+    {
+      "elapsed_seconds": 284.198572226,
+      "host_free_bytes": 88708710400,
+      "docker_free_bytes": 88708620288,
+      "source_allocated_bytes": 2240253952,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2623851318
+    },
+    {
+      "elapsed_seconds": 286.19879282,
+      "host_free_bytes": 88707997696,
+      "docker_free_bytes": 88708620288,
+      "source_allocated_bytes": 2240253952,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2623851318
+    },
+    {
+      "elapsed_seconds": 288.199031902,
+      "host_free_bytes": 88707346432,
+      "docker_free_bytes": 88708620288,
+      "source_allocated_bytes": 2240253952,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2623851318
+    },
+    {
+      "elapsed_seconds": 290.19918872,
+      "host_free_bytes": 88706498560,
+      "docker_free_bytes": 88708620288,
+      "source_allocated_bytes": 2240253952,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2623851318
+    },
+    {
+      "elapsed_seconds": 292.199403483,
+      "host_free_bytes": 88705814528,
+      "docker_free_bytes": 88708620288,
+      "source_allocated_bytes": 2240253952,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2623851318
+    },
+    {
+      "elapsed_seconds": 294.840681346,
+      "host_free_bytes": 88705130496,
+      "docker_free_bytes": 88704921600,
+      "source_allocated_bytes": 2243825664,
+      "owned_container_rw_bytes": 402471734,
+      "additional_allocation_bytes": 2627472182
+    },
+    {
+      "elapsed_seconds": 296.840880522,
+      "host_free_bytes": 88704237568,
+      "docker_free_bytes": 88704921600,
+      "source_allocated_bytes": 2243825664,
+      "owned_container_rw_bytes": 402471734,
+      "additional_allocation_bytes": 2627472182
+    },
+    {
+      "elapsed_seconds": 298.841106745,
+      "host_free_bytes": 88703275008,
+      "docker_free_bytes": 88704921600,
+      "source_allocated_bytes": 2243825664,
+      "owned_container_rw_bytes": 402471734,
+      "additional_allocation_bytes": 2627472182
+    },
+    {
+      "elapsed_seconds": 300.841331016,
+      "host_free_bytes": 88702365696,
+      "docker_free_bytes": 88704921600,
+      "source_allocated_bytes": 2243825664,
+      "owned_container_rw_bytes": 402471734,
+      "additional_allocation_bytes": 2627472182
+    },
+    {
+      "elapsed_seconds": 302.84156924,
+      "host_free_bytes": 88701640704,
+      "docker_free_bytes": 88704921600,
+      "source_allocated_bytes": 2243825664,
+      "owned_container_rw_bytes": 402471734,
+      "additional_allocation_bytes": 2627472182
+    },
+    {
+      "elapsed_seconds": 305.49044004,
+      "host_free_bytes": 88700870656,
+      "docker_free_bytes": 88700669952,
+      "source_allocated_bytes": 2248134656,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2631732022
+    },
+    {
+      "elapsed_seconds": 307.49067249300003,
+      "host_free_bytes": 88700051456,
+      "docker_free_bytes": 88700669952,
+      "source_allocated_bytes": 2248134656,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2631732022
+    },
+    {
+      "elapsed_seconds": 309.490888444,
+      "host_free_bytes": 88699326464,
+      "docker_free_bytes": 88700669952,
+      "source_allocated_bytes": 2248134656,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2631732022
+    },
+    {
+      "elapsed_seconds": 311.49113330800003,
+      "host_free_bytes": 88698724352,
+      "docker_free_bytes": 88700669952,
+      "source_allocated_bytes": 2248134656,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2631732022
+    },
+    {
+      "elapsed_seconds": 313.491352429,
+      "host_free_bytes": 88697958400,
+      "docker_free_bytes": 88700669952,
+      "source_allocated_bytes": 2248134656,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2631732022
+    },
+    {
+      "elapsed_seconds": 316.042498761,
+      "host_free_bytes": 88697229312,
+      "docker_free_bytes": 88697094144,
+      "source_allocated_bytes": 2251755520,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2635352886
+    },
+    {
+      "elapsed_seconds": 318.04271944100003,
+      "host_free_bytes": 88696373248,
+      "docker_free_bytes": 88697094144,
+      "source_allocated_bytes": 2251755520,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2635352886
+    },
+    {
+      "elapsed_seconds": 320.04295497100003,
+      "host_free_bytes": 88695664640,
+      "docker_free_bytes": 88697094144,
+      "source_allocated_bytes": 2251755520,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2635352886
+    },
+    {
+      "elapsed_seconds": 322.043168905,
+      "host_free_bytes": 88695013376,
+      "docker_free_bytes": 88697094144,
+      "source_allocated_bytes": 2251755520,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2635352886
+    },
+    {
+      "elapsed_seconds": 324.04340925500003,
+      "host_free_bytes": 88694403072,
+      "docker_free_bytes": 88697094144,
+      "source_allocated_bytes": 2251755520,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2635352886
+    },
+    {
+      "elapsed_seconds": 326.70277562,
+      "host_free_bytes": 88693579776,
+      "docker_free_bytes": 88693309440,
+      "source_allocated_bytes": 2255405056,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2639010614
+    },
+    {
+      "elapsed_seconds": 328.70298603000003,
+      "host_free_bytes": 88692535296,
+      "docker_free_bytes": 88693309440,
+      "source_allocated_bytes": 2255405056,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2639010614
+    },
+    {
+      "elapsed_seconds": 330.703200817,
+      "host_free_bytes": 88691777536,
+      "docker_free_bytes": 88693309440,
+      "source_allocated_bytes": 2255405056,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2639010614
+    },
+    {
+      "elapsed_seconds": 332.703412567,
+      "host_free_bytes": 88690954240,
+      "docker_free_bytes": 88693309440,
+      "source_allocated_bytes": 2255405056,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2639010614
+    },
+    {
+      "elapsed_seconds": 334.703652062,
+      "host_free_bytes": 88690192384,
+      "docker_free_bytes": 88693309440,
+      "source_allocated_bytes": 2255405056,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2639010614
+    },
+    {
+      "elapsed_seconds": 337.21447028,
+      "host_free_bytes": 88689397760,
+      "docker_free_bytes": 88689242112,
+      "source_allocated_bytes": 2259509248,
+      "owned_container_rw_bytes": 402508598,
+      "additional_allocation_bytes": 2643192630
+    },
+    {
+      "elapsed_seconds": 339.21470875800003,
+      "host_free_bytes": 88688476160,
+      "docker_free_bytes": 88689242112,
+      "source_allocated_bytes": 2259509248,
+      "owned_container_rw_bytes": 402508598,
+      "additional_allocation_bytes": 2643192630
+    },
+    {
+      "elapsed_seconds": 341.214925998,
+      "host_free_bytes": 88687677440,
+      "docker_free_bytes": 88689242112,
+      "source_allocated_bytes": 2259509248,
+      "owned_container_rw_bytes": 402508598,
+      "additional_allocation_bytes": 2643192630
+    },
+    {
+      "elapsed_seconds": 343.215150293,
+      "host_free_bytes": 88686931968,
+      "docker_free_bytes": 88689242112,
+      "source_allocated_bytes": 2259509248,
+      "owned_container_rw_bytes": 402508598,
+      "additional_allocation_bytes": 2643192630
+    },
+    {
+      "elapsed_seconds": 345.215374003,
+      "host_free_bytes": 88686157824,
+      "docker_free_bytes": 88689242112,
+      "source_allocated_bytes": 2259509248,
+      "owned_container_rw_bytes": 402508598,
+      "additional_allocation_bytes": 2643192630
+    },
+    {
+      "elapsed_seconds": 347.73045884100003,
+      "host_free_bytes": 88685359104,
+      "docker_free_bytes": 88685203456,
+      "source_allocated_bytes": 2263416832,
+      "owned_container_rw_bytes": 402635574,
+      "additional_allocation_bytes": 2647227190
+    },
+    {
+      "elapsed_seconds": 349.730683154,
+      "host_free_bytes": 88684474368,
+      "docker_free_bytes": 88685203456,
+      "source_allocated_bytes": 2263416832,
+      "owned_container_rw_bytes": 402635574,
+      "additional_allocation_bytes": 2647227190
+    },
+    {
+      "elapsed_seconds": 351.73091976,
+      "host_free_bytes": 88683667456,
+      "docker_free_bytes": 88685203456,
+      "source_allocated_bytes": 2263416832,
+      "owned_container_rw_bytes": 402635574,
+      "additional_allocation_bytes": 2647227190
+    },
+    {
+      "elapsed_seconds": 353.731142977,
+      "host_free_bytes": 88682962944,
+      "docker_free_bytes": 88685203456,
+      "source_allocated_bytes": 2263416832,
+      "owned_container_rw_bytes": 402635574,
+      "additional_allocation_bytes": 2647227190
+    },
+    {
+      "elapsed_seconds": 355.73136148000003,
+      "host_free_bytes": 88682110976,
+      "docker_free_bytes": 88685203456,
+      "source_allocated_bytes": 2263416832,
+      "owned_container_rw_bytes": 402635574,
+      "additional_allocation_bytes": 2647227190
+    },
+    {
+      "elapsed_seconds": 358.393261272,
+      "host_free_bytes": 88681308160,
+      "docker_free_bytes": 88681107456,
+      "source_allocated_bytes": 2267570176,
+      "owned_container_rw_bytes": 402459446,
+      "additional_allocation_bytes": 2651204406
+    },
+    {
+      "elapsed_seconds": 360.39345597,
+      "host_free_bytes": 88680402944,
+      "docker_free_bytes": 88681107456,
+      "source_allocated_bytes": 2267570176,
+      "owned_container_rw_bytes": 402459446,
+      "additional_allocation_bytes": 2651204406
+    },
+    {
+      "elapsed_seconds": 362.393694524,
+      "host_free_bytes": 88679735296,
+      "docker_free_bytes": 88681107456,
+      "source_allocated_bytes": 2267570176,
+      "owned_container_rw_bytes": 402459446,
+      "additional_allocation_bytes": 2651204406
+    },
+    {
+      "elapsed_seconds": 364.393921084,
+      "host_free_bytes": 88679112704,
+      "docker_free_bytes": 88681107456,
+      "source_allocated_bytes": 2267570176,
+      "owned_container_rw_bytes": 402459446,
+      "additional_allocation_bytes": 2651204406
+    },
+    {
+      "elapsed_seconds": 366.394145723,
+      "host_free_bytes": 88678428672,
+      "docker_free_bytes": 88681107456,
+      "source_allocated_bytes": 2267570176,
+      "owned_container_rw_bytes": 402459446,
+      "additional_allocation_bytes": 2651204406
+    },
+    {
+      "elapsed_seconds": 369.034918224,
+      "host_free_bytes": 88677752832,
+      "docker_free_bytes": 88677486592,
+      "source_allocated_bytes": 2271195136,
+      "owned_container_rw_bytes": 402426678,
+      "additional_allocation_bytes": 2654796598
+    },
+    {
+      "elapsed_seconds": 371.035119782,
+      "host_free_bytes": 88676827136,
+      "docker_free_bytes": 88677486592,
+      "source_allocated_bytes": 2271195136,
+      "owned_container_rw_bytes": 402426678,
+      "additional_allocation_bytes": 2654796598
+    },
+    {
+      "elapsed_seconds": 373.035342202,
+      "host_free_bytes": 88676081664,
+      "docker_free_bytes": 88677486592,
+      "source_allocated_bytes": 2271195136,
+      "owned_container_rw_bytes": 402426678,
+      "additional_allocation_bytes": 2654796598
+    },
+    {
+      "elapsed_seconds": 375.035574023,
+      "host_free_bytes": 88675323904,
+      "docker_free_bytes": 88677486592,
+      "source_allocated_bytes": 2271195136,
+      "owned_container_rw_bytes": 402426678,
+      "additional_allocation_bytes": 2654796598
+    },
+    {
+      "elapsed_seconds": 377.035786289,
+      "host_free_bytes": 88674545664,
+      "docker_free_bytes": 88677486592,
+      "source_allocated_bytes": 2271195136,
+      "owned_container_rw_bytes": 402426678,
+      "additional_allocation_bytes": 2654796598
+    },
+    {
+      "elapsed_seconds": 379.655426294,
+      "host_free_bytes": 88673787904,
+      "docker_free_bytes": 88673628160,
+      "source_allocated_bytes": 2275143680,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2658741046
+    },
+    {
+      "elapsed_seconds": 381.655644569,
+      "host_free_bytes": 88672866304,
+      "docker_free_bytes": 88673628160,
+      "source_allocated_bytes": 2275143680,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2658741046
+    },
+    {
+      "elapsed_seconds": 383.655864074,
+      "host_free_bytes": 88671825920,
+      "docker_free_bytes": 88673628160,
+      "source_allocated_bytes": 2275143680,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2658741046
+    },
+    {
+      "elapsed_seconds": 385.656077109,
+      "host_free_bytes": 88671182848,
+      "docker_free_bytes": 88673628160,
+      "source_allocated_bytes": 2275143680,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2658741046
+    },
+    {
+      "elapsed_seconds": 387.656307041,
+      "host_free_bytes": 88670502912,
+      "docker_free_bytes": 88673628160,
+      "source_allocated_bytes": 2275143680,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2658741046
+    },
+    {
+      "elapsed_seconds": 390.309191147,
+      "host_free_bytes": 88669900800,
+      "docker_free_bytes": 88669757440,
+      "source_allocated_bytes": 2278977536,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2662574902
+    },
+    {
+      "elapsed_seconds": 392.309412803,
+      "host_free_bytes": 88668753920,
+      "docker_free_bytes": 88669757440,
+      "source_allocated_bytes": 2278977536,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2662574902
+    },
+    {
+      "elapsed_seconds": 394.309644278,
+      "host_free_bytes": 88668114944,
+      "docker_free_bytes": 88669757440,
+      "source_allocated_bytes": 2278977536,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2662574902
+    },
+    {
+      "elapsed_seconds": 396.309849612,
+      "host_free_bytes": 88667373568,
+      "docker_free_bytes": 88669757440,
+      "source_allocated_bytes": 2278977536,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2662574902
+    },
+    {
+      "elapsed_seconds": 398.310081954,
+      "host_free_bytes": 88666738688,
+      "docker_free_bytes": 88669757440,
+      "source_allocated_bytes": 2278977536,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2662574902
+    },
+    {
+      "elapsed_seconds": 400.958946348,
+      "host_free_bytes": 88666017792,
+      "docker_free_bytes": 88665874432,
+      "source_allocated_bytes": 2282856448,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2666462006
+    },
+    {
+      "elapsed_seconds": 402.959176772,
+      "host_free_bytes": 88665124864,
+      "docker_free_bytes": 88665874432,
+      "source_allocated_bytes": 2282856448,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2666462006
+    },
+    {
+      "elapsed_seconds": 404.959398579,
+      "host_free_bytes": 88664309760,
+      "docker_free_bytes": 88665874432,
+      "source_allocated_bytes": 2282856448,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2666462006
+    },
+    {
+      "elapsed_seconds": 406.95965980600005,
+      "host_free_bytes": 88663425024,
+      "docker_free_bytes": 88665874432,
+      "source_allocated_bytes": 2282856448,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2666462006
+    },
+    {
+      "elapsed_seconds": 408.95987422499996,
+      "host_free_bytes": 88662650880,
+      "docker_free_bytes": 88665874432,
+      "source_allocated_bytes": 2282856448,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2666462006
+    },
+    {
+      "elapsed_seconds": 411.612208888,
+      "host_free_bytes": 88661942272,
+      "docker_free_bytes": 88661770240,
+      "source_allocated_bytes": 2287009792,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2670639926
+    },
+    {
+      "elapsed_seconds": 413.612410603,
+      "host_free_bytes": 88660987904,
+      "docker_free_bytes": 88661770240,
+      "source_allocated_bytes": 2287009792,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2670639926
+    },
+    {
+      "elapsed_seconds": 415.612638302,
+      "host_free_bytes": 88660271104,
+      "docker_free_bytes": 88661770240,
+      "source_allocated_bytes": 2287009792,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2670639926
+    },
+    {
+      "elapsed_seconds": 417.61287098300005,
+      "host_free_bytes": 88659447808,
+      "docker_free_bytes": 88661770240,
+      "source_allocated_bytes": 2287009792,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2670639926
+    },
+    {
+      "elapsed_seconds": 419.613082681,
+      "host_free_bytes": 88658755584,
+      "docker_free_bytes": 88661770240,
+      "source_allocated_bytes": 2287009792,
+      "owned_container_rw_bytes": 402455350,
+      "additional_allocation_bytes": 2670639926
+    },
+    {
+      "elapsed_seconds": 422.25853346900004,
+      "host_free_bytes": 88658182144,
+      "docker_free_bytes": 88658022400,
+      "source_allocated_bytes": 2290634752,
+      "owned_container_rw_bytes": 402434870,
+      "additional_allocation_bytes": 2674244406
+    },
+    {
+      "elapsed_seconds": 424.25873780600006,
+      "host_free_bytes": 88657297408,
+      "docker_free_bytes": 88658022400,
+      "source_allocated_bytes": 2290634752,
+      "owned_container_rw_bytes": 402434870,
+      "additional_allocation_bytes": 2674244406
+    },
+    {
+      "elapsed_seconds": 426.258963693,
+      "host_free_bytes": 88656674816,
+      "docker_free_bytes": 88658022400,
+      "source_allocated_bytes": 2290634752,
+      "owned_container_rw_bytes": 402434870,
+      "additional_allocation_bytes": 2674244406
+    },
+    {
+      "elapsed_seconds": 428.25919906400003,
+      "host_free_bytes": 88655966208,
+      "docker_free_bytes": 88658022400,
+      "source_allocated_bytes": 2290634752,
+      "owned_container_rw_bytes": 402434870,
+      "additional_allocation_bytes": 2674244406
+    },
+    {
+      "elapsed_seconds": 430.25942507400003,
+      "host_free_bytes": 88655593472,
+      "docker_free_bytes": 88658022400,
+      "source_allocated_bytes": 2290634752,
+      "owned_container_rw_bytes": 402434870,
+      "additional_allocation_bytes": 2674244406
+    },
+    {
+      "elapsed_seconds": 432.908605788,
+      "host_free_bytes": 88654856192,
+      "docker_free_bytes": 88654729216,
+      "source_allocated_bytes": 2293633024,
+      "owned_container_rw_bytes": 402869046,
+      "additional_allocation_bytes": 2677676854
+    },
+    {
+      "elapsed_seconds": 434.90888386,
+      "host_free_bytes": 88654336000,
+      "docker_free_bytes": 88654729216,
+      "source_allocated_bytes": 2293633024,
+      "owned_container_rw_bytes": 402869046,
+      "additional_allocation_bytes": 2677676854
+    },
+    {
+      "elapsed_seconds": 436.90911344299997,
+      "host_free_bytes": 88653828096,
+      "docker_free_bytes": 88654729216,
+      "source_allocated_bytes": 2293633024,
+      "owned_container_rw_bytes": 402869046,
+      "additional_allocation_bytes": 2677676854
+    },
+    {
+      "elapsed_seconds": 438.90933598199996,
+      "host_free_bytes": 88653180928,
+      "docker_free_bytes": 88654729216,
+      "source_allocated_bytes": 2293633024,
+      "owned_container_rw_bytes": 402869046,
+      "additional_allocation_bytes": 2677676854
+    },
+    {
+      "elapsed_seconds": 440.909560965,
+      "host_free_bytes": 88652468224,
+      "docker_free_bytes": 88654729216,
+      "source_allocated_bytes": 2293633024,
+      "owned_container_rw_bytes": 402869046,
+      "additional_allocation_bytes": 2677676854
+    },
+    {
+      "elapsed_seconds": 443.56730686500003,
+      "host_free_bytes": 88651784192,
+      "docker_free_bytes": 88651706368,
+      "source_allocated_bytes": 2296971264,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2680568630
+    },
+    {
+      "elapsed_seconds": 445.567547252,
+      "host_free_bytes": 88651145216,
+      "docker_free_bytes": 88651706368,
+      "source_allocated_bytes": 2296971264,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2680568630
+    },
+    {
+      "elapsed_seconds": 447.567795152,
+      "host_free_bytes": 88650485760,
+      "docker_free_bytes": 88651706368,
+      "source_allocated_bytes": 2296971264,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2680568630
+    },
+    {
+      "elapsed_seconds": 449.568033951,
+      "host_free_bytes": 88649814016,
+      "docker_free_bytes": 88651706368,
+      "source_allocated_bytes": 2296971264,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2680568630
+    },
+    {
+      "elapsed_seconds": 451.568268443,
+      "host_free_bytes": 88649207808,
+      "docker_free_bytes": 88651706368,
+      "source_allocated_bytes": 2296971264,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2680568630
+    },
+    {
+      "elapsed_seconds": 454.197005211,
+      "host_free_bytes": 88648581120,
+      "docker_free_bytes": 88648413184,
+      "source_allocated_bytes": 2300194816,
+      "owned_container_rw_bytes": 402516790,
+      "additional_allocation_bytes": 2683886390
+    },
+    {
+      "elapsed_seconds": 456.197195205,
+      "host_free_bytes": 88647897088,
+      "docker_free_bytes": 88648413184,
+      "source_allocated_bytes": 2300194816,
+      "owned_container_rw_bytes": 402516790,
+      "additional_allocation_bytes": 2683886390
+    },
+    {
+      "elapsed_seconds": 458.19743434800006,
+      "host_free_bytes": 88647270400,
+      "docker_free_bytes": 88648413184,
+      "source_allocated_bytes": 2300194816,
+      "owned_container_rw_bytes": 402516790,
+      "additional_allocation_bytes": 2683886390
+    },
+    {
+      "elapsed_seconds": 460.19768365199997,
+      "host_free_bytes": 88646553600,
+      "docker_free_bytes": 88648413184,
+      "source_allocated_bytes": 2300194816,
+      "owned_container_rw_bytes": 402516790,
+      "additional_allocation_bytes": 2683886390
+    },
+    {
+      "elapsed_seconds": 462.197910467,
+      "host_free_bytes": 88645804032,
+      "docker_free_bytes": 88648413184,
+      "source_allocated_bytes": 2300194816,
+      "owned_container_rw_bytes": 402516790,
+      "additional_allocation_bytes": 2683886390
+    },
+    {
+      "elapsed_seconds": 464.83496478399996,
+      "host_free_bytes": 88645136384,
+      "docker_free_bytes": 88645025792,
+      "source_allocated_bytes": 2303545344,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2687142710
+    },
+    {
+      "elapsed_seconds": 466.83517082199995,
+      "host_free_bytes": 88644337664,
+      "docker_free_bytes": 88645025792,
+      "source_allocated_bytes": 2303545344,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2687142710
+    },
+    {
+      "elapsed_seconds": 468.835408739,
+      "host_free_bytes": 88643629056,
+      "docker_free_bytes": 88645025792,
+      "source_allocated_bytes": 2303545344,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2687142710
+    },
+    {
+      "elapsed_seconds": 470.835656141,
+      "host_free_bytes": 88642994176,
+      "docker_free_bytes": 88645025792,
+      "source_allocated_bytes": 2303545344,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2687142710
+    },
+    {
+      "elapsed_seconds": 472.83587880299996,
+      "host_free_bytes": 88642338816,
+      "docker_free_bytes": 88645025792,
+      "source_allocated_bytes": 2303545344,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2687142710
+    },
+    {
+      "elapsed_seconds": 475.43106811800004,
+      "host_free_bytes": 88641724416,
+      "docker_free_bytes": 88641630208,
+      "source_allocated_bytes": 2307051520,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2690665270
+    },
+    {
+      "elapsed_seconds": 477.43127537000004,
+      "host_free_bytes": 88641134592,
+      "docker_free_bytes": 88641630208,
+      "source_allocated_bytes": 2307051520,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2690665270
+    },
+    {
+      "elapsed_seconds": 479.431507565,
+      "host_free_bytes": 88640552960,
+      "docker_free_bytes": 88641630208,
+      "source_allocated_bytes": 2307051520,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2690665270
+    },
+    {
+      "elapsed_seconds": 481.43171437999996,
+      "host_free_bytes": 88639975424,
+      "docker_free_bytes": 88641630208,
+      "source_allocated_bytes": 2307051520,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2690665270
+    },
+    {
+      "elapsed_seconds": 483.43194096200006,
+      "host_free_bytes": 88639475712,
+      "docker_free_bytes": 88641630208,
+      "source_allocated_bytes": 2307051520,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2690665270
+    },
+    {
+      "elapsed_seconds": 486.02092961500006,
+      "host_free_bytes": 88638849024,
+      "docker_free_bytes": 88638672896,
+      "source_allocated_bytes": 2309922816,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2693520182
+    },
+    {
+      "elapsed_seconds": 488.021166068,
+      "host_free_bytes": 88638099456,
+      "docker_free_bytes": 88638672896,
+      "source_allocated_bytes": 2309922816,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2693520182
+    },
+    {
+      "elapsed_seconds": 490.021406633,
+      "host_free_bytes": 88637440000,
+      "docker_free_bytes": 88638672896,
+      "source_allocated_bytes": 2309922816,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2693520182
+    },
+    {
+      "elapsed_seconds": 492.021653985,
+      "host_free_bytes": 88636702720,
+      "docker_free_bytes": 88638672896,
+      "source_allocated_bytes": 2309922816,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2693520182
+    },
+    {
+      "elapsed_seconds": 494.02187817400005,
+      "host_free_bytes": 88636047360,
+      "docker_free_bytes": 88638672896,
+      "source_allocated_bytes": 2309922816,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2693520182
+    },
+    {
+      "elapsed_seconds": 496.68597823,
+      "host_free_bytes": 88635416576,
+      "docker_free_bytes": 88635273216,
+      "source_allocated_bytes": 2313388032,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2697001782
+    },
+    {
+      "elapsed_seconds": 498.68620053700005,
+      "host_free_bytes": 88633532416,
+      "docker_free_bytes": 88635273216,
+      "source_allocated_bytes": 2313388032,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2697001782
+    },
+    {
+      "elapsed_seconds": 500.686424081,
+      "host_free_bytes": 88632872960,
+      "docker_free_bytes": 88635273216,
+      "source_allocated_bytes": 2313388032,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2697001782
+    },
+    {
+      "elapsed_seconds": 502.68666026600005,
+      "host_free_bytes": 88632238080,
+      "docker_free_bytes": 88635273216,
+      "source_allocated_bytes": 2313388032,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2697001782
+    },
+    {
+      "elapsed_seconds": 504.68689075599997,
+      "host_free_bytes": 88631595008,
+      "docker_free_bytes": 88635273216,
+      "source_allocated_bytes": 2313388032,
+      "owned_container_rw_bytes": 402438966,
+      "additional_allocation_bytes": 2697001782
+    },
+    {
+      "elapsed_seconds": 507.351080569,
+      "host_free_bytes": 88630931456,
+      "docker_free_bytes": 88630861824,
+      "source_allocated_bytes": 2317856768,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2701454134
+    },
+    {
+      "elapsed_seconds": 509.351303956,
+      "host_free_bytes": 88630259712,
+      "docker_free_bytes": 88630861824,
+      "source_allocated_bytes": 2317856768,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2701454134
+    },
+    {
+      "elapsed_seconds": 511.351524388,
+      "host_free_bytes": 88629727232,
+      "docker_free_bytes": 88630861824,
+      "source_allocated_bytes": 2317856768,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2701454134
+    },
+    {
+      "elapsed_seconds": 513.3517464910001,
+      "host_free_bytes": 88629334016,
+      "docker_free_bytes": 88630861824,
+      "source_allocated_bytes": 2317856768,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2701454134
+    },
+    {
+      "elapsed_seconds": 515.3519789290001,
+      "host_free_bytes": 88628707328,
+      "docker_free_bytes": 88630861824,
+      "source_allocated_bytes": 2317856768,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2701454134
+    },
+    {
+      "elapsed_seconds": 518.0059626249999,
+      "host_free_bytes": 88628154368,
+      "docker_free_bytes": 88628109312,
+      "source_allocated_bytes": 2320572416,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2704177974
+    },
+    {
+      "elapsed_seconds": 520.006180653,
+      "host_free_bytes": 88627380224,
+      "docker_free_bytes": 88628109312,
+      "source_allocated_bytes": 2320572416,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2704177974
+    },
+    {
+      "elapsed_seconds": 522.006405649,
+      "host_free_bytes": 88626601984,
+      "docker_free_bytes": 88628109312,
+      "source_allocated_bytes": 2320572416,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2704177974
+    },
+    {
+      "elapsed_seconds": 524.006652624,
+      "host_free_bytes": 88625889280,
+      "docker_free_bytes": 88628109312,
+      "source_allocated_bytes": 2320572416,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2704177974
+    },
+    {
+      "elapsed_seconds": 526.0068840429999,
+      "host_free_bytes": 88625172480,
+      "docker_free_bytes": 88628109312,
+      "source_allocated_bytes": 2320572416,
+      "owned_container_rw_bytes": 402430774,
+      "additional_allocation_bytes": 2704177974
+    },
+    {
+      "elapsed_seconds": 528.616269743,
+      "host_free_bytes": 88624549888,
+      "docker_free_bytes": 88624345088,
+      "source_allocated_bytes": 2324156416,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2707753782
+    },
+    {
+      "elapsed_seconds": 530.6164723290001,
+      "host_free_bytes": 88623554560,
+      "docker_free_bytes": 88624345088,
+      "source_allocated_bytes": 2324156416,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2707753782
+    },
+    {
+      "elapsed_seconds": 532.6166851129999,
+      "host_free_bytes": 88622665728,
+      "docker_free_bytes": 88624345088,
+      "source_allocated_bytes": 2324156416,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2707753782
+    },
+    {
+      "elapsed_seconds": 534.6168978640001,
+      "host_free_bytes": 88621805568,
+      "docker_free_bytes": 88624345088,
+      "source_allocated_bytes": 2324156416,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2707753782
+    },
+    {
+      "elapsed_seconds": 536.6171307259999,
+      "host_free_bytes": 88620855296,
+      "docker_free_bytes": 88624345088,
+      "source_allocated_bytes": 2324156416,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2707753782
+    },
+    {
+      "elapsed_seconds": 539.105452969,
+      "host_free_bytes": 88620036096,
+      "docker_free_bytes": 88619581440,
+      "source_allocated_bytes": 2328788992,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2712386358
+    },
+    {
+      "elapsed_seconds": 541.1056899719999,
+      "host_free_bytes": 88569159680,
+      "docker_free_bytes": 88619581440,
+      "source_allocated_bytes": 2328788992,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2712386358
+    },
+    {
+      "elapsed_seconds": 543.1059915640001,
+      "host_free_bytes": 88540033024,
+      "docker_free_bytes": 88619581440,
+      "source_allocated_bytes": 2328788992,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2712386358
+    },
+    {
+      "elapsed_seconds": 545.10619157,
+      "host_free_bytes": 88404066304,
+      "docker_free_bytes": 88619581440,
+      "source_allocated_bytes": 2328788992,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2712386358
+    },
+    {
+      "elapsed_seconds": 547.1064312020001,
+      "host_free_bytes": 88243466240,
+      "docker_free_bytes": 88619581440,
+      "source_allocated_bytes": 2328788992,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 2712386358
+    },
+    {
+      "elapsed_seconds": 549.6345577550001,
+      "host_free_bytes": 88216231936,
+      "docker_free_bytes": 88216043520,
+      "source_allocated_bytes": 2732556288,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 3116153654
+    },
+    {
+      "elapsed_seconds": 551.634737715,
+      "host_free_bytes": 88459317248,
+      "docker_free_bytes": 88216043520,
+      "source_allocated_bytes": 2732556288,
+      "owned_container_rw_bytes": 402422582,
+      "additional_allocation_bytes": 3116153654
+    }
+  ]
+}

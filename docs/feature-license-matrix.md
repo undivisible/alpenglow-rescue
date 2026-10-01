@@ -1,67 +1,58 @@
-# Candidate scope and licenses
+# Candidate capabilities and licenses
 
-Alpenglow source: `tschk/alpenglow` at
-`2214bc159355522bbebc61e8e90ca78933a8e1ac`, MPL-2.0.
-Comparison source: `crmne/omarchy-rescue` main at
-`ae903cd63a43aa609a7b5493b45647aa53a7cf73`, MIT (notice in `licenses/`).
-Baseline: official `v2026.09.30.1`, source tag commit
-`2c52ef26fb2a5b6d2f9605dd61bef96c237e6494`.
-That release source predates the explicit LICENSE file added at current main;
-the current MIT notice is preserved here. No upstream helper code is copied.
-Upstream README estimates rescue-only ~1.8 GB, full installer ~6.6 GB.
-Those are upstream estimates, not this project's measurements.
+Alpenglow: `2214bc159355522bbebc61e8e90ca78933a8e1ac`, MPL-2.0.
+Omarchy Rescue README: `ae903cd63a43aa609a7b5493b45647aa53a7cf73`, MIT.
+Official baseline: `v2026.09.30.1`, source
+`2c52ef26fb2a5b6d2f9605dd61bef96c237e6494`. The release predates the explicit
+LICENSE file at current main; its current MIT notice is preserved in `licenses/`.
+No upstream helper code is copied. Upstream estimates ~1.8 GB rescue-only and
+~6.6 GB installer; the separately verified release measures 1,954,578,432 bytes.
 
-| Capability | Upstream | Candidate plan | License / limitation |
+Current image: native storage-1a, 33,658,880 bytes, project source `4602cc5`.
+It is a **partial candidate**, not a validated equivalent. Kernel configuration
+and command presence do not establish rescue operations. The strict fixture
+suite failed before filesystem/LUKS/tmux tests. Earlier green fixture timings
+were revoked. [Exact measurements and raw evidence](measurement-report.md).
+
+| Capability | Omarchy Rescue | Current native candidate / evidence | License / remaining work |
 | --- | --- | --- | --- |
-| Linux kernel, broad storage/network/GPU drivers | Omarchy/Arch kernel | Signed Alpine linux-lts and all linux-firmware APKs | GPL-2.0 kernel; firmware retains per-file redistribution licenses |
-| PID 1 and libc | systemd/glibc | Alpenglow dinit/musl initramfs | dinit Apache-2.0; musl MIT |
-| Shell and package manager | Omarchy shell/pacman | toybox, oksh, Oil built from pinned Alpenglow | toybox 0BSD; oksh ISC/BSD; Oil MPL-2.0; bootstrap fallback must be disclosed |
-| Terminal + tmux | kmscon + kernel fallback | kernel VT/serial + tmux | tmux ISC; kmscon styling initially missing |
-| Ethernet and Wi-Fi | automatic Ethernet, impala/iwd | DHCP, iwd/iwctl | GPL/LGPL components; physical Wi-Fi not verified in VM; no impala UI |
-| Filesystems, LUKS, RAID, LVM | releng rescue tools | btrfs/cryptsetup/mdadm/lvm2, ext/XFS/FAT/NTFS/exFAT | GPL/LGPL packages; no real repair tests |
-| Recovery and hardware diagnostics | ddrescue, testdisk, SMART, NVMe, cloning, forensics | same core tools via signed APK packages | Each package's own license, recorded in package inventory |
-| Chroot/mount workflow | arch-chroot + fstab-driven Omarchy helper | util-linux chroot/mount, read-only inventory by default | Automated Omarchy subvolume/fstab mount helper initially missing |
-| Claude Code | bundled | pin official linux-x64-musl package, help/version only | Proprietary Anthropic terms; local build only, distribution unresolved |
-| Codex | bundled | pin official Linux x64 native package | Apache-2.0; no auth enrollment |
-| OpenCode | bundled | pin official x64 baseline-musl package | MIT; no auth enrollment |
-| Phone login / root-shell sharing | QR paste helper + opt-in ttyd root session | qrencode/ttyd executables available, never started during tests | GPL components; helper integration initially missing |
-| Updates | online pacman | Oil planned, absent; APK bootstrap inventory | Oil's registry compatibility must be checked before promising runtime updates |
-| Presentation / convenience | starship, zoxide, eza, bat, fonts, extra TUIs | initially absent | Cosmetic and convenience gaps still prevent claiming complete parity |
-| Installer | optional full Omarchy installer | rescue only | No installer equivalent claimed |
-| BIOS / UEFI | both | Limine ISO packaging reused from Alpenglow | BSD-2-Clause; test separately |
+| Kernel and storage drivers | Arch/Omarchy kernel with broad drivers | Custom Linux 7.1.3; all 106 requested storage/EFI settings compiled; builtin SATA/SCSI/NVMe/VirtIO/USB | GPL-2.0-only; no Alpine kernel; full physical-device coverage unverified |
+| Network/GPU drivers and firmware | Broad kernel/firmware | No audited broad network/WiFi/GPU/firmware restoration yet | Per-file firmware licenses need review; essential coverage must be retained before equivalence |
+| Init and libc | systemd/glibc | Native Zig init, dinit 0.19.2, musl; PID1 and kernel checked in guest | MPL-2.0 / Apache-2.0 / MIT; native core unchanged by payload |
+| Shell and package tools | Omarchy shell/pacman | Toybox 0.8.11, oksh 7.8; interactive BIOS/UEFI command response; signed APK build bootstrap | 0BSD; Alpine oksh metadata Public-Domain; Oil absent, runtime updates unproven |
+| Console and tmux | kmscon plus fallback, tmux | Serial console boots; VT/HID compiled; tmux 3.6 executable launches in earlier logs | tmux ISC; actual tmux session still unproved; kmscon/physical VT integration missing |
+| Ethernet and WiFi | Automatic Ethernet, iwd/impala | No networking in current candidate tests; no iwd/DHCP integration | Required increment; physical WiFi and firmware cannot be inferred from VM results |
+| ext4/Btrfs/XFS/FAT/exFAT/NTFS | Rescue filesystem tools | Tools staged and drivers compiled; read-only fixture suite prepared, not accepted | e2fsprogs mixed GPL/LGPL/BSD/MIT; Btrfs/exFAT GPL-2.0-or-later; XFS LGPL-2.1-or-later; dosfstools GPL-3.0-or-later; NTFS GPL-2.0-only |
+| LUKS, LVM and MD RAID | cryptsetup/lvm2/mdadm | CLI launches observed in earlier logs; readonly LUKS fixture not accepted; LVM/RAID repair untested | cryptsetup GPL-2.0-or-later with OpenSSL exception; LVM mixed GPL/LGPL/BSD; mdadm GPL-2.0-only |
+| Recovery and diagnostics | ddrescue/TestDisk/SMART/NVMe and more | ddrescue 1.29.1, TestDisk 7.2, SMART 7.5, nvme-cli 2.16 staged; version/help launches observed | GPL-3.0-or-later ddrescue; GPL-2.0-or-later others; real recovery untested |
+| Partition/module tools | releng tools | util-linux 2.41.6, parted 3.6, gptfdisk 1.0.10, kmod 34.2 staged | Mixed util-linux licenses in exact inventory; parted GPL-3.0-or-later; GPT/kmod GPL-2.0-or-later |
+| Chroot and mount workflow | arch-chroot and fstab/subvolume helper | Toybox chroot executable proven by help output; actual guest chroot fix local, not image-tested; util-linux mount present | Toybox 0BSD; util-linux mixed; automatic mount/subvolume helpers missing |
+| Claude Code | Bundled | Absent | Proprietary terms; official musl executable/help test and redistribution review needed; no auth enrollment |
+| Codex | Bundled | Absent | Apache-2.0; official native executable launch needed; no auth enrollment |
+| OpenCode | Bundled | Absent | MIT; official baseline-musl executable launch needed; no auth enrollment |
+| Phone login/root sharing | QR/paste helper and opt-in ttyd | Absent; no remote root service activated | Helper integration and licenses pending; tests require no credentials or activation |
+| Installer | Optional full installer | Rescue-only scope; no installer | No installer equivalence claimed |
+| Presentation and other tools | Fonts/starship/zoxide/eza/bat and extra TUIs | Mostly absent | kmscon, impala, foremost, clonezilla orchestration, snapper, bcachefs repair, sbctl and guest Limine repair still missing |
+| BIOS and UEFI | Both | Interactive command response observed once each on corrected storage candidate | Limine 12.4.0 BSD-2-Clause; strict three-cold-run rescue suite still pending |
 
-This is a development candidate, not a validated equivalent. Small evidence
-under `build/evidence/` retains the package database and file manifest after
-the rebuildable staging tree was removed. Every missing package
-or failed smoke command must be listed in the measurement report. No binaries
-or releases are published without distribution review and verified claims.
+The signed solver resolved 86 APK package records; exact versions, checksums,
+licenses, origin/build commits and source recipe links are in
+`evidence/storage-built-image/storage-package-license-inventory.json` and its
+lockfile. Package scripts were disabled; Alpine init/auth config was excluded.
+Staging installed-size proxies are not exact copied-file or compressed costs.
+Core license texts plus package metadata accompany the ISO. Complete
+corresponding-source and distribution review are still required before final
+release. This was a separate source-review pass by the implementing agent,
+not an independent reviewer or legal clearance.
 
-Measured current status: the core ISO contains 347 signed APK packages,
-including all linux-firmware dependencies. Claude/Codex/OpenCode and Oil were
-not downloaded/built after the resource stop. The fixture and full-client smoke
-recipe is prepared but unexecuted. `foremost`, clonezilla orchestration, sbctl,
-limine repair CLI in the guest, snapper, bcachefs repair tools, kmscon, impala,
-phone handoff, mount automation and several convenience tools are not included.
-The host packager uses Limine to boot the ISO, which is distinct from shipping
-Limine repair tools inside the rescue guest. Current ISO size is over 500 MB.
+Read-only fixtures use VirtIO, NVMe, USB mass storage and SATA CD transport.
+The latter avoids QEMU's refusal of readonly IDE hard-disk backends; it proves
+no hard-disk repair. The guest helper refuses without its explicit fixture boot
+flag and requires QEMU backend plus guest block-layer read-only state. No host
+disks, mounts, actual repair, credentials or remote access are involved.
 
-The measured prototype used Alpine LTS and an APK-populated RAM root, not
-Alpenglow FAST kernel/rootfs. The default build now selects native fast-base
-validation; rescue payload integration and essential driver restoration are
-pending. See `docs/provenance-and-fast-path.md` for exact lineage.
-
-## Verified native base milestone
-
-The downloaded GitHub-built native proof ISO uses Linux 7.1.3, embedded LZ4
-initramfs, pinned Alpenglow Zig init, dinit 0.19.2, static Toybox 0.8.11 and
-Limine 12.4.0. Three cold BIOS boots passed interactive shell response and
-Toybox/dinit CLI version checks. The ISO is 9,795,584 bytes. UEFI readiness
-was not established; networking was disabled. Exact source/image hashes and
-raw logs are in `docs/github-image-test.md` and `evidence/corrected-ci-base.json`.
-
-This base contains no tmux, Oil, Claude/Codex/OpenCode, filesystem/LUKS/RAID
-rescue payload or mount/phone helpers. It uses the original FAST driver cut,
-not the 141-setting rescue restoration fragment. USB, NVMe, SATA/SCSI, Wi-Fi,
-additional filesystems and audited firmware coverage remain essential future
-work. None of those omissions is accepted as rescue equivalence. The large
-APK prototype above is historical, not the default native kernel recipe.
+The earlier 347-package/1,014,913,024-byte Alpine-kernel prototype retained
+broad firmware but was not Alpenglow's native FAST image. It remains historical
+evidence in [measurement-history.md](measurement-history.md), not current scope.
+Its large firmware cost does not authorize omitting required firmware from the
+complete native rescue product to meet a target.

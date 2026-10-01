@@ -1,0 +1,12 @@
+{
+  "observed_at_utc": "2026-10-01T15:37:48.396164+00:00",
+  "host_free_bytes": 23552000000,
+  "docker_free_bytes": 13820731392,
+  "docker_observation": "read-only cached immutable Debian df; no mount/network/download/build",
+  "hard_floor_bytes": 21474836480,
+  "decision": "all local heavy work remains stopped; no broad cleanup; only small source/evidence operations",
+  "latest_tested_project_commit": "4602cc54681f858e1388661f7aebda4754306ae1",
+  "local_chroot_fix_commit": "c972dbfbc246f9364e328e936641181419af464d",
+  "source_push_blocker": "Same-route push twice rejected by automatic review: initial no-push restriction, later authorization transcript treated as untrusted tool output; no workaround attempted",
+  "ci_fixture_acceptance": "failed before operations, strict exit125; rescue timing null"
+}

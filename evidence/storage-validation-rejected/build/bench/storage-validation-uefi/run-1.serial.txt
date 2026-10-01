@@ -1,0 +1,125 @@
+[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01H[2J[01;01H[=3h[2J[01;01HBdsDxe: loading Boot0001 "UEFI QEMU DVD-ROM QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+BdsDxe: starting Boot0001 "UEFI QEMU DVD-ROM QM00001 " from PciRoot(0x0)/Pci(0x1F,0x2)/Sata(0x0,0xFFFF,0x0)
+[01;01H[01;01HWarning: unable to open an initial console.
+
+Alpenglow boot
+
+[  OK  ] mount-filesystems
+[  OK  ] shell-ttyS0
+[  OK  ] boot
+(none) login: root
+login[79]: root logged in on /dev/ttyS0  
+# test "$(uname -r)" = 7.1.3 && test "$(cat /proc/1/comm)" = dinit && printf "%s%s\n" FAST_BASE_ READY_OK
+FAST_BASE_READY_OK
+# /usr/local/bin/rescue-smoke-storage; printf "STORAGE_SMOKE_EXIT=%s\n" "$?"
+set: bad -e
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+sh: command: No such file or directory
+lsblk from util-linux 2.41.6
+cryptsetup 2.8.1 flags: UDEV BLKID KEYRING KERNEL_CAPI HW_OPAL 
+  LVM version:     2.03.35(2) (2025-09-09)
+  Library version: 1.02.209 (2025-09-09)
+  Driver version:  4.50.0
+  Configuration:   ./configure --build=x86_64-alpine-linux-musl --host=x86_64-alpine-linux-musl --prefix=/usr --sysconfdir=/etc --sbindir=/sbin --localstatedir=/var --enable-static_link --disable-dependency-tracking --disable-nls --disable-readline --enable-pkgconfig --with-thin=internal --enable-dmeventd --enable-cmdlib --with-thin-check=/usr/sbin/thin_check --disable-thin_check_needs_check --with-thin-dump=/usr/sbin/thin_dump --with-thin-repair=/usr/sbin/thin_repair --with-thin-restore=/usr/sbin/thin_restore --with-cache-check=/usr/sbin/cache_check --disable-cache_check_needs_check --with-cache-dump=/usr/sbin/cache_dump --with-cache-repair=/usr/sbin/cache_repair --with-cache-restore=/usr/sbin/cache_restore --with-dmeventd-path=/sbin/dmeventd --without-systemd-run --enable-udev_rules --enable-write_install --enable-lvmlockd-sanlock --disable-udev_sync CLDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs
+mdadm - v4.3 - 2024-02-15
+GNU ddrescue 1.29.1
+Copyright (C) 2025 Antonio Diaz Diaz.
+License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+TestDisk 7.2, Data Recovery Utility, February 2024
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+
+Version: 7.2
+Compiler: GCC 15.2
+ext2fs lib: 1.47.3, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.5
+iconv support: yes
+OS: Linux, kernel 7.1.3 (#1 SMP PREEMPT_DYNAMIC Thu Oct  1 14:42:37 UTC 2026) x86_64
+smartctl 7.5 2025-04-30 r5714 [x86_64-linux-7.1.3] (local build)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+smartctl comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+the terms of the GNU General Public License; either
+version 2, or (at your option) any later version.
+See https://www.gnu.org for further details.
+
+smartmontools release 7.5 dated 2025-04-30 at 07:42:55 UTC
+smartmontools SVN rev 5714 dated 2025-04-30 at 07:43:44
+smartmontools build host: x86_64-alpine-linux-musl
+smartmontools build with: C++11, GCC 15.2.0
+smartmontools configure arguments: [hidden in reproducible builds]
+reproducible build SOURCE_DATE_EPOCH: 1747214110 (2025-05-14 09:15:10)
+nvme version 2.16 (git 2.16)
+libnvme version 1.16.2 (git 1.16.2)
+tmux 3.6
+can't find terminfo database
+error connecting to /tmp/tmux-0/rescue-smoke (No such file or directory)
+error connecting to /tmp/tmux-0/rescue-smoke (No such file or directory)
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+set: bad --
+blockdev:  SEC_TYPE="msdos": No such file or directory
+blockdev:  SEC_TYPE="msdos": No such file or directory
+mount: ' SEC_TYPE="msdos"'->'/mnt/fixture': No such device
+umount: /mnt/fixture: Invalid argument
+RESCUE_FIXTURE_PASS AR_  SEC_TYPE="msdos"
+blockdev:  SEC_TYPE="msdos": No such file or directory
+Device  SEC_TYPE="msdos" does not exist or access denied.
+Device  SEC_TYPE="msdos" does not exist or access denied.
+blockdev: /dev/mapper/rescue-fixture: No such file or directory
+Device rescue-fixture is not active.
+RESCUE_FIXTURE_PASS AR_LUKS  SEC_TYPE="msdos"
+RESCUE_STORAGE_READY_OK
+STORAGE_SMOKE_EXIT=0
+# qemu-system-x86_64: terminating on signal 15 from pid 3973 (python3)

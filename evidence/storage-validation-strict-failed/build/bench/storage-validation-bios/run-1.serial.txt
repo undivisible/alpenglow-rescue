@@ -1,0 +1,19 @@
+Warning: unable to open an initial console.
+
+Alpenglow boot
+
+[  OK  ] mount-filesystems
+[  OK  ] shell-ttyS0
+[  OK  ] boot
+(none) login: root
+login[79]: root logged in on /dev/ttyS0  
+(none)# test "$(uname -r)" = 7.1.3 && test "$(cat /proc/1/comm)" = dinit && pr"$(cat /proc/1/comm)" = dinit && pr                                           <intf "%s%s\n" FAST_BASE_ READY_OK
+FAST_BASE_READY_OK
+(none)# /usr/local/bin/rescue-smoke-storage; printf "STORAGE_SMOKE_EXIT=%s\n" ; printf "STORAGE_SMOKE_EXIT=%s\n"                                            <"$?"
+Toybox 0.8.11 multicall binary (see toybox --help)
+
+usage: chroot NEWROOT [COMMAND [ARG...]]
+
+Run command within a new root directory. If no command, run /bin/sh.
+STORAGE_SMOKE_EXIT=125
+(none)# qemu-system-x86_64: terminating on signal 15 from pid 4366 (python3)

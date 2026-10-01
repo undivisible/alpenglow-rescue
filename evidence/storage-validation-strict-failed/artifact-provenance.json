@@ -1,0 +1,9 @@
+{
+  "ci_run": 36883059485,
+  "project_commit": "4602cc54681f858e1388661f7aebda4754306ae1",
+  "artifact_id": 11173395031,
+  "zip_bytes": 13473,
+  "zip_sha256": "6da39e5b4c1706eae60dec8f3c680f0d0afd0c5dad73d9c35ee98bb66492c525",
+  "selection": "Only unmodified JSON and serial text retained; screenshots remain CI; no ISO download",
+  "conclusion": "strict probe failed at Toybox chroot help exit125; rescue readiness null; fix committed locally and source push denied"
+}

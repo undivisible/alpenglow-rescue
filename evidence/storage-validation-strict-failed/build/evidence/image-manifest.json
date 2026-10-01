@@ -1,0 +1,50 @@
+{
+  "scope": "Native storage-1a partial rescue; exact embedded native kernel plus small supplemental shell/terminfo/probe initramfs. No networking/firmware/AI/full parity claim.",
+  "project_commit": "4602cc54681f858e1388661f7aebda4754306ae1",
+  "alpenglow_commit": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "kernel": {
+    "kernel_version": "7.1.3",
+    "kernel_url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz",
+    "kernel_sha256": "be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+    "toybox_version": "0.8.11",
+    "dinit_version": "0.19.2",
+    "init": "pinned system/init/init.zig",
+    "base_firmware": "none; bare headless diskless base proof only"
+  },
+  "image_bytes": 33658880,
+  "image_sha256": "2dd28a8cc383ef347879887b4e97c99a1f7e434a63ef52333b246eca498c87af",
+  "tested_firmware": null,
+  "native_artifacts": {
+    "vmlinuz": {
+      "bytes": 29647872,
+      "sha256": "d0de6039b139c1c5eed984ae74a836c1d1c6136c9dc741f0a7642f131882ec34"
+    },
+    "initramfs.cpio.lz4": {
+      "bytes": 19697499,
+      "sha256": "996dcd5eac4f914b08853a4517e5a34905be23e09733460fde331f2ad2f0bb84"
+    },
+    "alpenglow-init": {
+      "bytes": 4912,
+      "sha256": "c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b"
+    },
+    "toybox": {
+      "bytes": 857544,
+      "sha256": "adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+    },
+    "dinit": {
+      "bytes": 1727824,
+      "sha256": "977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+    }
+  },
+  "kernel_config_sha256": "16255df854a02b818f5f638f8b805832b14e298a7941e2835fc20433797560fb",
+  "base_project_commit": "e4ef9d31516ed23a4610678d828dd7178b0e5a42",
+  "base_image_sha256": "2116c874884540f9977ea73103f6fa1e5aa57d3689c4bc8a4b43baf67a33ef65",
+  "supplemental_initramfs": {
+    "bytes": 18454,
+    "sha256": "571861e747243695036796a77dec0e973444a0c40ac583848bdb7d5338b77dca",
+    "shell": "/bin/sh -> /usr/bin/oksh",
+    "probe_sha256": "9ade931e960bba290d417dc66a4ca566bc8ad1a064af135ec485d425827a47a7",
+    "terminfo_package": "ncurses-terminfo-base=6.5_p20251123-r0",
+    "terminfo_archive_sha256": "0d32a07fcbb47b6e3019dc9a938f7bfe8bb5a6e0cb58a14f4cd271eae178d594"
+  }
+}

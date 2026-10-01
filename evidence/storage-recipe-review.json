@@ -12,14 +12,32 @@
     "kernel/storage-x86_64.fragment": "46957b0c42a6fe89d3e05a5ad5cfc572a1f46ff154a553bc41f73605678151e8",
     "packages-storage.txt": "76d3cae0fe0544e10b10c068d9f7b90fa30a7bb743918a7a7b08ca012350e5e6",
     "scripts/prepare-fast-base.py": "ffb84dff58dd854e8a3c9fe998073cb7eeb5723a58319a84b72dc27a4cf3dec9",
-    "scripts/add-storage-payload.sh": "d2bcba9d497336d89ed791eb6d2b59f0f81f623c57c7dd8574a4c7a35e959311",
-    "scripts/make-storage-fixtures.sh": "e09880a5e5f254f74bbb5b7a15a2ab06a2e9014359d044be9ee01f890a96ad3e",
-    "scripts/smoke-storage.sh": "bcc7f391de189f6eb875c6fece0150548fc98ea23c99b1caa273c340209416dd",
-    "scripts/bench-fast-base.py": "db3a82896d8c2792e7958a43aa75d3422da8acc55d89db1d16c9fc9a80d26873",
-    ".github/workflows/fast-base-image.yml": "57fec900a1d6b2ed4fc4820e52d558664df185743b46658c9dc8935dc2fd1f0b",
-    "scripts/storage-evidence.py": "6fc3642ca86121be409de818d77c6bfec8f44b06d971bbb36b580bb65c5aa438"
+    "scripts/add-storage-payload.sh": "cc89db3e2b1c6d7d0f6e64fec2f92c9c9d375cbbc4abe5d0da00788ad8cd2b76",
+    "scripts/make-storage-fixtures.sh": "43279cac410c4eae233668264203a5b0edcdea5cb7d4deb366d2fe2b6d77e277",
+    "scripts/smoke-storage.sh": "e03c018e41af8f490e5021c236ccc72c6cd2375d50083351a4179218dc859820",
+    "scripts/bench-fast-base.py": "c34177ef103d94b97fa66713a95c627d64ee2a3cd5da6cef62efa1f557815f5e",
+    ".github/workflows/fast-base-image.yml": "2edc71616b9c1f578d9c7a989619e5c40593ece8c4cf24641dded38fa659b5f6",
+    "scripts/storage-evidence.py": "75a11b622d6c162036eb028743c3e48287913c79e0cd61c28bd83e4467d6ffde",
+    "scripts/correct-storage-image.sh": "d01a5a4e2cd2c73286e0d6a4d0f8103ad44a68be6c006bb6d75bc2f2e69ae05e",
+    ".github/workflows/storage-validation.yml": "a0c417c33518384ca910106e9a6707ccc272fa3b02132b8f46b5d303d04d7738",
+    "scripts/test-storage-acceptance.py": "515ba75c50e2b0f89b7e1e2113de717156b8fb9f3cf131b36184b9bfb01d25a3"
   },
-  "local_verification": "recipe checks, monitor regression suite and storage adaptation --check passed",
+  "local_verification": "Recipe syntax/adaptation checks, seven monitor regression tests and observed-false-positive storage acceptance regression pass. No local ISO/VM after headroom stop.",
   "ci_run": "36873856455",
-  "review_correction": "Use the exact aports source tree and origin; do not assume every package recipe is in main."
+  "review_correction": "Use the exact aports source tree and origin; do not assume every package recipe is in main.",
+  "source_review_revision": "e4ef9d3",
+  "storage_fragment_requested_settings": 106,
+  "additional_checks": [
+    "Native core pre/post SHA256 required",
+    "Only docker-exec exit127 falls back to fresh read-only immutable backing-filesystem probe; all other live failures stop",
+    "Guest-only BLKROSET adds read-only flag for synthetic ATA/NVMe fixtures; backing files remain read-only",
+    "False readiness marker replay rejected; all seven named block-device passes, tmux session and exit0 required",
+    "Supplemental native initramfs preserves kernel bytes and existing native init/dinit/Toybox; exact base+overlay+wholeISO hashes",
+    "Full sbin tools precede Toybox aliases in PATH; rescue scripts use POSIX oksh, not incomplete Toybox sh",
+    "Strict latest raw serial logs inspected: BIOS/UEFI base command response genuine, no fixture passes and no rescue marker; exit125 rejected",
+    "Local fix runs Toybox chroot against guest root only and executes Toybox true, no disk mounts/writes"
+  ],
+  "reviewed_source_revision": "c972dbfbc246f9364e328e936641181419af464d",
+  "latest_ci_run": 36883059485,
+  "latest_ci_conclusion": "Failed strict fixture probe at Toybox chroot help exit125; local actual-chroot fix untested in image. Prior green timings revoked."
 }

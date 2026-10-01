@@ -1,0 +1,10 @@
+{
+  "source": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "purpose": "storage-1",
+  "container_floor_kib": 20971520,
+  "adapted_file_sha256": {
+    "scripts/boot-native.sh": "1057e66fe87706493bf6e12908e759f5684b5270a84bf7476ce7dadd9843a789",
+    "system/backends/appliance/scripts/build-kernel-fast.sh": "638003ffb43755fbfe4839462e7debca98e2609ed43e537820985228d05ca919",
+    "scripts/lib/assemble-rootfs.sh": "88a06c6d61ffc0bc25586da672826f70b82f573ecad6b3d7ad619e07a852a168"
+  }
+}

@@ -46,3 +46,22 @@ broader physical hardware/console coverage, Oil, AI client launch checks,
 chroot/mount and phone helpers, and recovery/diagnostic gaps in the feature
 matrix. No complete-equivalence, under-500-MB or four-times-faster claim follows
 from the size or timing of this partial image.
+
+## Current test checkpoint
+
+The original native storage ISO was compiled in run 36877105791 at source
+`e4ef9d31516ed23a4610678d828dd7178b0e5a42`: 33,638,400 bytes. A reviewed
+18,454-byte supplemental gzip initramfs corrects the shell, terminfo, applet
+links and strict probe while preserving the exact native kernel. The latest
+whole ISO is 33,658,880 bytes at source `4602cc5`, SHA-256
+`2dd28a8cc383ef347879887b4e97c99a1f7e434a63ef52333b246eca498c87af`.
+BIOS and UEFI interactive base response passed once each; the strict helper
+failed at Toybox chroot help's exit125, before storage operations. The local
+fix performs an actual guest chroot command. It has not been image-tested.
+
+Earlier green markers were false positives from incomplete Toybox shell
+semantics; all reported rescue timings from that run are revoked. Current
+acceptance requires POSIX oksh, all seven exact fixture passes, tmux, READY
+and exit0. See the current measurement report and retained raw evidence.
+The source push is blocked by automatic approval review pending direct approval;
+no alternate publication route or additional local heavy work was attempted.

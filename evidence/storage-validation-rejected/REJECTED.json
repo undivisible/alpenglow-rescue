@@ -1,0 +1,15 @@
+{
+  "run": 36879008739,
+  "verdict": "REJECTED FALSE POSITIVE; do not use raw rescue_ready_seconds as a successful rescue measurement",
+  "valid_scope": "Three BIOS and three UEFI interactive base-console responses and CLI versions; no validated filesystem/LUKS/tmux success",
+  "observed_errors": [
+    "Toybox sh: set: bad -e",
+    "set: bad --",
+    "command: No such file or directory",
+    "wrong blkid selected due PATH ordering",
+    "tmux: cannot find terminfo database",
+    "mount and LUKS commands failed while final marker still printed"
+  ],
+  "correction": "oksh helper and /bin/sh alias; full tools before Toybox in PATH; signed terminfo data; host requires seven correctly named /dev fixture passes, tmux pass and status zero",
+  "raw_logs": "retained untouched with original archive digest; rejection is a companion interpretation"
+}

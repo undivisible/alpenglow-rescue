@@ -1,0 +1,10 @@
+{
+  "host_start_free_bytes": 91395981312,
+  "docker_start_free_bytes": 91395817472,
+  "source_start_allocated_bytes": 18825216,
+  "floor_bytes": 21474836480,
+  "soft_stop_bytes": 22548578304,
+  "additional_cap_bytes": 4294967296,
+  "at_utc": "2026-10-01T14:33:34.667937+00:00",
+  "authorization": "Explicit bounded native continuation; earlier control files preserved."
+}

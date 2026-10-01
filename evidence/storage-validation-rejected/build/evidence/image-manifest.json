@@ -1,0 +1,40 @@
+{
+  "scope": "Native storage-1 partial rescue: built-in storage/filesystems/EFI and signed APK tools; no network/firmware/AI parity claim",
+  "project_commit": "e4ef9d31516ed23a4610678d828dd7178b0e5a42",
+  "alpenglow_commit": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "kernel": {
+    "kernel_version": "7.1.3",
+    "kernel_url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz",
+    "kernel_sha256": "be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+    "toybox_version": "0.8.11",
+    "dinit_version": "0.19.2",
+    "init": "pinned system/init/init.zig",
+    "base_firmware": "none; bare headless diskless base proof only"
+  },
+  "image_bytes": 33638400,
+  "image_sha256": "2116c874884540f9977ea73103f6fa1e5aa57d3689c4bc8a4b43baf67a33ef65",
+  "tested_firmware": null,
+  "native_artifacts": {
+    "vmlinuz": {
+      "bytes": 29647872,
+      "sha256": "d0de6039b139c1c5eed984ae74a836c1d1c6136c9dc741f0a7642f131882ec34"
+    },
+    "initramfs.cpio.lz4": {
+      "bytes": 19697499,
+      "sha256": "996dcd5eac4f914b08853a4517e5a34905be23e09733460fde331f2ad2f0bb84"
+    },
+    "alpenglow-init": {
+      "bytes": 4912,
+      "sha256": "c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b"
+    },
+    "toybox": {
+      "bytes": 857544,
+      "sha256": "adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+    },
+    "dinit": {
+      "bytes": 1727824,
+      "sha256": "977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+    }
+  },
+  "kernel_config_sha256": "16255df854a02b818f5f638f8b805832b14e298a7941e2835fc20433797560fb"
+}

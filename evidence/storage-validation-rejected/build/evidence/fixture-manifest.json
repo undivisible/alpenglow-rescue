@@ -1,0 +1,33 @@
+{
+  "scope": "synthetic regular CI files; no host mounts; QEMU backend read-only",
+  "files": {
+    "xfs.img": {
+      "bytes": 402653184,
+      "sha256": "658d40a4debab9672587bf2fd83cd8eb4739901aa4fc5d986012e992eb1fc60e"
+    },
+    "ext4.img": {
+      "bytes": 33554432,
+      "sha256": "e830c04685d42c139cf0fab6ae6b77b895dd090b7ec67dd4932c3f6efd07cd00"
+    },
+    "luks.img": {
+      "bytes": 67108864,
+      "sha256": "548ad80683a2c7e538f529e7588f147e589b73d8471c394b067a509a693d7d65"
+    },
+    "ntfs.img": {
+      "bytes": 67108864,
+      "sha256": "4661d2dcf131b829b7e55bd7417920996b92daba9f7ca8d8c18e9ce65ab3e708"
+    },
+    "btrfs.img": {
+      "bytes": 268435456,
+      "sha256": "66341032cb43a01fc2e5c2f033a722a90dfd1f4fedc3aafc2a3bc4fc08c519f2"
+    },
+    "fat.img": {
+      "bytes": 33554432,
+      "sha256": "bdcca9e9d18222fb64c223b20fe690900e1ab1c80dd11d4a95379cfef19b8939"
+    },
+    "exfat.img": {
+      "bytes": 33554432,
+      "sha256": "6789378f946c08de7da5e6899d9f75baf190d7db832e571d1362521be18b081e"
+    }
+  }
+}
