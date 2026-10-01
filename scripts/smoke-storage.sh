@@ -29,6 +29,9 @@ for entry in 'EXT4 ext4' 'BTRFS btrfs' 'XFS xfs' 'FAT vfat' 'EXFAT exfat' 'NTFS 
   set -- $entry; label="AR_$1"; fs=$2
   dev=$(blkid -L "$label")
   test -b "$dev"
+  # NVMe/ATA emulation may not advertise the read-only backend to Linux. Set
+  # the guest block-layer flag too; this ioctl changes no fixture bytes.
+  blockdev --setro "$dev"
   # QEMU backend and guest device must both be read-only before diagnostics.
   test "$(blockdev --getro "$dev")" = 1
   case "$fs" in

@@ -20,8 +20,11 @@ parser.add_argument('--iso',type=Path)
 parser.add_argument('--name',default='native-fast-base')
 parser.add_argument('--firmware',choices=['bios','uefi'],default='bios')
 parser.add_argument('--fixtures',action='store_true',help='CI synthetic storage readiness test')
+parser.add_argument('--probe-script',type=Path,help='Explicit external test script, streamed only into guest RAM')
 a=parser.parse_args()
 assert not a.fixtures or os.environ.get('CI') == 'true'
+assert not a.probe_script or a.fixtures
+probe_body=a.probe_script.read_bytes() if a.probe_script else None
 def first_file(paths):
     return next(p for p in map(Path,paths) if p.is_file())
 if a.firmware == 'uefi':
@@ -107,6 +110,10 @@ for run in range(1,a.runs+1):
             if 'base_console' in markers and not smoke_sent:
                 command=(b'/usr/local/bin/rescue-smoke-storage; printf "STORAGE_SMOKE_EXIT=%s\\n" "$?"\n' if a.fixtures else
                          b'/bin/toybox --version && /sbin/dinit --version && printf "%s%s\\n" CLI_SMOKE_ OK\n')
+                if probe_body:
+                    assert b'AR_EXTERNAL_PROBE_END' not in probe_body
+                    command=(b"/bin/sh -s <<'AR_EXTERNAL_PROBE_END'\n"+probe_body+
+                             b'\nAR_EXTERNAL_PROBE_END\nprintf "STORAGE_SMOKE_EXIT=%s\\n" "$?"\n')
                 p.stdin.write(command)
                 p.stdin.flush();smoke_sent=True
             if ('storage_rescue' if a.fixtures else 'cli_smoke') in markers: break
@@ -129,6 +136,7 @@ for run in range(1,a.runs+1):
                     'benchmark_script_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
                     'qemu_version':subprocess.check_output(['qemu-system-x86_64','--version'],text=True).splitlines()[0],
                     'screen_error':screen_error,
+                    'external_probe_sha256':hashlib.sha256(probe_body).hexdigest() if probe_body else None,
                     'scope':('storage increment with synthetic read-only fixtures' if a.fixtures else 'base console command proof only')+'; network disabled; no full rescue comparison'})
     (out/'results.json').write_text(json.dumps(results,indent=2)+'\n')
     print(json.dumps(results[-1]),flush=True)

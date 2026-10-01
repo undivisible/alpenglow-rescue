@@ -1,0 +1,71 @@
+name: Validate existing storage artifact
+on:
+  workflow_dispatch:
+    inputs:
+      image_run:
+        description: Run that uploaded native-storage-1-x86_64
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: native-storage-validation
+  cancel-in-progress: false
+jobs:
+  fixtures:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      ALPENGLOW_FAST_CONTINUATION: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install official fixture and VM tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq python3 qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup
+          test "$(df -Pk . | awk 'END {print $4}')" -ge 25165824
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: native-storage-1-x86_64
+          path: build/ci/output
+          github-token: ${{ github.token }}
+          run-id: ${{ inputs.image_run }}
+      - name: Verify exact image and source manifest
+        run: |
+          python3 - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          p=Path('build/ci/output/alpenglow-rescue-storage-1-x86_64.iso')
+          m=json.loads(Path('build/ci/output/manifest.json').read_text())
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==m['image_sha256']
+          assert p.stat().st_size==m['image_bytes']
+          print(json.dumps(m,indent=2))
+          Path('build/evidence').mkdir(parents=True,exist_ok=True)
+          Path('build/evidence/image-manifest.json').write_text(json.dumps(m,indent=2)+'\n')
+          PY
+      - name: Create regular-file synthetic fixtures
+        run: sh scripts/make-storage-fixtures.sh
+      - name: BIOS external storage probe (three cold processes)
+        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-external --fixtures --probe-script scripts/smoke-storage.sh --runs 3 --timeout 120
+      - name: UEFI external storage probe (three cold processes)
+        if: always()
+        run: |
+          if [ -f build/fixtures/ext4.img ]; then
+            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-external --firmware uefi --fixtures --probe-script scripts/smoke-storage.sh --runs 3 --timeout 120
+          fi
+      - name: Preserve test evidence and external probe
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: storage-external-validation-evidence
+          path: |
+            build/bench/**/*.json
+            build/bench/**/*.log
+            build/bench/**/*.ppm
+            build/evidence/*.json
+            scripts/smoke-storage.sh
+          if-no-files-found: ignore
+          retention-days: 14
