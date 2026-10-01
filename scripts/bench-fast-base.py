@@ -132,6 +132,8 @@ for run in range(1,a.runs+1):
                     'scope':('storage increment with synthetic read-only fixtures' if a.fixtures else 'base console command proof only')+'; network disabled; no full rescue comparison'})
     (out/'results.json').write_text(json.dumps(results,indent=2)+'\n')
     print(json.dumps(results[-1]),flush=True)
+    if ('storage_rescue' if a.fixtures else 'cli_smoke') not in markers:
+        break  # Preserve the first failure; do not repeat an identical timeout.
 print('artifact_sha256',hashlib.sha256(artifact.read_bytes()).hexdigest(),flush=True)
 required='storage_rescue' if a.fixtures else 'cli_smoke'
 raise SystemExit(0 if all('base_console' in r['markers_seconds'] and required in r['markers_seconds'] for r in results) else 1)
