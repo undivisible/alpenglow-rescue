@@ -6,6 +6,7 @@ for path in / /out; do
 done
 test -f /out/rootfs/bin/toybox
 test -f /out/rootfs/sbin/dinit
+sha256sum /out/rootfs/init /out/rootfs/bin/toybox /out/rootfs/sbin/dinit > /out/native-before.sha256
 mkdir -p /out/storage-payload /out/storage-evidence
 # Verify Alpine signatures and solve dependencies; execute no package scripts.
 apk --root /out/storage-payload --arch x86_64 --initdb --no-scripts \
@@ -17,6 +18,12 @@ cp -a /etc/apk/keys /out/storage-evidence/verification-keys
 # Retain native init, PID 1, local login and service configuration. Import only
 # package executables, libraries and shared data, not Alpine boot/auth services.
 for dir in bin sbin lib usr; do
+  # Remove colliding destination aliases explicitly; cp implementations differ
+  # in whether an existing destination symlink is followed or replaced.
+  find "/out/storage-payload/$dir" ! -type d | while IFS= read -r source; do
+    dest="/out/rootfs/${source#/out/storage-payload/}"
+    if [ -L "$dest" ]; then rm "$dest"; fi
+  done
   cp -a "/out/storage-payload/$dir/." "/out/rootfs/$dir/"
 done
 for applet in sh login getty; do ln -snf /bin/toybox "/out/rootfs/bin/$applet"; done
@@ -29,4 +36,5 @@ printf '%s\n' 'NAME="Alpenglow Rescue"' 'ID=alpenglow' 'VERSION_ID=storage-1-dev
   'PRETTY_NAME="Alpenglow Rescue storage increment (partial)"' > /out/rootfs/etc/os-release
 grep -qx 'root:x:0:0:root:/root:/bin/sh' /out/rootfs/etc/passwd
 sha256sum /out/rootfs/init /out/rootfs/bin/toybox /out/rootfs/sbin/dinit > /out/storage-evidence/native-core.sha256
+sha256sum -c /out/native-before.sha256
 test "$(df -Pk /out | awk 'END {print $4}')" -ge 22020096
