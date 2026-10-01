@@ -6,7 +6,9 @@ case " $(cat /proc/cmdline) " in *' alpenglow.test-fixtures=1 '*) ;; *) echo 'Sy
 test "$(uname -r)" = 7.1.3
 test "$(cat /proc/1/comm)" = dinit
 test "$(readlink /bin/sh)" = /usr/bin/oksh
-/bin/toybox chroot --help
+# Exercise the real applet in this disposable guest. Toybox's help path returns
+# 125, so help output alone is not a successful chroot launch.
+/bin/toybox chroot / /bin/toybox true
 for tool in lsblk blkid mount umount chroot e2fsck btrfs xfs_repair fsck.fat fsck.exfat ntfsfix \
   cryptsetup lvm mdadm parted sgdisk modprobe ddrescue testdisk smartctl nvme tmux oksh; do
   command -v "$tool" >/dev/null
