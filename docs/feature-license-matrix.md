@@ -25,7 +25,7 @@ Those are upstream estimates, not this project's measurements.
 | Codex | bundled | pin official Linux x64 native package | Apache-2.0; no auth enrollment |
 | OpenCode | bundled | pin official x64 baseline-musl package | MIT; no auth enrollment |
 | Phone login / root-shell sharing | QR paste helper + opt-in ttyd root session | qrencode/ttyd executables available, never started during tests | GPL components; helper integration initially missing |
-| Updates | online pacman | Oil present; APK bootstrap inventory | Oil's registry compatibility must be checked before promising runtime updates |
+| Updates | online pacman | Oil planned, absent; APK bootstrap inventory | Oil's registry compatibility must be checked before promising runtime updates |
 | Presentation / convenience | starship, zoxide, eza, bat, fonts, extra TUIs | initially absent | Cosmetic and convenience gaps still prevent claiming complete parity |
 | Installer | optional full Omarchy installer | rescue only | No installer equivalent claimed |
 | BIOS / UEFI | both | Limine ISO packaging reused from Alpenglow | BSD-2-Clause; test separately |
@@ -49,3 +49,19 @@ The measured prototype used Alpine LTS and an APK-populated RAM root, not
 Alpenglow FAST kernel/rootfs. The default build now selects native fast-base
 validation; rescue payload integration and essential driver restoration are
 pending. See `docs/provenance-and-fast-path.md` for exact lineage.
+
+## Verified native base milestone
+
+The downloaded GitHub-built native proof ISO uses Linux 7.1.3, embedded LZ4
+initramfs, pinned Alpenglow Zig init, dinit 0.19.2, static Toybox 0.8.11 and
+Limine 12.4.0. Three cold BIOS boots passed interactive shell response and
+Toybox/dinit CLI version checks. The ISO is 9,795,584 bytes. UEFI readiness
+was not established; networking was disabled. Exact source/image hashes and
+raw logs are in `docs/github-image-test.md` and `evidence/corrected-ci-base.json`.
+
+This base contains no tmux, Oil, Claude/Codex/OpenCode, filesystem/LUKS/RAID
+rescue payload or mount/phone helpers. It uses the original FAST driver cut,
+not the 141-setting rescue restoration fragment. USB, NVMe, SATA/SCSI, Wi-Fi,
+additional filesystems and audited firmware coverage remain essential future
+work. None of those omissions is accepted as rescue equivalence. The large
+APK prototype above is historical, not the default native kernel recipe.

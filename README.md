@@ -21,14 +21,12 @@ The Alpenglow submodule is pinned to `2214bc159355522bbebc61e8e90ca78933a8e1ac`.
 Alpenglow-derived sources and this project use MPL-2.0. Image components retain
 their own licenses; Omarchy Rescue's MIT attribution is in `licenses/`.
 
-Validate the actual pinned fast base with the bounded runner and two jobs.
-The specifically authorized development run has a 30 GiB hard free-space floor:
+The manual `Native fast-base image` Actions workflow builds the pinned base
+and proof ISO with two jobs and verified toolchains. Local source checks are:
 
 ```sh
 git submodule update --init
 python3 scripts/prepare-fast-base.py --check
-python3 scripts/run-bounded-fast.py --stage kernel-config -- sh scripts/resolve-rescue-config.sh
-python3 scripts/run-bounded-fast.py --stage fast-base -- sh scripts/build.sh
 python3 scripts/test-recipes.py
 ```
 
@@ -36,7 +34,7 @@ The source submodule is unchanged. The measured historical core used Alpenglow's
 rootfs assembly and Limine ISO layout, signed Alpine APK bootstrap with its
 dependency solver, dinit, musl, toybox and oksh. The normal Oil bootstrap was
 not used. The default recipe now targets the actual Alpenglow fast base;
-that corrected base is being built and is not integrated with rescue payloads.
+that corrected base passed the GitHub/QEMU proof and is not integrated with rescue payloads.
 Linux 7.1.3 is checksum-verified and the rescue fragment resolves all 141
 requested settings; rescue drivers/modules have not been compiled or tested.
 See [exact provenance and fast-path correction](docs/provenance-and-fast-path.md). The partial host packaging recipe is `scripts/pack-core-native.sh`;
@@ -67,5 +65,13 @@ rescue tools, AI clients or Oil, so its small size is not rescue equivalence.
 The manual `Native fast-base image` workflow builds our pinned native recipe
 with the `/bin/sh` correction, verified official toolchains and kernel archive,
 and produces a proof ISO plus exact provenance. It uploads Actions artifacts;
-it does not create a release. Boot/readiness results for that corrected image
-remain pending. The supervisor stops owned jobs on errors or capacity limits.
+it does not create a release. [Run 36865793057](https://github.com/undivisible/alpenglow-rescue/actions/runs/36865793057)
+passed at source `ead71e23926b02a046769ada0787efd17bbf39e3`. Its downloaded
+**9,795,584-byte proof ISO** passed three cold BIOS boots with interactive base
+command response at **2.015 / 1.912 / 1.917 seconds** on ARM-host QEMU TCG.
+Toybox 0.8.11 and dinit 0.19.2 CLI checks passed. A separate 60-second UEFI
+trial reached no serial readiness marker; networking was disabled.
+See [the GitHub image test report](docs/github-image-test.md) for exact hashes,
+raw evidence and scope. This is a bare base, with rescue payload and essential
+driver restoration still pending. No matched baseline or 4x comparison exists.
+The supervisor stops owned jobs on errors or capacity limits.

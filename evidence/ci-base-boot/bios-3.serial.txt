@@ -1,0 +1,17 @@
+Warning: unable to open an initial console.
+
+Alpenglow boot
+
+[  OK  ] mount-filesystems
+[  OK  ] shell-ttyS0
+(none) login: [  OK  ] boot
+root
+login[40]: root logged in on /dev/ttyS0  
+# test "$(uname -r)" = 7.1.3 && test "$(cat /proc/1/comm)" = dinit && printf "%s%s\n" FAST_BASE_ READY_OK
+FAST_BASE_READY_OK
+# /bin/toybox --version && /sbin/dinit --version && printf "%s%s\n" CLI_SMOKE_ OK
+toybox 0.8.11
+Dinit version 0.19.2.
+Supported features: cgroups utmp supplemental-groups
+CLI_SMOKE_OK
+# qemu-system-x86_64: terminating on signal 15 from pid 34800 (<unknown process>)

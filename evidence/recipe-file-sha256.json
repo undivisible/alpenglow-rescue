@@ -15,7 +15,7 @@
   "overlay/usr/share/udhcpc/default.script": "5058c33bf4874bd1d5583efc9d8c582c25bfc8c776a7ae0d6e4482f76efdec27",
   "packages.txt": "e7e4fa0960c830732024511f759b318bb29241e51b35dc78341158e3f0785710",
   "pins.json": "9401bd2acfc0372db5fad4237bc2bb8f431152e1b124ff9651db10255fb0ceca",
-  "scripts/bench-fast-base.py": "7c0c5c175754734028caff8d6770ec1680e6b53fa869717e20510046cdf03d7d",
+  "scripts/bench-fast-base.py": "8ca55bfa14bf5221f550463807f4fafc2746e6e6b697b54764cd57a8714b95cf",
   "scripts/bench.py": "127921e6c9c23aebdbb87b3a430c014700a2858a2c0332caa18e352f77c52a8d",
   "scripts/build-ci-fast-base.sh": "b9aab6ac820e23626b10d7ad0c340d64644cd007b4320369cd5f0e39d708f8ca",
   "scripts/build-container.sh": "a2775b7ab50a020c63187a4372403286910448838bd2b3e40df12181ba70048d",

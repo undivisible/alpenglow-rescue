@@ -1,9 +1,12 @@
 # Development measurement report, 2026-10-01
 
-The full goal is **not achieved**. A partial core ISO was built and reached
-the Linux kernel, but no valid interactive-ready time or speed ratio exists.
-The ISO already exceeds 500,000,000 bytes before adding AI clients and Oil.
-No binaries, GitHub release, or announcement were published.
+The full rescue goal is **not achieved**. The historical partial core ISO
+exceeds 500,000,000 bytes before adding AI clients and Oil. A later corrected
+native FAST base was built by GitHub Actions, downloaded, verified and passed
+three BIOS interactive-console and CLI smoke tests. That small base lacks
+rescue payload and essential restored drivers, so it establishes no rescue
+size or speed equivalence. No GitHub release or announcement was published.
+See [the GitHub image test](github-image-test.md) for this completed milestone.
 
 ## Sources and isolation
 
@@ -22,6 +25,7 @@ No binaries, GitHub release, or announcement were published.
 
 | Artifact | Bytes | SHA-256 |
 | --- | ---: | --- |
+| Corrected GitHub native base proof ISO | 9,795,584 | `f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a` |
 | Partial core ISO | 1,014,913,024 | `6fe574f213acaccbc8eb99ef2387e1dbeedbb512bcd0a1b3a04cfac14fb2f528` |
 | Core zstd initramfs | 996,492,127 | `696e8a882de8dbe7bfe1dc4c3fa11d81e3257338bd38e26d0ee67a1089250504` |
 | Alpine LTS kernel | 14,541,824 | `73833ffe45bed7bde514dea76a28c3116f98a3f748ee5bab5d60b7cc05598fb9` |
@@ -148,6 +152,11 @@ regression tests pass. Cached compilation is preserved. A subsequent entry
 check found Docker overlay free space below its current 30 GiB guard even
 though host free space remains above 30 GiB; no unmonitored job remains.
 No native readiness time or new ISO is claimed.
+
+That earlier checkpoint is superseded for the bare native base by the verified
+GitHub-built proof ISO and BIOS results in `docs/github-image-test.md`.
+The historical rescue prototype and baseline still have no matched readiness
+results; the native base is not a complete rescue candidate.
 
 ## Scoped Docker cleanup follow-up
 

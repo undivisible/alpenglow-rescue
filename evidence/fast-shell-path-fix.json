@@ -6,5 +6,5 @@
   "primary_evidence": "https://github.com/landley/toybox/blob/0.8.11/toys/other/login.c#L125",
   "basis": "Toybox login directly execl()s pw_shell; it does not split command arguments",
   "scope": "only generated task-owned source copy; upstream/WIP unchanged; native custom kernel/LZ4/Zig/dinit boot architecture retained",
-  "runtime_status": "pending native boot proof"
+  "runtime_status": "Verified in downloaded CI-built ISO: three BIOS interactive-shell and Toybox/dinit CLI smoke passes; UEFI readiness unestablished."
 }

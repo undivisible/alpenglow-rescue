@@ -1,0 +1,276 @@
+{
+  "run_url": "https://github.com/undivisible/alpenglow-rescue/actions/runs/36865793057",
+  "run_id": 36865793057,
+  "artifact_id": 11164016836,
+  "artifact_name": "native-fast-base-x86_64",
+  "artifact_archive_bytes": 6387982,
+  "artifact_archive_digest": "sha256:d60a61735c0c18d45cdecc9a973f810e6cd33d1238676728faf1c9454e430552",
+  "archive_verified": true,
+  "build_manifest": {
+    "scope": "Native FAST base proof only; rescue clients, payload, restored drivers and network readiness absent",
+    "project_commit": "ead71e23926b02a046769ada0787efd17bbf39e3",
+    "alpenglow_commit": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+    "kernel": {
+      "kernel_version": "7.1.3",
+      "kernel_url": "https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz",
+      "kernel_sha256": "be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+      "toybox_version": "0.8.11",
+      "dinit_version": "0.19.2",
+      "init": "pinned system/init/init.zig",
+      "base_firmware": "none; bare headless diskless base proof only"
+    },
+    "image_bytes": 9795584,
+    "image_sha256": "f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a",
+    "tested_firmware": null,
+    "native_artifacts": {
+      "vmlinuz": {
+        "bytes": 5891072,
+        "sha256": "5cc49b1111ade2fde6f037e9c3871c42eb0837228af0b60bd6970c2866f481dc"
+      },
+      "initramfs.cpio.lz4": {
+        "bytes": 1289632,
+        "sha256": "a4c237de4328fbd08e91205e9ff2ba410437f3d0da8ff43cf45e1afbfbc9ece8"
+      },
+      "alpenglow-init": {
+        "bytes": 4912,
+        "sha256": "c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b"
+      },
+      "toybox": {
+        "bytes": 857544,
+        "sha256": "adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+      },
+      "dinit": {
+        "bytes": 1727824,
+        "sha256": "977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+      }
+    }
+  },
+  "image_hash_rechecked_after_boots": true,
+  "actual_embedded_root_inspection": {
+    "etc/passwd": {
+      "bytes": 77,
+      "sha256": "d63e6f1389c65f6d69ae45f3af7c226d0d4cd5da93fa045cc29f90770205aba4",
+      "text": "root:x:0:0:root:/root:/bin/sh\nseatd:x:772:772:seatd:/var/empty:/sbin/nologin\n"
+    },
+    "etc/dinit.d/boot": {
+      "bytes": 105,
+      "sha256": "a96fed59678e80641a6c244b33c1f2b283b908949cabd613554c9ac48e664513",
+      "text": "type = scripted\ncommand = /bin/true\nrestart = no\ndepends-on = shell-ttyS0\ndepends-on = mount-filesystems\n"
+    },
+    "init": {
+      "bytes": 4912,
+      "sha256": "c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b"
+    },
+    "sbin/dinit": {
+      "bytes": 1727824,
+      "sha256": "977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+    },
+    "bin/toybox": {
+      "bytes": 857544,
+      "sha256": "adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+    }
+  },
+  "boot_definition": "Elapsed from before QEMU process spawn to newline-delimited FAST_BASE_READY_OK, emitted only after interactive shell validates uname -r=7.1.3 and PID1 comm=dinit. Includes root input and a 0.5s probe delay. Fresh VM each run; host file cache is not flushed.",
+  "host_architecture": "ARM64 macOS, cp.local",
+  "qemu_version": "11.0.2",
+  "machine": "q35, TCG, CPU max, 2 vCPUs, 4096 MiB RAM",
+  "storage": "Only the untouched readonly IDE CD-ROM ISO; no target disk or host shares",
+  "network": "Disabled",
+  "bios_runs": [
+    {
+      "run": 1,
+      "command": [
+        "qemu-system-x86_64",
+        "-machine",
+        "q35,accel=tcg",
+        "-cpu",
+        "max",
+        "-m",
+        "4096",
+        "-smp",
+        "2",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-no-reboot",
+        "-nic",
+        "none",
+        "-drive",
+        "file=workspace/build/github/rescue-36865793057/alpenglow-fast-base-x86_64.iso,media=cdrom,format=raw,readonly=on",
+        "-boot",
+        "order=d"
+      ],
+      "markers_seconds": {
+        "boot": 1.3668427079974208,
+        "login": 1.4677359580236953,
+        "base_console": 2.0150287080032285,
+        "cli_smoke": 2.042294250015402
+      },
+      "probe_attempts": 1,
+      "rescue_ready_seconds": null,
+      "network_ready_seconds": null,
+      "artifact_bytes": 9795584,
+      "artifact_sha256": "f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a",
+      "firmware": "bios",
+      "firmware_sha256": "ae6f6aa973aaccc143f57aa960fb035fd9de4daee4ad0cd713322f8c259e7650",
+      "benchmark_script_sha256": "8ca55bfa14bf5221f550463807f4fafc2746e6e6b697b54764cd57a8714b95cf",
+      "scope": "untouched ISO boot; base console command proof only; network disabled; no full rescue comparison",
+      "serial_evidence": "evidence/ci-base-boot/bios-1.serial.txt",
+      "serial_sha256": "b274871fafaeada62a75a58cbde1b7e166e3e4a921f811cb34743071c6c637ab"
+    },
+    {
+      "run": 2,
+      "command": [
+        "qemu-system-x86_64",
+        "-machine",
+        "q35,accel=tcg",
+        "-cpu",
+        "max",
+        "-m",
+        "4096",
+        "-smp",
+        "2",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-no-reboot",
+        "-nic",
+        "none",
+        "-drive",
+        "file=workspace/build/github/rescue-36865793057/alpenglow-fast-base-x86_64.iso,media=cdrom,format=raw,readonly=on",
+        "-boot",
+        "order=d"
+      ],
+      "markers_seconds": {
+        "boot": 1.2768240830046125,
+        "login": 1.3740321249933913,
+        "base_console": 1.9123689999978524,
+        "cli_smoke": 1.9413180830015335
+      },
+      "probe_attempts": 1,
+      "rescue_ready_seconds": null,
+      "network_ready_seconds": null,
+      "artifact_bytes": 9795584,
+      "artifact_sha256": "f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a",
+      "firmware": "bios",
+      "firmware_sha256": "ae6f6aa973aaccc143f57aa960fb035fd9de4daee4ad0cd713322f8c259e7650",
+      "benchmark_script_sha256": "8ca55bfa14bf5221f550463807f4fafc2746e6e6b697b54764cd57a8714b95cf",
+      "scope": "untouched ISO boot; base console command proof only; network disabled; no full rescue comparison",
+      "serial_evidence": "evidence/ci-base-boot/bios-2.serial.txt",
+      "serial_sha256": "37fa903c4686e75d8008807ce14b6977f7e8e523cb0b86777f20abccd146c03c"
+    },
+    {
+      "run": 3,
+      "command": [
+        "qemu-system-x86_64",
+        "-machine",
+        "q35,accel=tcg",
+        "-cpu",
+        "max",
+        "-m",
+        "4096",
+        "-smp",
+        "2",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-no-reboot",
+        "-nic",
+        "none",
+        "-drive",
+        "file=workspace/build/github/rescue-36865793057/alpenglow-fast-base-x86_64.iso,media=cdrom,format=raw,readonly=on",
+        "-boot",
+        "order=d"
+      ],
+      "markers_seconds": {
+        "boot": 1.2670283330080565,
+        "login": 1.3634532919968478,
+        "base_console": 1.9167655000055674,
+        "cli_smoke": 1.9458794170059264
+      },
+      "probe_attempts": 1,
+      "rescue_ready_seconds": null,
+      "network_ready_seconds": null,
+      "artifact_bytes": 9795584,
+      "artifact_sha256": "f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a",
+      "firmware": "bios",
+      "firmware_sha256": "ae6f6aa973aaccc143f57aa960fb035fd9de4daee4ad0cd713322f8c259e7650",
+      "benchmark_script_sha256": "8ca55bfa14bf5221f550463807f4fafc2746e6e6b697b54764cd57a8714b95cf",
+      "scope": "untouched ISO boot; base console command proof only; network disabled; no full rescue comparison",
+      "serial_evidence": "evidence/ci-base-boot/bios-3.serial.txt",
+      "serial_sha256": "b274871fafaeada62a75a58cbde1b7e166e3e4a921f811cb34743071c6c637ab"
+    }
+  ],
+  "bios_base_console_median_seconds": 1.9167655000055674,
+  "uefi_runs": [
+    {
+      "run": 1,
+      "command": [
+        "qemu-system-x86_64",
+        "-machine",
+        "q35,accel=tcg",
+        "-cpu",
+        "max",
+        "-m",
+        "4096",
+        "-smp",
+        "2",
+        "-display",
+        "none",
+        "-serial",
+        "stdio",
+        "-monitor",
+        "none",
+        "-no-reboot",
+        "-nic",
+        "none",
+        "-drive",
+        "file=workspace/build/github/rescue-36865793057/alpenglow-fast-base-x86_64.iso,media=cdrom,format=raw,readonly=on",
+        "-boot",
+        "order=d",
+        "-drive",
+        "if=pflash,format=raw,readonly=on,file=qemu-firmware/edk2-x86_64-code.fd",
+        "-drive",
+        "if=pflash,format=raw,file=workspace/build/bench/corrected-ci-fast-base-uefi/run-1.vars.fd"
+      ],
+      "markers_seconds": {},
+      "probe_attempts": 0,
+      "rescue_ready_seconds": null,
+      "network_ready_seconds": null,
+      "artifact_bytes": 9795584,
+      "artifact_sha256": "f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a",
+      "firmware": "uefi",
+      "firmware_sha256": "33090cc07675baa5190d9f1e84bf5176b33bcbfa9bacac522961150cdb6dbb2a",
+      "benchmark_script_sha256": "8ca55bfa14bf5221f550463807f4fafc2746e6e6b697b54764cd57a8714b95cf",
+      "scope": "untouched ISO boot; base console command proof only; network disabled; no full rescue comparison",
+      "serial_evidence": "evidence/ci-base-boot/uefi-1.serial.txt",
+      "serial_sha256": "6875ee3c2448e071368d494d1102a325c679b6280de180fb5735c3d31993b274"
+    }
+  ],
+  "uefi_status": "No serial boot/login/readiness marker within one 60-second trial; cause unresolved; no UEFI readiness claim",
+  "build_resource_summary": {
+    "stage": "ci-fast-base",
+    "command": [
+      "sh",
+      "scripts/build-ci-fast-base.sh"
+    ],
+    "exit_code": 0,
+    "stopped_reason": null,
+    "cleanup_error": null,
+    "duration_seconds": 407.14906063600006,
+    "min_host_free_bytes": 88971542528,
+    "min_docker_free_bytes": 89082523648,
+    "max_additional_allocation_bytes": 2520505086
+  },
+  "missing": "Rescue payload, tmux, Oil, AI clients, mount/phone workflows, restored USB/NVMe/SATA/WiFi/filesystem drivers and audited firmware coverage.",
+  "comparative_claims": "None. The Omarchy baseline has no matched valid readiness runs; this is bare native base, not a rescue equivalent."
+}

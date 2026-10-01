@@ -1,0 +1,16 @@
+{
+  "stage": "native-fast-base-continuation",
+  "command": [
+    "sh",
+    "scripts/build.sh"
+  ],
+  "exit_code": 137,
+  "stopped_reason": null,
+  "cleanup_error": null,
+  "duration_seconds": 300.8319340000162,
+  "min_host_free_bytes": 30195576832,
+  "min_docker_free_bytes": 25403236352,
+  "max_additional_allocation_bytes": 535121920,
+  "termination_reason": "Intentionally stopped the sole labeled local build container to prioritize the requested GitHub-built artifact; no resource threshold breached.",
+  "native_tree_preserved": true
+}
