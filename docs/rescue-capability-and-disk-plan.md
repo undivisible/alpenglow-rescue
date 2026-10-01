@@ -13,8 +13,7 @@ Only orchestration limits, toolchain pins, resource guards and the documented
 toybox header-order fix differ. Alpine/Debian are toolchains, not a populated
 boot root. Source export is 17,767,268 logical tracked-file bytes.
 
-The rescue delta in `kernel/rescue-x86_64.fragment` is **proposed, not applied
-or compiled**. It must be merged after upstream's final FAST disables and
+The rescue delta in `kernel/rescue-x86_64.fragment` is **resolved against Linux 7.1.3, not compiled**. It must be merged after upstream's final FAST disables and
 resolved with 7.1.3 olddefconfig; applying it only before those disables would
 silently lose essential drivers again. Build matching modules from the same
 custom kernel. Never copy Alpine LTS `.ko` files into it. Retain the embedded
@@ -41,7 +40,7 @@ deltas cannot be assigned exact bytes until the custom kernel is compiled.
 | Recovery and hardware diagnostics | ddrescue, TestDisk, SMART, NVMe, fsarchiver, partclone, rsync | 6,854,604 proxy |
 | Ethernet/network diagnostics | VirtIO/e1000 built-in, Intel e1000e/igb/igc, Realtek r8169, USB tether/Ethernet modules; DHCP, IPv4/IPv6, DNS/TLS and SSH client | Together with Wi-Fi: 22,969,536 proxy |
 | Wi-Fi | cfg80211/mac80211; Intel, Atheros, Broadcom, Realtek, MediaTek families; iwd/iwctl/dbus | Kernel and matching firmware coverage unverified |
-| Firmware | Start with all historical firmware coverage; later derive x86_64 file selection from retained drivers' firmware references and device-family audit | 762,089,168 installed bytes; compressed cost unmeasured |
+| Firmware | Bare base has no firmware; rescue payload inclusion must follow retained x86_64 drivers' firmware references and a device-family audit. All historical firmware remains in the preserved old ISO | 762,089,168 installed bytes; compressed cost unmeasured |
 | Backup conveniences | rclone/restic/borg retained in the complete payload for upstream comparison; they need not be early boot services | 155,273,849 proxy; no removal authorized by a size target |
 | AI clients and Oil | All three pinned clients and Oil in complete payload; executable/version smoke, no auth | Absent currently; native executable/archive/compile costs unmeasured |
 | BIOS/UEFI | Limine packaging, EFI/EFI_STUB restored for rescue; serial/VT on both | Boot files and custom kernel delta unmeasured |
@@ -57,13 +56,18 @@ No under-500-MB or quarter-time result can be inferred from these costs.
 
 ## Temporary space allowances
 
-No large build was run. These are conservative **planning budgets**, not
-observed peak measurements. An existing unrelated Linux 7.1.0 tree was read
+These are conservative **planning budgets**, not observed complete-build peaks.
+The specifically authorized native fast-base run is now in progress with a
+30 GiB hard floor, 31.5 GiB early stop and a 6 GiB total budget. The full
+rescue build is not authorized by this exception. An existing unrelated Linux 7.1.0 tree was read
 only to calibrate scale: 2,134,892 KiB allocated, including 279,953,408 bytes
 of regular object/build metadata. It was not reused or modified and is not
 the pinned 7.1.3 source. The official [kernel archive listing](https://cdn.kernel.org/pub/linux/kernel/v7.x/)
-reports the 7.1.3 xz download as about 151 MB; the archive is not downloaded
-for this new route.
+reports the 7.1.3 xz download as about 151 MB. The exact 158,335,040-byte
+archive was downloaded and verified against the separately fetched official
+SHA-256 list. See `evidence/rescue-config-7.1.3.json`. All 141 requested
+settings now resolve after adding BLK_DEV and MISC_FILESYSTEMS menu switches.
+This validates configuration dependencies, not compile or hardware operation.
 
 Fast-base incremental allowance:
 
@@ -85,8 +89,9 @@ contingency. Native driver modules and the actual client sizes remain uncertain;
 measure each phase before spending the next phase's allowance. Existing ISOs
 and evidence are already included in current volume usage and stay preserved.
 
-The fast-base entry guard is now **46 GiB available**: 40 GiB reserve plus
-6 GiB planned temporary use. Complete rescue planning requires **56 GiB**.
+The original fast-base entry plan was 46 GiB. For this explicitly authorized
+run, initial entry is **36 GiB available**: 30 GiB floor plus 6 GiB allowance.
+Subsequent phases use the same monitored total budget, not fresh allowances. Complete rescue planning requires **56 GiB**.
 Host and container free-space checks are required, with two jobs/CPUs maximum.
 A future build also needs ongoing monitoring during compilation: stop on
 unexpected growth before continuing phases. No unbounded build is authorized
@@ -98,8 +103,9 @@ Exact availability and additional bytes needed at this checkpoint are in
 43,417,600,000 bytes; the fast-base allowance required **5,974,523,904 more
 bytes (5.56 GiB)**, and complete rescue required **16,711,942,144 more bytes
 (15.56 GiB)**. Free space fluctuates with shared volume activity, so re-read it
-before work. With current headroom, preparation/tests are allowed; kernel,
-Oil/client downloads, root staging, packaging and VMs remain deferred.
+before work. Those original 40 GiB-reserve numbers are historical. The later 30 GiB-floor
+exception allows only the bounded native fast-base build and its boot proof.
+Oil/client downloads and the complete rescue staging/packaging remain deferred.
 
 ## Published README and needed action
 
@@ -110,7 +116,8 @@ It does not explicitly distinguish Alpine LTS/shell init from custom FAST
 kernel/Zig init; the local correction does. See
 `evidence/published-readme-check.json`.
 
-No further push attempt was made after automatic review rejected the update.
-The parent needs direct human authorization to push the local source-only
-branch to the existing private repository using the same normal route.
-Do not recreate the repository or use another identity/API path.
+The user later directly approved corrected source upload and public visibility.
+History/source preflight found no secret-pattern matches or binaries; commit
+author metadata matches the already-public pinned Alpenglow commit. An
+unnecessary absolute workspace path was removed from unpublished history.
+Source publication does not include ISOs or a benchmark announcement.

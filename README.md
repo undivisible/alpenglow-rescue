@@ -21,13 +21,14 @@ The Alpenglow submodule is pinned to `2214bc159355522bbebc61e8e90ca78933a8e1ac`.
 Alpenglow-derived sources and this project use MPL-2.0. Image components retain
 their own licenses; Omarchy Rescue's MIT attribution is in `licenses/`.
 
-Validate the actual pinned fast base after its disk budget is established
-and at least 40 GiB host/container reserve remains:
+Validate the actual pinned fast base with the bounded runner and two jobs.
+The specifically authorized development run has a 30 GiB hard free-space floor:
 
 ```sh
 git submodule update --init
 python3 scripts/prepare-fast-base.py --check
-sh scripts/build.sh
+python3 scripts/run-bounded-fast.py --stage kernel-config -- sh scripts/resolve-rescue-config.sh
+python3 scripts/run-bounded-fast.py --stage fast-base -- sh scripts/build.sh
 python3 scripts/test-recipes.py
 ```
 
@@ -35,7 +36,9 @@ The source submodule is unchanged. The measured historical core used Alpenglow's
 rootfs assembly and Limine ISO layout, signed Alpine APK bootstrap with its
 dependency solver, dinit, musl, toybox and oksh. The normal Oil bootstrap was
 not used. The default recipe now targets the actual Alpenglow fast base;
-that corrected base has not been built or integrated with rescue payloads.
+that corrected base is being built and is not integrated with rescue payloads.
+Linux 7.1.3 is checksum-verified and the rescue fragment resolves all 141
+requested settings; rescue drivers/modules have not been compiled or tested.
 See [exact provenance and fast-path correction](docs/provenance-and-fast-path.md). The partial host packaging recipe is `scripts/pack-core-native.sh`;
 it requires workspace-local xorriso and Limine tools described in the report.
 Never interpret that partial artifact as a complete upstream equivalent.
@@ -45,5 +48,6 @@ small manifests, logs and both measured ISOs. Details and exact paths are in
 [evidence/cleanup-20261001.json](evidence/cleanup-20261001.json).
 
 The [native rescue capability and disk plan](docs/rescue-capability-and-disk-plan.md)
-records essential driver restoration, installed-size proxies and the 46 GiB
-fast-base / 56 GiB complete-build entry thresholds. Current space is insufficient.
+records essential driver restoration, installed-size proxies and the original
+40 GiB-reserve plan. A later exception permits only this 6 GiB fast-base run
+with a monitored 30 GiB floor; the complete rescue build remains deferred.

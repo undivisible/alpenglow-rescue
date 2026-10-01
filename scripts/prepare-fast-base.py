@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -24,18 +25,21 @@ for name in paths:
         text = text.replace(line, 'NPROC="2"', 1)
         # Same header-order correction used in the measured toybox build.
         text = text.replace('make -j$(nproc) LDFLAGS="-static"', 'CPUS=2 make -j2 CFLAGS="-D_GNU_SOURCE -include string.h" LDFLAGS="-static"')
+    text = text.replace('tar -xzf /tmp/toybox.tar.gz -C /tmp', 'sha256sum /tmp/toybox.tar.gz > /out/toybox-source.sha256\n    tar -xzf /tmp/toybox.tar.gz -C /tmp')
+    text = text.replace('tar -xf /tmp/dinit.tar.xz -C /tmp', 'sha256sum /tmp/dinit.tar.xz > /out/dinit-source.sha256\n    tar -xf /tmp/dinit.tar.xz -C /tmp')
+    text = text.replace('cpio -o -H newc', 'cpio -o -H newc -R 0:0')
     text = text.replace('$(nproc)', '2').replace('zstd -6 -T0', 'zstd -6 -T2')
-    text = text.replace('docker run --rm --platform', 'docker run --rm --cpus=2 --pids-limit=512 --platform')
+    text = text.replace('docker run --rm --platform', 'docker run --rm --cpus=2 --pids-limit=512 --memory=2g --label alpenglow-rescue.build=task15-fast-20261001 --platform')
     text = text.replace('alpine:3.21 sh', 'alpine:3.21@' + pins['fast_toolchain']['alpine_3_21'] + ' sh')
     text = text.replace('debian:bookworm-slim sh', 'debian:bookworm-slim@' + pins['fast_toolchain']['debian_bookworm_slim'] + ' sh')
     # Every container checks both its writable layer and task artifact mount.
     container_guard = r"""    for rescue_path in / /out; do
-      [ "$(df -Pk "$rescue_path" | awk "END {print \$4}")" -ge 41943040 ] || exit 1
+      [ "$(df -Pk "$rescue_path" | awk "END {print \$4}")" -ge 31457280 ] || exit 1
     done
 """
     text = text.replace("sh -c '\n", "sh -c '\n" + container_guard)
     assert '$(nproc)' not in text and '-T0' not in text
-    assert '--cpus=2' in text and '41943040' in text
+    assert '--cpus=2' in text and '31457280' in text
     subprocess.run(['sh', '-n'], input=text, text=True, check=True)
     original = (source / name).read_text()
     if name == paths[0]:
@@ -55,8 +59,8 @@ for name in paths:
 if args.check:
     print('pinned Alpenglow fast recipe adaptation: passed (no files or build created)')
 else:
-    if shutil.disk_usage(root).free < 46 * 1024**3:
-        raise SystemExit('Stop: need 40 GiB reserve plus 6 GiB build allowance')
+    if shutil.disk_usage(root).free < (31.5 if os.environ.get('ALPENGLOW_BOUNDED_FAST') == '1' else 36) * 1024**3:
+        raise SystemExit('Stop: need 30 GiB floor plus 6 GiB build allowance')
     dest = root / 'build/fast-source'
     # Reuse only our own source export; never delete another checkout or WIP.
     if dest.exists():

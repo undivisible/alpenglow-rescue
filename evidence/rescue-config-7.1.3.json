@@ -1,0 +1,13 @@
+{
+  "kernel": "7.1.3",
+  "scope": "Kconfig resolution only; no rescue modules/kernel compiled",
+  "requested": 141,
+  "fast_disable_symbols": 269,
+  "mismatches": {},
+  "fast_config": "build/fast-source/build/native/config-fast/.config",
+  "rescue_config": "build/fast-source/build/native/config-rescue/.config",
+  "kernel_tar_sha256": "be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+  "kernel_tar_bytes": 158335040,
+  "fast_config_sha256": "1944dc1101e34e51a15badc199faef2c355df3423d6558b6fb5154518a5d76ba",
+  "rescue_config_sha256": "ae00506279900bae5eede9705af8227f4e124bb4d16e7eee63d2fbc047f63f8f"
+}

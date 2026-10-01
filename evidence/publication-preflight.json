@@ -1,0 +1,31 @@
+{
+  "commits_reviewed": 5,
+  "unique_history_blobs_reviewed": 81,
+  "tracked_history_paths": 56,
+  "history_roots": [
+    "c9ece4f6b9d4e989b4be13235019c3923f2f335e"
+  ],
+  "secret_pattern_findings": [],
+  "binary_history_paths": [],
+  "public_submodule": "https://github.com/tschk/alpenglow.git",
+  "license_files": [
+    "LICENSE",
+    "licenses/omarchy-rescue-MIT.txt"
+  ],
+  "review_note": "Pattern scan plus manual review required; no raw credential values emitted.",
+  "author_metadata_public_verification": [
+    {
+      "identity_already_public": true,
+      "public_commit_url": "https://github.com/tschk/alpenglow/commit/2214bc159355522bbebc61e8e90ca78933a8e1ac",
+      "email_domain": "vk.com"
+    }
+  ],
+  "workspace_path_redacted_from_unpublished_history": true,
+  "manual_review": {
+    "source_and_docs_only": true,
+    "no_images_clients_raw_logs_or_WIP": true,
+    "public_pinned_submodule_only": true,
+    "MPL_2_0_and_MIT_notices_preserved": true,
+    "no_proprietary_client_code_redistributed": true
+  }
+}

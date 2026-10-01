@@ -10,3 +10,8 @@ Use synthetic fixtures and read-only diagnostics. Measure the whole bootable
 artifact and interactive command response, not a login prompt alone. Keep
 firmware, console, and network milestones distinct. No size or speed claim
 without raw measurements and an identically configured verified baseline.
+
+The specifically authorized 2026-10-01 native fast-base run has a 6 GiB
+temporary budget and a 30 GiB hard disk floor (early stop at 31.5 GiB).
+This exception does not authorize the full rescue build or publication of
+images/benchmarks. Keep other build recipes at the default reserve.

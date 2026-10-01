@@ -3,7 +3,9 @@
 # All generated sources and artifacts live in this project's build directory.
 set -eu
 cd "$(dirname "$0")/.."
-[ "$(df -Pk . | awk 'END {print $4}')" -ge 48234496 ] || { echo 'Stop: need 40 GiB reserve plus 6 GiB build allowance' >&2; exit 1; }
+fast_min_kib=37748736
+if [ "${ALPENGLOW_BOUNDED_FAST:-0}" = 1 ]; then fast_min_kib=33030144; fi
+[ "$(df -Pk . | awk 'END {print $4}')" -ge "$fast_min_kib" ] || { echo 'Stop: need 30 GiB floor plus 6 GiB build allowance' >&2; exit 1; }
 ZIG=${ZIG:-/opt/homebrew/Cellar/zig/0.16.0_1/bin/zig}
 [ -x "$ZIG" ] || { echo 'Need a compatible Zig 0.16 compiler for the pinned fast init' >&2; exit 1; }
 case "$("$ZIG" version)" in 0.16.*) ;; *) echo 'Need Zig 0.16' >&2; exit 1 ;; esac

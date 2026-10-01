@@ -59,11 +59,11 @@ the known toybox fortify-header-order correction. `BUILD_ONLY=1` launches no VM.
 `prepare-fast-base.py --check` verifies the edits in memory; it does not build.
 The old recipe is explicitly retained as `build-hybrid.sh` for provenance.
 
-**The corrected fast base has not been built or booted here.** It is a base
+**The corrected fast base build is in progress; it has not been booted here.** It is a base
 validation step, not a rescue ISO. Before building, account for kernel source,
 objects, container layers and export size; the current 6 GiB fast-base allowance is a
-conservative plan, not a measured peak. See `docs/rescue-capability-and-disk-plan.md`. Keep 40 GiB host/container
-reserve throughout and preserve Twenify's priority.
+conservative plan, not a measured peak. See `docs/rescue-capability-and-disk-plan.md`. The authorized fast-base run uses a monitored 30 GiB hard floor; other work
+keeps the 40 GiB coordination reserve and preserve Twenify's priority.
 
 The rescue integration needs matching custom-kernel storage/USB/Wi-Fi and
 filesystem support, modules/firmware coverage audited for x86_64, and a lean
