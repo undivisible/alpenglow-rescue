@@ -16,6 +16,10 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--check', action='store_true', help='validate edits in memory only')
 args = parser.parse_args()
 continuation = os.environ.get('ALPENGLOW_FAST_CONTINUATION') == '1'
+increment = os.environ.get('ALPENGLOW_RESCUE_INCREMENT', 'fast-base')
+assert increment in ('fast-base', 'storage-1')
+if increment == 'storage-1':
+    assert os.environ.get('CI') == 'true', 'Storage compilation is CI-only while local Docker is below the disk floor'
 container_floor_kib = 20971520 if continuation else 31457280
 assert subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip() == pins['alpenglow']
 paths = ['scripts/boot-native.sh', 'system/backends/appliance/scripts/build-kernel-fast.sh', 'scripts/lib/assemble-rootfs.sh']
@@ -35,6 +39,9 @@ for name in paths:
         text = text.replace('make -j$(nproc) LDFLAGS="-static"', 'CPUS=2 make -j2 CFLAGS="-D_GNU_SOURCE -include string.h" LDFLAGS="-static"')
     text = text.replace('tar -xzf /tmp/toybox.tar.gz -C /tmp', 'sha256sum /tmp/toybox.tar.gz > /out/toybox-source.sha256\n    tar -xzf /tmp/toybox.tar.gz -C /tmp')
     text = text.replace('tar -xf /tmp/dinit.tar.xz -C /tmp', 'sha256sum /tmp/dinit.tar.xz > /out/dinit-source.sha256\n    tar -xf /tmp/dinit.tar.xz -C /tmp')
+    if increment == 'storage-1' and name == paths[0]:
+        text = text.replace('    tar -xzf /tmp/toybox.tar.gz -C /tmp', '    tar -xzf /tmp/toybox.tar.gz -C /tmp\n    cp /tmp/toybox-*/LICENSE /out/toybox-LICENSE')
+        text = text.replace('    tar -xf /tmp/dinit.tar.xz -C /tmp', '    tar -xf /tmp/dinit.tar.xz -C /tmp\n    cp /tmp/dinit-*/LICENSE /out/dinit-LICENSE')
     if name == paths[1]:
         kernel_check = '      echo "' + pins['fast_native']['kernel_sha256'] + '  k.tar.xz" > kernel-download.sha256\n      sha256sum -c kernel-download.sha256\n'
         text = text.replace('      tar -xf k.tar.xz', kernel_check + '      tar -xf k.tar.xz')
@@ -66,6 +73,31 @@ for name in paths:
         begin = '# Profile-specific trimming'
         end = 'make ARCH=x86_64 olddefconfig'
         assert original[original.index(begin):original.index(end, original.index(begin))] == text[text.index(begin):text.index(end, text.index(begin))]
+    # Add the rescue delta only after checking preservation of upstream FAST
+    # architecture and its original trimming span above.
+    if increment == 'storage-1' and name == paths[0]:
+        anchor = '# Build initramfs\n'
+        assert text.count(anchor) == 1
+        hook = '''# First rescue payload, before the native embedded-LZ4 build.
+docker run --rm --cpus=2 --pids-limit=512 --memory=2g \\
+  --label alpenglow-rescue.build=task15-fast-20261001 --platform linux/amd64 \\
+  -v "${OUT_DIR}:/out" -v "${ROOT_DIR}/rescue-recipe:/recipe:ro" \\
+  ''' + pins['alpine_image'] + ''' sh /recipe/scripts/add-storage-payload.sh
+'''
+        text = text.replace(anchor, hook + anchor)
+    if increment == 'storage-1' and name == paths[1]:
+        anchor = '    echo "→ compiling bzImage (this can take several minutes)..."'
+        assert text.count(anchor) == 1
+        hook = '''    # Restore storage/UEFI after every FAST-only disable, then resolve.
+    ./scripts/kconfig/merge_config.sh -m .config /kcfg/storage-x86_64.fragment
+    make -j2 ARCH=x86_64 olddefconfig >/dev/null
+    while IFS= read -r rescue_setting; do
+      case "$rescue_setting" in CONFIG_*=*) grep -qx "$rescue_setting" .config || { echo "Unresolved: $rescue_setting"; exit 1; };; esac
+    done < /kcfg/storage-x86_64.fragment
+    cp .config /out/storage-evidence/kernel.config
+'''
+        text = text.replace(anchor, hook + anchor)
+    subprocess.run(['sh', '-n'], input=text, text=True, check=True)
     adapted[name] = text
 
 if args.check:
@@ -88,10 +120,17 @@ else:
     (dest / '.source-pin').write_text(pins['alpenglow'] + '\n')
     for name, text in adapted.items():
         (dest / name).write_text(text)
+    if increment == 'storage-1':
+        recipe = dest / 'rescue-recipe'
+        (recipe / 'scripts').mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / 'packages-storage.txt', recipe / 'packages-storage.txt')
+        for name in ('add-storage-payload.sh', 'smoke-storage.sh'):
+            shutil.copyfile(root / 'scripts' / name, recipe / 'scripts' / name)
+        shutil.copyfile(root / 'kernel/storage-x86_64.fragment', dest / 'system/backends/appliance/kernel/storage-x86_64.fragment')
     (root / 'build/evidence').mkdir(parents=True, exist_ok=True)
     (root / 'build/evidence/fast-recipe-adaptation.json').write_text(json.dumps({
         'source': pins['alpenglow'],
-        'purpose': 'upstream fast base validation; rescue integration pending',
+        'purpose': increment,
         'container_floor_kib': container_floor_kib,
         'adapted_file_sha256': {name:hashlib.sha256(text.encode()).hexdigest() for name,text in adapted.items()},
     }, indent=2) + '\n')

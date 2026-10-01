@@ -1,8 +1,15 @@
 name: Native fast-base image
 on:
   workflow_dispatch:
+    inputs:
+      increment:
+        description: Native bounded increment
+        type: choice
+        default: fast-base
+        options: [fast-base, storage-1]
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: native-fast-base-image
   cancel-in-progress: false
@@ -14,6 +21,7 @@ jobs:
       CARGO_BUILD_JOBS: '2'
       MAKEFLAGS: -j2
       ALPENGLOW_FAST_CONTINUATION: '1'
+      ALPENGLOW_RESCUE_INCREMENT: ${{ inputs.increment }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -22,7 +30,7 @@ jobs:
       - name: Install official build tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq cpio lz4 xorriso xz-utils build-essential curl python3
+          sudo apt-get install -y -qq cpio lz4 xorriso xz-utils build-essential curl python3 qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup
           mkdir -p build/ci/zig
           curl -fsSL https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz -o build/ci/zig.tar.xz
           printf '%s\n' '70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00  build/ci/zig.tar.xz' | sha256sum -c -
@@ -30,25 +38,66 @@ jobs:
           echo "ZIG=$PWD/build/ci/zig/zig" >> "$GITHUB_ENV"
           docker pull alpine@sha256:ce64758a109eb420d874a118f87920e625e12d3634e03b4a5573fd9f6e5d3507
           docker pull debian@sha256:3783cc01769c7b2b1b83a5c5ad96c815348e28ed7da68e2e3687004faa906251
+          if [ "$ALPENGLOW_RESCUE_INCREMENT" = storage-1 ]; then
+            docker pull alpine@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0
+          fi
       - name: Validate source and guarded recipe
         run: |
           python3 scripts/prepare-fast-base.py --check
           python3 scripts/test-fast-monitor.py
           python3 scripts/prepare-fast-base.py
+      - name: Obtain previous verified base for separate UEFI diagnosis
+        if: inputs.increment == 'storage-1'
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: native-fast-base-x86_64
+          path: build/ci/previous-base
+          github-token: ${{ github.token }}
+          run-id: '36865793057'
+      - name: Record previous base UEFI behavior and screen
+        if: inputs.increment == 'storage-1'
+        run: |
+          printf '%s\n' 'f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a  build/ci/previous-base/alpenglow-fast-base-x86_64.iso' | sha256sum -c -
+          if python3 scripts/bench-fast-base.py --iso build/ci/previous-base/alpenglow-fast-base-x86_64.iso --name previous-base-diagnostic --firmware uefi --runs 1 --timeout 30; then
+            echo 'Previous base UEFI console passed on this CI firmware.'
+          else
+            echo 'Previous base UEFI console did not pass; raw log, command and screen retained.'
+          fi
       - name: Build native base and proof ISO with two jobs
         run: python3 scripts/resume-fast-base.py --stage ci-fast-base -- sh scripts/build-ci-fast-base.sh
       - name: Upload exact proof image and provenance
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: native-fast-base-x86_64
+          name: native-${{ inputs.increment }}-x86_64
           path: build/ci/output/*
           if-no-files-found: error
+          retention-days: 14
+      - name: Create synthetic file fixtures
+        if: inputs.increment == 'storage-1'
+        run: sh scripts/make-storage-fixtures.sh
+      - name: Cold BIOS storage readiness (three runs)
+        if: inputs.increment == 'storage-1'
+        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --fixtures --runs 3 --timeout 120
+      - name: Separate cold UEFI storage readiness (three runs)
+        if: always() && inputs.increment == 'storage-1'
+        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --firmware uefi --fixtures --runs 3 --timeout 120
+      - name: Upload BIOS and UEFI test evidence
+        if: always() && inputs.increment == 'storage-1'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-storage-1-boot-evidence
+          path: |
+            build/bench/**/*.json
+            build/bench/**/*.log
+            build/bench/**/*.ppm
+            build/evidence/fixture-manifest.json
+          if-no-files-found: ignore
           retention-days: 14
       - name: Upload bounded build evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: native-fast-base-build-evidence
+          name: native-${{ inputs.increment }}-build-evidence
           path: build/evidence/*
           if-no-files-found: ignore
           retention-days: 14

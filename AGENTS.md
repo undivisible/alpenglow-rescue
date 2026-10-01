@@ -21,3 +21,10 @@ uses a 20 GiB hard floor on both host and Docker, a 21 GiB early stop, and a
 4 GiB additional-allocation cap from its new continuation checkpoint. Preserve
 earlier monitoring controls and the existing kernel objects. This exception
 permits only kernel completion and native base boot proof, not full rescue.
+
+The subsequent explicit storage-rescue increment uses GitHub Actions for heavy
+work, with the same two-job/CPU bound, 20 GiB hard floor, 21 GiB early stop and
+4 GiB allocation cap. Local heavy jobs stay stopped below 20 GiB; do not lower
+that floor again. Source pushes and temporary CI test artifacts are authorized;
+final binary releases and announcements remain unapproved. Fixture disks are
+task-owned regular CI files attached read-only in QEMU, never host devices.

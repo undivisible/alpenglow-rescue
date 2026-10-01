@@ -1,0 +1,23 @@
+# First native storage increment. No replacement kernel, firmware or servers.
+musl
+util-linux
+e2fsprogs
+e2fsprogs-extra
+btrfs-progs
+xfsprogs
+dosfstools
+exfatprogs
+ntfs-3g
+ntfs-3g-progs
+cryptsetup
+lvm2
+mdadm
+parted
+gptfdisk
+kmod
+ddrescue
+testdisk
+smartmontools
+nvme-cli
+tmux
+oksh
