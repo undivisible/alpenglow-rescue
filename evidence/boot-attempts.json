@@ -1,0 +1,142 @@
+{
+  "core-diagnostic-bios": {
+    "iso": "alpenglow-rescue-core-x86_64.iso",
+    "bytes": 1014913024,
+    "sha256": "6fe574f213acaccbc8eb99ef2387e1dbeedbb512bcd0a1b3a04cfac14fb2f528",
+    "firmware": "bios",
+    "runs": [
+      {
+        "run": 1,
+        "rescue_ready_seconds": null,
+        "network_ready_seconds": null,
+        "events": [],
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-smp",
+          "2",
+          "-m",
+          "4096",
+          "-display",
+          "none",
+          "-serial",
+          "stdio",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:build/bench/core-diagnostic-bios/qmp-1.sock,server=on,wait=off",
+          "-no-reboot",
+          "-device",
+          "e1000,romfile=,netdev=net0",
+          "-netdev",
+          "user,id=net0",
+          "-device",
+          "qemu-xhci,id=xhci",
+          "-device",
+          "usb-kbd,bus=xhci.0",
+          "-drive",
+          "file=<project>/build/alpenglow-rescue-core-x86_64.iso,media=cdrom,format=raw,readonly=on",
+          "-boot",
+          "order=d"
+        ]
+      }
+    ]
+  },
+  "baseline-cold-bios": {
+    "iso": "omarchy-rescue-2026.09.30-x86_64.iso",
+    "bytes": 1954578432,
+    "sha256": "b812a848e93bc5526094a8165fba8564e9211a7e86859faba2fd525b6bcd82f1",
+    "firmware": "bios",
+    "runs": [
+      {
+        "run": 1,
+        "rescue_ready_seconds": null,
+        "network_ready_seconds": null,
+        "events": [
+          {
+            "event": "selected-basic-console-with-serial",
+            "seconds": 3.29970558398054
+          }
+        ],
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-smp",
+          "2",
+          "-m",
+          "4096",
+          "-display",
+          "none",
+          "-serial",
+          "stdio",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:build/bench/baseline-cold-bios/qmp-1.sock,server=on,wait=off",
+          "-no-reboot",
+          "-device",
+          "e1000,romfile=,netdev=net0",
+          "-netdev",
+          "user,id=net0",
+          "-drive",
+          "file=<task>/baseline/omarchy-rescue-2026.09.30-x86_64.iso,media=cdrom,format=raw,readonly=on",
+          "-boot",
+          "order=d"
+        ]
+      }
+    ]
+  },
+  "baseline-diagnostic-permitted-bios": {
+    "iso": "omarchy-rescue-2026.09.30-x86_64.iso",
+    "bytes": 1954578432,
+    "sha256": "b812a848e93bc5526094a8165fba8564e9211a7e86859faba2fd525b6bcd82f1",
+    "firmware": "bios",
+    "runs": [
+      {
+        "run": 1,
+        "rescue_ready_seconds": null,
+        "network_ready_seconds": null,
+        "events": [
+          {
+            "event": "selected-basic-console-with-serial",
+            "seconds": 3.3366713339928538
+          }
+        ],
+        "command": [
+          "qemu-system-x86_64",
+          "-machine",
+          "q35,accel=tcg",
+          "-cpu",
+          "max",
+          "-smp",
+          "2",
+          "-m",
+          "4096",
+          "-display",
+          "none",
+          "-serial",
+          "stdio",
+          "-monitor",
+          "none",
+          "-qmp",
+          "unix:build/bench/baseline-diagnostic-permitted-bios/qmp-1.sock,server=on,wait=off",
+          "-no-reboot",
+          "-device",
+          "e1000,romfile=,netdev=net0",
+          "-netdev",
+          "user,id=net0",
+          "-drive",
+          "file=<task>/baseline/omarchy-rescue-2026.09.30-x86_64.iso,media=cdrom,format=raw,readonly=on",
+          "-boot",
+          "order=d"
+        ]
+      }
+    ]
+  }
+}

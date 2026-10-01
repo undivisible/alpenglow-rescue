@@ -63,6 +63,7 @@ for run in range(1, args.runs + 1):
            '-m', '4096', '-display', 'none', '-serial', 'stdio', '-monitor', 'none',
            '-qmp', f'unix:{sock},server=on,wait=off', '-no-reboot',
            '-device', 'e1000,romfile=,netdev=net0', '-netdev', 'user,id=net0',
+           '-device', 'qemu-xhci,id=xhci', '-device', 'usb-kbd,bus=xhci.0',
            '-drive', f'file={args.iso.resolve()},media=cdrom,format=raw,readonly=on', '-boot', 'order=d']
     if args.firmware == 'uefi':
         code = Path('/opt/homebrew/share/qemu/edk2-x86_64-code.fd')

@@ -1,0 +1,2778 @@
+[
+  {
+    "name": "7zip",
+    "version": "25.01-r0",
+    "license": "LGPL-2.0-only",
+    "source": "7zip",
+    "url": "https://7-zip.org/",
+    "size": "1784184"
+  },
+  {
+    "name": "acl-libs",
+    "version": "2.3.2-r1",
+    "license": "LGPL-2.1-or-later AND GPL-2.0-or-later",
+    "source": "acl",
+    "url": "https://savannah.nongnu.org/projects/acl",
+    "size": "34576"
+  },
+  {
+    "name": "agetty",
+    "version": "2.41.6-r1",
+    "license": "Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "48368"
+  },
+  {
+    "name": "alpine-baselayout",
+    "version": "3.7.2-r0",
+    "license": "GPL-2.0-only",
+    "source": "alpine-baselayout",
+    "url": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/master/main/alpine-baselayout",
+    "size": "6552"
+  },
+  {
+    "name": "alpine-baselayout-data",
+    "version": "3.7.2-r0",
+    "license": "GPL-2.0-only",
+    "source": "alpine-baselayout",
+    "url": "https://gitlab.alpinelinux.org/alpine/aports/-/tree/master/main/alpine-baselayout",
+    "size": "19034"
+  },
+  {
+    "name": "alpine-keys",
+    "version": "2.6-r0",
+    "license": "MIT",
+    "source": "alpine-keys",
+    "url": "https://alpinelinux.org",
+    "size": "12961"
+  },
+  {
+    "name": "apk-tools",
+    "version": "3.0.8-r0",
+    "license": "GPL-2.0-only",
+    "source": "apk-tools",
+    "url": "https://gitlab.alpinelinux.org/alpine/apk-tools",
+    "size": "115096"
+  },
+  {
+    "name": "blkid",
+    "version": "2.41.6-r1",
+    "license": "LGPL-1.0-only",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "47184"
+  },
+  {
+    "name": "borgbackup",
+    "version": "1.4.4-r0",
+    "license": "BSD-3-Clause",
+    "source": "borgbackup",
+    "url": "https://www.borgbackup.org/",
+    "size": "2153337"
+  },
+  {
+    "name": "borgbackup-pyc",
+    "version": "1.4.4-r0",
+    "license": "BSD-3-Clause",
+    "source": "borgbackup",
+    "url": "https://www.borgbackup.org/",
+    "size": "1192788"
+  },
+  {
+    "name": "brotli-libs",
+    "version": "1.2.0-r0",
+    "license": "MIT",
+    "source": "brotli",
+    "url": "https://github.com/google/brotli",
+    "size": "980488"
+  },
+  {
+    "name": "btrfs-progs",
+    "version": "6.17.1-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "btrfs-progs",
+    "url": "https://btrfs.wiki.kernel.org",
+    "size": "1626753"
+  },
+  {
+    "name": "btrfs-progs-udev",
+    "version": "6.17.1-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "btrfs-progs",
+    "url": "https://btrfs.wiki.kernel.org",
+    "size": "733"
+  },
+  {
+    "name": "bubblewrap",
+    "version": "0.12.0-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "bubblewrap",
+    "url": "https://github.com/containers/bubblewrap",
+    "size": "67704"
+  },
+  {
+    "name": "busybox",
+    "version": "1.37.0-r30",
+    "license": "GPL-2.0-only",
+    "source": "busybox",
+    "url": "https://busybox.net/",
+    "size": "813480"
+  },
+  {
+    "name": "busybox-binsh",
+    "version": "1.37.0-r30",
+    "license": "GPL-2.0-only",
+    "source": "busybox",
+    "url": "https://busybox.net/",
+    "size": "1"
+  },
+  {
+    "name": "c-ares",
+    "version": "1.34.8-r0",
+    "license": "MIT",
+    "source": "c-ares",
+    "url": "https://c-ares.org/",
+    "size": "243416"
+  },
+  {
+    "name": "ca-certificates",
+    "version": "20260909-r0",
+    "license": "MPL-2.0 AND MIT",
+    "source": "ca-certificates",
+    "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+    "size": "215307"
+  },
+  {
+    "name": "ca-certificates-bundle",
+    "version": "20260909-r0",
+    "license": "MPL-2.0 AND MIT",
+    "source": "ca-certificates",
+    "url": "https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/",
+    "size": "181724"
+  },
+  {
+    "name": "cfdisk",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "72104"
+  },
+  {
+    "name": "chntpw",
+    "version": "140201-r6",
+    "license": "GPL-2.0-only AND LGPL-2.1-only",
+    "source": "chntpw",
+    "url": "https://pogostick.net/~pnh/ntpasswd/",
+    "size": "170648"
+  },
+  {
+    "name": "chrony",
+    "version": "4.8-r2",
+    "license": "GPL-2.0-or-later",
+    "source": "chrony",
+    "url": "https://chrony-project.org/",
+    "size": "333305"
+  },
+  {
+    "name": "cryptsetup",
+    "version": "2.8.1-r0",
+    "license": "GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception",
+    "source": "cryptsetup",
+    "url": "https://gitlab.com/cryptsetup/cryptsetup",
+    "size": "280792"
+  },
+  {
+    "name": "cryptsetup-libs",
+    "version": "2.8.1-r0",
+    "license": "GPL-2.0-or-later WITH cryptsetup-OpenSSL-exception",
+    "source": "cryptsetup",
+    "url": "https://gitlab.com/cryptsetup/cryptsetup",
+    "size": "480811"
+  },
+  {
+    "name": "curl",
+    "version": "8.22.0-r0",
+    "license": "curl",
+    "source": "curl",
+    "url": "https://curl.se/",
+    "size": "285023"
+  },
+  {
+    "name": "dbus",
+    "version": "1.16.2-r1",
+    "license": "AFL-2.1 OR GPL-2.0-or-later",
+    "source": "dbus",
+    "url": "https://www.freedesktop.org/Software/dbus",
+    "size": "339016"
+  },
+  {
+    "name": "dbus-daemon-launch-helper",
+    "version": "1.16.2-r1",
+    "license": "AFL-2.1 OR GPL-2.0-or-later",
+    "source": "dbus",
+    "url": "https://www.freedesktop.org/Software/dbus",
+    "size": "51384"
+  },
+  {
+    "name": "dbus-libs",
+    "version": "1.16.2-r1",
+    "license": "AFL-2.1 OR GPL-2.0-or-later",
+    "source": "dbus",
+    "url": "https://www.freedesktop.org/Software/dbus",
+    "size": "296952"
+  },
+  {
+    "name": "ddrescue",
+    "version": "1.29.1-r0",
+    "license": "GPL-3.0-or-later",
+    "source": "ddrescue",
+    "url": "https://www.gnu.org/s/ddrescue/ddrescue.html",
+    "size": "187296"
+  },
+  {
+    "name": "device-mapper-event-libs",
+    "version": "2.03.35-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later AND BSD-2-Clause",
+    "source": "lvm2",
+    "url": "https://sourceware.org/lvm2/",
+    "size": "30560"
+  },
+  {
+    "name": "device-mapper-libs",
+    "version": "2.03.35-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later AND BSD-2-Clause",
+    "source": "lvm2",
+    "url": "https://sourceware.org/lvm2/",
+    "size": "301120"
+  },
+  {
+    "name": "dinit",
+    "version": "0.19.4-r0",
+    "license": "Apache-2.0",
+    "source": "dinit",
+    "url": "https://github.com/davmac314/dinit",
+    "size": "440768"
+  },
+  {
+    "name": "dmesg",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "53480"
+  },
+  {
+    "name": "dmidecode",
+    "version": "3.6-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "dmidecode",
+    "url": "https://nongnu.org/dmidecode",
+    "size": "165616"
+  },
+  {
+    "name": "dosfstools",
+    "version": "4.2-r2",
+    "license": "GPL-3.0-or-later",
+    "source": "dosfstools",
+    "url": "https://github.com/dosfstools/dosfstools",
+    "size": "166128"
+  },
+  {
+    "name": "e2fsprogs",
+    "version": "1.47.3-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT",
+    "source": "e2fsprogs",
+    "url": "https://e2fsprogs.sourceforge.net/",
+    "size": "401378"
+  },
+  {
+    "name": "e2fsprogs-libs",
+    "version": "1.47.3-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT",
+    "source": "e2fsprogs",
+    "url": "https://e2fsprogs.sourceforge.net/",
+    "size": "451824"
+  },
+  {
+    "name": "ethtool",
+    "version": "6.15-r0",
+    "license": "GPL-2.0-only",
+    "source": "ethtool",
+    "url": "https://mirrors.edge.kernel.org/pub/software/network/ethtool/",
+    "size": "757937"
+  },
+  {
+    "name": "eudev",
+    "version": "3.2.14-r6",
+    "license": "GPL-2.0-or-later",
+    "source": "eudev",
+    "url": "https://github.com/eudev-project/eudev",
+    "size": "671525"
+  },
+  {
+    "name": "eudev-libs",
+    "version": "3.2.14-r6",
+    "license": "GPL-2.0-or-later",
+    "source": "eudev",
+    "url": "https://github.com/eudev-project/eudev",
+    "size": "55144"
+  },
+  {
+    "name": "exfatprogs",
+    "version": "1.3.0-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "exfatprogs",
+    "url": "https://github.com/exfatprogs/exfatprogs",
+    "size": "298624"
+  },
+  {
+    "name": "findmnt",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "61000"
+  },
+  {
+    "name": "flock",
+    "version": "2.41.6-r1",
+    "license": "MIT",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "14344"
+  },
+  {
+    "name": "fsarchiver",
+    "version": "0.8.8-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "fsarchiver",
+    "url": "https://www.fsarchiver.org/",
+    "size": "225640"
+  },
+  {
+    "name": "fstrim",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "30768"
+  },
+  {
+    "name": "fuse3-libs",
+    "version": "3.18.3-r0",
+    "license": "GPL-2.0-only AND LGPL-2.1-only",
+    "source": "fuse3",
+    "url": "https://github.com/libfuse/libfuse",
+    "size": "305160"
+  },
+  {
+    "name": "gdbm",
+    "version": "1.26-r0",
+    "license": "GPL-3.0-or-later",
+    "source": "gdbm",
+    "url": "https://www.gnu.org/software/gdbm/",
+    "size": "73200"
+  },
+  {
+    "name": "git",
+    "version": "2.52.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "git",
+    "url": "https://www.git-scm.com/",
+    "size": "6837094"
+  },
+  {
+    "name": "git-init-template",
+    "version": "2.52.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "git",
+    "url": "https://www.git-scm.com/",
+    "size": "21414"
+  },
+  {
+    "name": "git-perl",
+    "version": "2.52.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "git",
+    "url": "https://www.git-scm.com/",
+    "size": "41743"
+  },
+  {
+    "name": "gmp",
+    "version": "6.3.0-r4",
+    "license": "LGPL-3.0-or-later OR GPL-2.0-or-later",
+    "source": "gmp",
+    "url": "https://gmplib.org/",
+    "size": "423880"
+  },
+  {
+    "name": "gnutls",
+    "version": "3.8.13-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "gnutls",
+    "url": "https://www.gnutls.org/",
+    "size": "2060368"
+  },
+  {
+    "name": "gptfdisk",
+    "version": "1.0.10-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "gptfdisk",
+    "url": "https://www.rodsbooks.com/gdisk",
+    "size": "588224"
+  },
+  {
+    "name": "grub-mount",
+    "version": "2.12-r8",
+    "license": "GPL-3.0-or-later",
+    "source": "grub",
+    "url": "https://www.gnu.org/software/grub/",
+    "size": "533168"
+  },
+  {
+    "name": "hexdump",
+    "version": "2.41.6-r1",
+    "license": "BSD-4-Clause-UC",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "34712"
+  },
+  {
+    "name": "htop",
+    "version": "3.4.1-r2",
+    "license": "GPL-2.0-or-later",
+    "source": "htop",
+    "url": "https://htop.dev/",
+    "size": "292836"
+  },
+  {
+    "name": "hwdata-pci",
+    "version": "0.401-r0",
+    "license": "GPL-2.0-or-later OR XFree86-1.1",
+    "source": "hwdata",
+    "url": "https://github.com/vcrhonek/hwdata",
+    "size": "1555871"
+  },
+  {
+    "name": "hwdata-usb",
+    "version": "0.401-r0",
+    "license": "GPL-2.0-or-later OR XFree86-1.1",
+    "source": "hwdata",
+    "url": "https://github.com/vcrhonek/hwdata",
+    "size": "730516"
+  },
+  {
+    "name": "inih",
+    "version": "62-r0",
+    "license": "BSD-3-Clause",
+    "source": "inih",
+    "url": "https://github.com/benhoyt/inih",
+    "size": "13936"
+  },
+  {
+    "name": "iperf3",
+    "version": "3.19.1-r1",
+    "license": "BSD-3-Clause-LBNL",
+    "source": "iperf3",
+    "url": "https://github.com/esnet/iperf",
+    "size": "194544"
+  },
+  {
+    "name": "iproute2",
+    "version": "6.17.0-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "iproute2",
+    "url": "https://wiki.linuxfoundation.org/networking/iproute2",
+    "size": "426346"
+  },
+  {
+    "name": "iproute2-minimal",
+    "version": "6.17.0-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "iproute2",
+    "url": "https://wiki.linuxfoundation.org/networking/iproute2",
+    "size": "603979"
+  },
+  {
+    "name": "iproute2-ss",
+    "version": "6.17.0-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "iproute2",
+    "url": "https://wiki.linuxfoundation.org/networking/iproute2",
+    "size": "98816"
+  },
+  {
+    "name": "iproute2-tc",
+    "version": "6.17.0-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "iproute2",
+    "url": "https://wiki.linuxfoundation.org/networking/iproute2",
+    "size": "584786"
+  },
+  {
+    "name": "iw",
+    "version": "6.17-r0",
+    "license": "ISC",
+    "source": "iw",
+    "url": "https://wireless.docs.kernel.org/en/latest/en/users/documentation/iw.html",
+    "size": "245536"
+  },
+  {
+    "name": "iwd",
+    "version": "3.10-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "iwd",
+    "url": "https://iwd.wiki.kernel.org/",
+    "size": "2652750"
+  },
+  {
+    "name": "jansson",
+    "version": "2.14.1-r0",
+    "license": "MIT",
+    "source": "jansson",
+    "url": "http://www.digip.org/jansson/",
+    "size": "87832"
+  },
+  {
+    "name": "json-c",
+    "version": "0.18-r1",
+    "license": "MIT",
+    "source": "json-c",
+    "url": "https://github.com/json-c/json-c/wiki",
+    "size": "63576"
+  },
+  {
+    "name": "judy",
+    "version": "1.0.5-r1",
+    "license": "LGPL-2.0-only",
+    "source": "judy",
+    "url": "https://judy.sourceforge.net/",
+    "size": "259728"
+  },
+  {
+    "name": "kmod",
+    "version": "34.2-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "kmod",
+    "url": "http://git.kernel.org/?p=utils/kernel/kmod/kmod.git;a=summary",
+    "size": "133320"
+  },
+  {
+    "name": "kmod-libs",
+    "version": "34.2-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "kmod",
+    "url": "http://git.kernel.org/?p=utils/kernel/kmod/kmod.git;a=summary",
+    "size": "83880"
+  },
+  {
+    "name": "lddtree",
+    "version": "1.27-r0",
+    "license": "GPL-2.0-only",
+    "source": "lddtree",
+    "url": "https://github.com/ncopa/lddtree",
+    "size": "9965"
+  },
+  {
+    "name": "libaio",
+    "version": "0.3.113-r2",
+    "license": "LGPL-2.1-or-later",
+    "source": "libaio",
+    "url": "https://pagure.io/libaio",
+    "size": "14024"
+  },
+  {
+    "name": "libapk",
+    "version": "3.0.8-r0",
+    "license": "GPL-2.0-only",
+    "source": "apk-tools",
+    "url": "https://gitlab.alpinelinux.org/alpine/apk-tools",
+    "size": "277184"
+  },
+  {
+    "name": "libblkid",
+    "version": "2.41.6-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "199488"
+  },
+  {
+    "name": "libbsd",
+    "version": "0.12.2-r0",
+    "license": "BSD-3-Clause",
+    "source": "libbsd",
+    "url": "https://libbsd.freedesktop.org/",
+    "size": "64272"
+  },
+  {
+    "name": "libbz2",
+    "version": "1.0.8-r6",
+    "license": "bzip2-1.0.6",
+    "source": "bzip2",
+    "url": "https://sourceware.org/bzip2/",
+    "size": "78480"
+  },
+  {
+    "name": "libcap-ng",
+    "version": "0.8.5-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "source": "libcap-ng",
+    "url": "https://people.redhat.com/sgrubb/libcap-ng/index.html",
+    "size": "40160"
+  },
+  {
+    "name": "libcap2",
+    "version": "2.78-r0",
+    "license": "BSD-3-Clause OR GPL-2.0-only",
+    "source": "libcap",
+    "url": "https://sites.google.com/site/fullycapable/",
+    "size": "48616"
+  },
+  {
+    "name": "libcom_err",
+    "version": "1.47.3-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.0-or-later AND BSD-3-Clause AND MIT",
+    "source": "e2fsprogs",
+    "url": "https://e2fsprogs.sourceforge.net/",
+    "size": "18112"
+  },
+  {
+    "name": "libcrypto3",
+    "version": "3.5.9-r0",
+    "license": "Apache-2.0",
+    "source": "openssl",
+    "url": "https://www.openssl.org/",
+    "size": "5221974"
+  },
+  {
+    "name": "libcurl",
+    "version": "8.22.0-r0",
+    "license": "curl",
+    "source": "curl",
+    "url": "https://curl.se/",
+    "size": "743243"
+  },
+  {
+    "name": "libdw",
+    "version": "0.194-r0",
+    "license": "GPL-3.0-or-later AND ( GPL-2.0-or-later OR LGPL-3.0-or-later )",
+    "source": "elfutils",
+    "url": "https://sourceware.org/elfutils/",
+    "size": "556088"
+  },
+  {
+    "name": "libeconf",
+    "version": "0.8.3-r0",
+    "license": "MIT",
+    "source": "libeconf",
+    "url": "https://github.com/openSUSE/libeconf",
+    "size": "65672"
+  },
+  {
+    "name": "libedit",
+    "version": "20251016.3.1-r0",
+    "license": "BSD-3-Clause",
+    "source": "libedit",
+    "url": "https://www.thrysoee.dk/editline",
+    "size": "178016"
+  },
+  {
+    "name": "libelf",
+    "version": "0.194-r0",
+    "license": "GPL-3.0-or-later AND ( GPL-2.0-or-later OR LGPL-3.0-or-later )",
+    "source": "elfutils",
+    "url": "https://sourceware.org/elfutils/",
+    "size": "92064"
+  },
+  {
+    "name": "libevent",
+    "version": "2.1.13-r0",
+    "license": "BSD-3-Clause",
+    "source": "libevent",
+    "url": "https://libevent.org/",
+    "size": "656984"
+  },
+  {
+    "name": "libexpat",
+    "version": "2.8.5-r0",
+    "license": "MIT",
+    "source": "expat",
+    "url": "https://libexpat.github.io/",
+    "size": "140992"
+  },
+  {
+    "name": "libfdisk",
+    "version": "2.41.6-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "272400"
+  },
+  {
+    "name": "libffi",
+    "version": "3.5.2-r0",
+    "license": "MIT",
+    "source": "libffi",
+    "url": "https://sourceware.org/libffi/",
+    "size": "38960"
+  },
+  {
+    "name": "libgcc",
+    "version": "15.2.0-r2",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "source": "gcc",
+    "url": "https://gcc.gnu.org",
+    "size": "173920"
+  },
+  {
+    "name": "libgcrypt",
+    "version": "1.11.2-r0",
+    "license": "LGPL-2.1-or-later AND GPL-2.0-or-later",
+    "source": "libgcrypt",
+    "url": "https://www.gnupg.org/",
+    "size": "1489232"
+  },
+  {
+    "name": "libgpg-error",
+    "version": "1.55-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "source": "libgpg-error",
+    "url": "https://www.gnupg.org/",
+    "size": "176528"
+  },
+  {
+    "name": "libidn2",
+    "version": "2.3.8-r0",
+    "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+    "source": "libidn2",
+    "url": "https://www.gnu.org/software/libidn#libidn2",
+    "size": "198632"
+  },
+  {
+    "name": "libintl",
+    "version": "0.24.1-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "gettext",
+    "url": "https://www.gnu.org/software/gettext/gettext.html",
+    "size": "136912"
+  },
+  {
+    "name": "libjpeg-turbo",
+    "version": "3.1.2-r0",
+    "license": "BSD-3-Clause AND IJG AND Zlib",
+    "source": "libjpeg-turbo",
+    "url": "https://libjpeg-turbo.org/",
+    "size": "657232"
+  },
+  {
+    "name": "liblksctp",
+    "version": "1.0.19-r5",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "source": "lksctp-tools",
+    "url": "https://lksctp.sourceforge.net/",
+    "size": "28918"
+  },
+  {
+    "name": "libluv",
+    "version": "1.51.0.1-r0",
+    "license": "Apache-2.0",
+    "source": "lua-luv",
+    "url": "https://github.com/luvit/luv",
+    "size": "165632"
+  },
+  {
+    "name": "libmd",
+    "version": "1.1.0-r0",
+    "license": "BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND Public Domain",
+    "source": "libmd",
+    "url": "https://www.hadrons.org/software/libmd/",
+    "size": "51120"
+  },
+  {
+    "name": "libmnl",
+    "version": "1.0.5-r2",
+    "license": "LGPL-2.1-or-later",
+    "source": "libmnl",
+    "url": "https://www.netfilter.org/projects/libmnl/",
+    "size": "26456"
+  },
+  {
+    "name": "libmount",
+    "version": "2.41.6-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "272976"
+  },
+  {
+    "name": "libncursesw",
+    "version": "6.5_p20251123-r0",
+    "license": "X11",
+    "source": "ncurses",
+    "url": "https://invisible-island.net/ncurses/",
+    "size": "342888"
+  },
+  {
+    "name": "libnl3",
+    "version": "3.11.0-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "libnl3",
+    "url": "http://www.infradead.org/~tgr/libnl/",
+    "size": "868934"
+  },
+  {
+    "name": "libnvme",
+    "version": "1.16.2-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "libnvme",
+    "url": "https://github.com/linux-nvme/libnvme/",
+    "size": "178104"
+  },
+  {
+    "name": "libnvmemi",
+    "version": "1.16.2-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "libnvme",
+    "url": "https://github.com/linux-nvme/libnvme/",
+    "size": "34664"
+  },
+  {
+    "name": "libpanelw",
+    "version": "6.5_p20251123-r0",
+    "license": "X11",
+    "source": "ncurses",
+    "url": "https://invisible-island.net/ncurses/",
+    "size": "17960"
+  },
+  {
+    "name": "libpcap",
+    "version": "1.10.7-r0",
+    "license": "BSD-3-Clause",
+    "source": "libpcap",
+    "url": "https://www.tcpdump.org/",
+    "size": "243824"
+  },
+  {
+    "name": "libpng",
+    "version": "1.6.59-r0",
+    "license": "Libpng",
+    "source": "libpng",
+    "url": "http://www.libpng.org",
+    "size": "186280"
+  },
+  {
+    "name": "libpsl",
+    "version": "0.21.5-r3",
+    "license": "MIT",
+    "source": "libpsl",
+    "url": "https://rockdaboot.github.io/libpsl",
+    "size": "75536"
+  },
+  {
+    "name": "libqrencode",
+    "version": "4.1.1-r3",
+    "license": "LGPL-2.1-or-later",
+    "source": "libqrencode",
+    "url": "https://fukuchi.org/works/qrencode/index.html",
+    "size": "46784"
+  },
+  {
+    "name": "libqrencode-tools",
+    "version": "4.1.1-r3",
+    "license": "LGPL-2.1-or-later",
+    "source": "libqrencode",
+    "url": "https://fukuchi.org/works/qrencode/index.html",
+    "size": "34888"
+  },
+  {
+    "name": "libseccomp",
+    "version": "2.6.0-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "libseccomp",
+    "url": "https://github.com/seccomp/libseccomp",
+    "size": "167584"
+  },
+  {
+    "name": "libsmartcols",
+    "version": "2.41.6-r1",
+    "license": "LGPL-2.1-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "120664"
+  },
+  {
+    "name": "libssh2",
+    "version": "1.11.1-r3",
+    "license": "BSD-3-Clause",
+    "source": "libssh2",
+    "url": "https://libssh2.org/",
+    "size": "244152"
+  },
+  {
+    "name": "libssl3",
+    "version": "3.5.9-r0",
+    "license": "Apache-2.0",
+    "source": "openssl",
+    "url": "https://www.openssl.org/",
+    "size": "843640"
+  },
+  {
+    "name": "libstdc++",
+    "version": "15.2.0-r2",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later",
+    "source": "gcc",
+    "url": "https://gcc.gnu.org",
+    "size": "2804104"
+  },
+  {
+    "name": "libtasn1",
+    "version": "4.21.0-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "libtasn1",
+    "url": "https://www.gnu.org/software/gnutls/",
+    "size": "67424"
+  },
+  {
+    "name": "libunistring",
+    "version": "1.4.1-r0",
+    "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+    "source": "libunistring",
+    "url": "https://www.gnu.org/software/libunistring/",
+    "size": "1922880"
+  },
+  {
+    "name": "libusb",
+    "version": "1.0.29-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "libusb",
+    "url": "https://libusb.info/",
+    "size": "104224"
+  },
+  {
+    "name": "libuuid",
+    "version": "2.41.6-r1",
+    "license": "BSD-3-Clause",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "30624"
+  },
+  {
+    "name": "libuv",
+    "version": "1.52.1-r0",
+    "license": "MIT",
+    "source": "libuv",
+    "url": "https://libuv.org/",
+    "size": "215895"
+  },
+  {
+    "name": "libwebsockets",
+    "version": "4.3.5-r2",
+    "license": "MIT",
+    "source": "libwebsockets",
+    "url": "https://libwebsockets.org/",
+    "size": "338168"
+  },
+  {
+    "name": "libwebsockets-evlib_uv",
+    "version": "4.3.5-r2",
+    "license": "MIT",
+    "source": "libwebsockets",
+    "url": "https://libwebsockets.org/",
+    "size": "22208"
+  },
+  {
+    "name": "libxtables",
+    "version": "1.8.11-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "iptables",
+    "url": "https://www.netfilter.org/projects/iptables/index.html",
+    "size": "54976"
+  },
+  {
+    "name": "libxxhash",
+    "version": "0.8.3-r0",
+    "license": "BSD-2-Clause",
+    "source": "xxhash",
+    "url": "https://cyan4973.github.io/xxHash/",
+    "size": "71360"
+  },
+  {
+    "name": "linux-firmware",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "0"
+  },
+  {
+    "name": "linux-firmware-3com",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "29643"
+  },
+  {
+    "name": "linux-firmware-acenic",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "45284"
+  },
+  {
+    "name": "linux-firmware-adaptec",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "388"
+  },
+  {
+    "name": "linux-firmware-advansys",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "14323"
+  },
+  {
+    "name": "linux-firmware-aeonsemi",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "147771"
+  },
+  {
+    "name": "linux-firmware-airoha",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "127146"
+  },
+  {
+    "name": "linux-firmware-amd",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "255485"
+  },
+  {
+    "name": "linux-firmware-amd-ucode",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "306441"
+  },
+  {
+    "name": "linux-firmware-amdgpu",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "27290947"
+  },
+  {
+    "name": "linux-firmware-amdnpu",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "219060"
+  },
+  {
+    "name": "linux-firmware-amdtee",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "13207"
+  },
+  {
+    "name": "linux-firmware-amlogic",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "830928"
+  },
+  {
+    "name": "linux-firmware-amphion",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "340969"
+  },
+  {
+    "name": "linux-firmware-ar3k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "277708"
+  },
+  {
+    "name": "linux-firmware-arm",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "256563"
+  },
+  {
+    "name": "linux-firmware-ath10k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "9178520"
+  },
+  {
+    "name": "linux-firmware-ath11k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "25540887"
+  },
+  {
+    "name": "linux-firmware-ath12k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "10002817"
+  },
+  {
+    "name": "linux-firmware-ath6k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "704035"
+  },
+  {
+    "name": "linux-firmware-ath9k_htc",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "59917"
+  },
+  {
+    "name": "linux-firmware-atmel",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "460927"
+  },
+  {
+    "name": "linux-firmware-atusb",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "11602"
+  },
+  {
+    "name": "linux-firmware-av7110",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "191"
+  },
+  {
+    "name": "linux-firmware-bnx2",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "101716"
+  },
+  {
+    "name": "linux-firmware-bnx2x",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2385858"
+  },
+  {
+    "name": "linux-firmware-brcm",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "8194826"
+  },
+  {
+    "name": "linux-firmware-cadence",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "22885"
+  },
+  {
+    "name": "linux-firmware-cavium",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "35034"
+  },
+  {
+    "name": "linux-firmware-cirrus",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2100748"
+  },
+  {
+    "name": "linux-firmware-cis",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1904"
+  },
+  {
+    "name": "linux-firmware-cnm",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "427148"
+  },
+  {
+    "name": "linux-firmware-cpia2",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "723"
+  },
+  {
+    "name": "linux-firmware-cxgb3",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "124050"
+  },
+  {
+    "name": "linux-firmware-cxgb4",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2833548"
+  },
+  {
+    "name": "linux-firmware-cypress",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5103422"
+  },
+  {
+    "name": "linux-firmware-dabusb",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "11966"
+  },
+  {
+    "name": "linux-firmware-dell",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "338999"
+  },
+  {
+    "name": "linux-firmware-dpaa2",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5615374"
+  },
+  {
+    "name": "linux-firmware-dsp56k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "161"
+  },
+  {
+    "name": "linux-firmware-e100",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "792"
+  },
+  {
+    "name": "linux-firmware-edgeport",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "28669"
+  },
+  {
+    "name": "linux-firmware-emi26",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "59952"
+  },
+  {
+    "name": "linux-firmware-emi62",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "98257"
+  },
+  {
+    "name": "linux-firmware-ene-ub6250",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5049"
+  },
+  {
+    "name": "linux-firmware-ess",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1823"
+  },
+  {
+    "name": "linux-firmware-go7007",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "56329"
+  },
+  {
+    "name": "linux-firmware-hp",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "335797"
+  },
+  {
+    "name": "linux-firmware-i915",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "9724822"
+  },
+  {
+    "name": "linux-firmware-imx",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "3434"
+  },
+  {
+    "name": "linux-firmware-inside-secure",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "212"
+  },
+  {
+    "name": "linux-firmware-intel",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "106729002"
+  },
+  {
+    "name": "linux-firmware-isci",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "73"
+  },
+  {
+    "name": "linux-firmware-ixp4xx",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "20387"
+  },
+  {
+    "name": "linux-firmware-kaweth",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2794"
+  },
+  {
+    "name": "linux-firmware-keyspan",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "38723"
+  },
+  {
+    "name": "linux-firmware-keyspan_pda",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2425"
+  },
+  {
+    "name": "linux-firmware-korg",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "3006"
+  },
+  {
+    "name": "linux-firmware-lenovo",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "252633"
+  },
+  {
+    "name": "linux-firmware-libertas",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1485001"
+  },
+  {
+    "name": "linux-firmware-liquidio",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1656105"
+  },
+  {
+    "name": "linux-firmware-matrox",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "3477"
+  },
+  {
+    "name": "linux-firmware-mediatek",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "26359287"
+  },
+  {
+    "name": "linux-firmware-mellanox",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "93752967"
+  },
+  {
+    "name": "linux-firmware-meson",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "106752"
+  },
+  {
+    "name": "linux-firmware-microchip",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1376"
+  },
+  {
+    "name": "linux-firmware-moxa",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "173874"
+  },
+  {
+    "name": "linux-firmware-mrvl",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "81010777"
+  },
+  {
+    "name": "linux-firmware-mwl8k",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "407163"
+  },
+  {
+    "name": "linux-firmware-mwlwifi",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "403810"
+  },
+  {
+    "name": "linux-firmware-myricom",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "22678"
+  },
+  {
+    "name": "linux-firmware-netronome",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5681449"
+  },
+  {
+    "name": "linux-firmware-nvidia",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "108571319"
+  },
+  {
+    "name": "linux-firmware-nxp",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "959745"
+  },
+  {
+    "name": "linux-firmware-ositech",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1237"
+  },
+  {
+    "name": "linux-firmware-other",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5608081"
+  },
+  {
+    "name": "linux-firmware-powervr",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "122479"
+  },
+  {
+    "name": "linux-firmware-qca",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2242828"
+  },
+  {
+    "name": "linux-firmware-qcom",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "182230772"
+  },
+  {
+    "name": "linux-firmware-qed",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "10589304"
+  },
+  {
+    "name": "linux-firmware-qlogic",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "69673"
+  },
+  {
+    "name": "linux-firmware-r128",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "657"
+  },
+  {
+    "name": "linux-firmware-radeon",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1626502"
+  },
+  {
+    "name": "linux-firmware-realtek",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "11367"
+  },
+  {
+    "name": "linux-firmware-rockchip",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "32777"
+  },
+  {
+    "name": "linux-firmware-rsi",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "630487"
+  },
+  {
+    "name": "linux-firmware-rtl_bt",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "849326"
+  },
+  {
+    "name": "linux-firmware-rtl_nic",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "68883"
+  },
+  {
+    "name": "linux-firmware-rtlwifi",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "595629"
+  },
+  {
+    "name": "linux-firmware-rtw88",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "405229"
+  },
+  {
+    "name": "linux-firmware-rtw89",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "4676732"
+  },
+  {
+    "name": "linux-firmware-s5p-mfc",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1082922"
+  },
+  {
+    "name": "linux-firmware-sb16",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "4161"
+  },
+  {
+    "name": "linux-firmware-sdca",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "14812"
+  },
+  {
+    "name": "linux-firmware-slicoss",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "73194"
+  },
+  {
+    "name": "linux-firmware-sun",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1518"
+  },
+  {
+    "name": "linux-firmware-sxg",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "35809"
+  },
+  {
+    "name": "linux-firmware-synaptics",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "64867"
+  },
+  {
+    "name": "linux-firmware-tehuti",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5634"
+  },
+  {
+    "name": "linux-firmware-ti",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "307284"
+  },
+  {
+    "name": "linux-firmware-ti-connectivity",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5191471"
+  },
+  {
+    "name": "linux-firmware-ti-keystone",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1186"
+  },
+  {
+    "name": "linux-firmware-tigon",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "6725"
+  },
+  {
+    "name": "linux-firmware-ttusb-budget",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "6323"
+  },
+  {
+    "name": "linux-firmware-ueagle-atm",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "781954"
+  },
+  {
+    "name": "linux-firmware-vicam",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "1248"
+  },
+  {
+    "name": "linux-firmware-vxge",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "839484"
+  },
+  {
+    "name": "linux-firmware-wfx",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "312879"
+  },
+  {
+    "name": "linux-firmware-xe",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "2208630"
+  },
+  {
+    "name": "linux-firmware-yam",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "5414"
+  },
+  {
+    "name": "linux-firmware-yamaha",
+    "version": "20251125-r1",
+    "license": "custom",
+    "source": "linux-firmware",
+    "url": "https://git.kernel.org/?p=linux/kernel/git/firmware/linux-firmware.git;a=summary",
+    "size": "8610"
+  },
+  {
+    "name": "linux-lts",
+    "version": "6.18.54-r0",
+    "license": "GPL-2.0-only",
+    "source": "linux-lts",
+    "url": "https://www.kernel.org",
+    "size": "150677193"
+  },
+  {
+    "name": "linux-pam",
+    "version": "1.7.1-r2",
+    "license": "BSD-3-Clause",
+    "source": "linux-pam",
+    "url": "https://www.kernel.org/pub/linux/libs/pam",
+    "size": "850895"
+  },
+  {
+    "name": "lm-sensors",
+    "version": "3.6.0-r5",
+    "license": "LGPL-2.1-or-later AND GPL-2.0-or-later",
+    "source": "lm-sensors",
+    "url": "https://github.com/lm-sensors/lm-sensors",
+    "size": "61849"
+  },
+  {
+    "name": "lm-sensors-libs",
+    "version": "3.6.0-r5",
+    "license": "LGPL-2.1-or-later AND GPL-2.0-or-later",
+    "source": "lm-sensors",
+    "url": "https://github.com/lm-sensors/lm-sensors",
+    "size": "50912"
+  },
+  {
+    "name": "logger",
+    "version": "2.41.6-r1",
+    "license": "BSD-4-Clause-UC",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "31224"
+  },
+  {
+    "name": "losetup",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "59632"
+  },
+  {
+    "name": "lsblk",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "124976"
+  },
+  {
+    "name": "lscpu",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "88112"
+  },
+  {
+    "name": "lsof",
+    "version": "4.99.5-r0",
+    "license": "custom",
+    "source": "lsof",
+    "url": "https://github.com/lsof-org/lsof",
+    "size": "265728"
+  },
+  {
+    "name": "lua5.1",
+    "version": "5.1.5-r13",
+    "license": "MIT",
+    "source": "lua5.1",
+    "url": "https://www.lua.org/",
+    "size": "114424"
+  },
+  {
+    "name": "lua5.1-libs",
+    "version": "5.1.5-r13",
+    "license": "MIT",
+    "source": "lua5.1",
+    "url": "https://www.lua.org/",
+    "size": "150114"
+  },
+  {
+    "name": "lua5.1-lpeg",
+    "version": "1.1.0-r0",
+    "license": "MIT",
+    "source": "lua-lpeg",
+    "url": "http://www.inf.puc-rio.br/~roberto/lpeg",
+    "size": "53781"
+  },
+  {
+    "name": "lua5.4-libs",
+    "version": "5.4.8-r0",
+    "license": "MIT",
+    "source": "lua5.4",
+    "url": "https://www.lua.org/",
+    "size": "219769"
+  },
+  {
+    "name": "luajit",
+    "version": "2.1_p20240815-r1",
+    "license": "MIT",
+    "source": "luajit",
+    "url": "https://github.com/openresty/luajit2",
+    "size": "1419228"
+  },
+  {
+    "name": "lvm2",
+    "version": "2.03.35-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later AND BSD-2-Clause",
+    "source": "lvm2",
+    "url": "https://sourceware.org/lvm2/",
+    "size": "2364403"
+  },
+  {
+    "name": "lvm2-libs",
+    "version": "2.03.35-r0",
+    "license": "GPL-2.0-or-later AND LGPL-2.1-or-later AND BSD-2-Clause",
+    "source": "lvm2",
+    "url": "https://sourceware.org/lvm2/",
+    "size": "2215336"
+  },
+  {
+    "name": "lz4-libs",
+    "version": "1.10.0-r0",
+    "license": "BSD-2-Clause AND GPL-2.0-or-later",
+    "source": "lz4",
+    "url": "https://github.com/lz4/lz4",
+    "size": "169664"
+  },
+  {
+    "name": "lzo",
+    "version": "2.10-r5",
+    "license": "GPL-2.0-or-later",
+    "source": "lzo",
+    "url": "https://www.oberhumer.com/opensource/lzo",
+    "size": "222912"
+  },
+  {
+    "name": "mcookie",
+    "version": "2.41.6-r1",
+    "license": "Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "18392"
+  },
+  {
+    "name": "mdadm",
+    "version": "4.3-r2",
+    "license": "GPL-2.0-only",
+    "source": "mdadm",
+    "url": "https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm",
+    "size": "883527"
+  },
+  {
+    "name": "mdadm-udev",
+    "version": "4.3-r2",
+    "license": "GPL-2.0-only",
+    "source": "mdadm",
+    "url": "https://raid.wiki.kernel.org/index.php/A_guide_to_mdadm",
+    "size": "5645"
+  },
+  {
+    "name": "mdev-conf",
+    "version": "4.9-r0",
+    "license": "MIT",
+    "source": "mdev-conf",
+    "url": "https://gitlab.alpinelinux.org/alpine/mdev-conf",
+    "size": "9645"
+  },
+  {
+    "name": "memtester",
+    "version": "4.7.1-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "memtester",
+    "url": "https://pyropus.ca/software/memtester/",
+    "size": "26760"
+  },
+  {
+    "name": "mkinitfs",
+    "version": "3.13.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "mkinitfs",
+    "url": "https://gitlab.alpinelinux.org/alpine/mkinitfs",
+    "size": "80770"
+  },
+  {
+    "name": "mount",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "38960"
+  },
+  {
+    "name": "mpdecimal",
+    "version": "4.0.1-r0",
+    "license": "BSD-2-Clause",
+    "source": "mpdecimal",
+    "url": "https://www.bytereef.org/mpdecimal/index.html",
+    "size": "196552"
+  },
+  {
+    "name": "mtr",
+    "version": "0.96-r0",
+    "license": "GPL-2.0-only",
+    "source": "mtr",
+    "url": "https://www.bitwizard.nl/mtr/",
+    "size": "118688"
+  },
+  {
+    "name": "musl",
+    "version": "1.2.5-r23",
+    "license": "MIT",
+    "source": "musl",
+    "url": "https://musl.libc.org/",
+    "size": "666216"
+  },
+  {
+    "name": "musl-fts",
+    "version": "1.2.7-r7",
+    "license": "BSD-3-Clause",
+    "source": "musl-fts",
+    "url": "https://github.com/void-linux/musl-fts/",
+    "size": "22272"
+  },
+  {
+    "name": "ncdu",
+    "version": "1.22-r0",
+    "license": "MIT",
+    "source": "ncdu",
+    "url": "https://dev.yorhel.nl/ncdu",
+    "size": "71880"
+  },
+  {
+    "name": "ncurses-terminfo-base",
+    "version": "6.5_p20251123-r0",
+    "license": "X11",
+    "source": "ncurses",
+    "url": "https://invisible-island.net/ncurses/",
+    "size": "101351"
+  },
+  {
+    "name": "neovim",
+    "version": "0.11.7-r0",
+    "license": "Apache-2.0 AND Vim",
+    "source": "neovim",
+    "url": "https://neovim.io/",
+    "size": "19600415"
+  },
+  {
+    "name": "nettle",
+    "version": "3.10.2-r0",
+    "license": "GPL-2.0-or-later OR LGPL-3.0-or-later",
+    "source": "nettle",
+    "url": "https://www.lysator.liu.se/~nisse/nettle/",
+    "size": "597872"
+  },
+  {
+    "name": "nghttp2-libs",
+    "version": "1.69.0-r0",
+    "license": "MIT",
+    "source": "nghttp2",
+    "url": "https://nghttp2.org",
+    "size": "132896"
+  },
+  {
+    "name": "nmap",
+    "version": "7.97-r0",
+    "license": "custom",
+    "source": "nmap",
+    "url": "https://nmap.org",
+    "size": "13214602"
+  },
+  {
+    "name": "ntfs-3g",
+    "version": "2026.2.25-r0",
+    "license": "GPL-2.0-only",
+    "source": "ntfs-3g",
+    "url": "https://www.tuxera.com/company/open-source/",
+    "size": "218144"
+  },
+  {
+    "name": "ntfs-3g-libs",
+    "version": "2026.2.25-r0",
+    "license": "GPL-2.0-only",
+    "source": "ntfs-3g",
+    "url": "https://www.tuxera.com/company/open-source/",
+    "size": "276824"
+  },
+  {
+    "name": "nvme-cli",
+    "version": "2.16-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "nvme-cli",
+    "url": "https://github.com/linux-nvme/nvme-cli",
+    "size": "1259963"
+  },
+  {
+    "name": "nvme-cli-udev",
+    "version": "2.16-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "nvme-cli",
+    "url": "https://github.com/linux-nvme/nvme-cli",
+    "size": "3669"
+  },
+  {
+    "name": "oksh",
+    "version": "7.8-r0",
+    "license": "Public-Domain",
+    "source": "oksh",
+    "url": "https://github.com/ibara/oksh",
+    "size": "211496"
+  },
+  {
+    "name": "openssh-client-common",
+    "version": "10.2_p1-r0",
+    "license": "SSH-OpenSSH",
+    "source": "openssh",
+    "url": "https://www.openssh.com/portable.html",
+    "size": "2561474"
+  },
+  {
+    "name": "openssh-client-default",
+    "version": "10.2_p1-r0",
+    "license": "SSH-OpenSSH",
+    "source": "openssh",
+    "url": "https://www.openssh.com/portable.html",
+    "size": "842560"
+  },
+  {
+    "name": "openssh-keygen",
+    "version": "10.2_p1-r0",
+    "license": "SSH-OpenSSH",
+    "source": "openssh",
+    "url": "https://www.openssh.com/portable.html",
+    "size": "477480"
+  },
+  {
+    "name": "os-prober",
+    "version": "1.83-r0",
+    "license": "GPL-3.0-only",
+    "source": "os-prober",
+    "url": "https://joeyh.name/code/os-prober/",
+    "size": "58881"
+  },
+  {
+    "name": "p11-kit",
+    "version": "0.26.2-r0",
+    "license": "BSD-3-Clause",
+    "source": "p11-kit",
+    "url": "https://p11-glue.freedesktop.org/",
+    "size": "1586639"
+  },
+  {
+    "name": "partclone",
+    "version": "0.3.40-r0",
+    "license": "GPL-2.0-only",
+    "source": "partclone",
+    "url": "https://partclone.org",
+    "size": "2008224"
+  },
+  {
+    "name": "parted",
+    "version": "3.6-r2",
+    "license": "GPL-3.0-or-later",
+    "source": "parted",
+    "url": "https://www.gnu.org/software/parted/parted.html",
+    "size": "502048"
+  },
+  {
+    "name": "partx",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "51248"
+  },
+  {
+    "name": "pciutils",
+    "version": "3.14.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "pciutils",
+    "url": "http://mj.ucw.cz/pciutils.html",
+    "size": "176408"
+  },
+  {
+    "name": "pciutils-libs",
+    "version": "3.14.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "pciutils",
+    "url": "http://mj.ucw.cz/pciutils.html",
+    "size": "68440"
+  },
+  {
+    "name": "pcre2",
+    "version": "10.48-r0",
+    "license": "BSD-3-Clause",
+    "source": "pcre2",
+    "url": "https://pcre.org/",
+    "size": "798368"
+  },
+  {
+    "name": "perl",
+    "version": "5.42.2-r0",
+    "license": "Artistic-1.0-Perl OR GPL-1.0-or-later",
+    "source": "perl",
+    "url": "https://www.perl.org/",
+    "size": "40225349"
+  },
+  {
+    "name": "perl-error",
+    "version": "0.17030-r0",
+    "license": "GPL-1.0-or-later OR Artistic-1.0-Perl",
+    "source": "perl-error",
+    "url": "https://metacpan.org/release/Error",
+    "size": "33627"
+  },
+  {
+    "name": "perl-git",
+    "version": "2.52.0-r0",
+    "license": "GPL-2.0-only",
+    "source": "git",
+    "url": "https://www.git-scm.com/",
+    "size": "91984"
+  },
+  {
+    "name": "popt",
+    "version": "1.19-r4",
+    "license": "MIT",
+    "source": "popt",
+    "url": "https://github.com/rpm-software-management/popt",
+    "size": "43304"
+  },
+  {
+    "name": "py3-msgpack",
+    "version": "1.0.8-r1",
+    "license": "Apache-2.0",
+    "source": "py3-msgpack",
+    "url": "https://msgpack.org/",
+    "size": "188045"
+  },
+  {
+    "name": "py3-msgpack-pyc",
+    "version": "1.0.8-r1",
+    "license": "Apache-2.0",
+    "source": "py3-msgpack",
+    "url": "https://msgpack.org/",
+    "size": "53815"
+  },
+  {
+    "name": "py3-packaging",
+    "version": "25.0-r0",
+    "license": "Apache-2.0 AND BSD-2-Clause",
+    "source": "py3-packaging",
+    "url": "https://pypi.org/project/packaging",
+    "size": "238344"
+  },
+  {
+    "name": "py3-packaging-pyc",
+    "version": "25.0-r0",
+    "license": "Apache-2.0 AND BSD-2-Clause",
+    "source": "py3-packaging",
+    "url": "https://pypi.org/project/packaging",
+    "size": "231007"
+  },
+  {
+    "name": "py3-parsing",
+    "version": "3.2.5-r0",
+    "license": "MIT",
+    "source": "py3-parsing",
+    "url": "https://github.com/pyparsing/pyparsing",
+    "size": "435145"
+  },
+  {
+    "name": "py3-parsing-pyc",
+    "version": "3.2.5-r0",
+    "license": "MIT",
+    "source": "py3-parsing",
+    "url": "https://github.com/pyparsing/pyparsing",
+    "size": "502297"
+  },
+  {
+    "name": "pyc",
+    "version": "3.12.14-r0",
+    "license": "PSF-2.0",
+    "source": "python3",
+    "url": "https://www.python.org/",
+    "size": "0"
+  },
+  {
+    "name": "python3",
+    "version": "3.12.14-r0",
+    "license": "PSF-2.0",
+    "source": "python3",
+    "url": "https://www.python.org/",
+    "size": "24009437"
+  },
+  {
+    "name": "python3-pyc",
+    "version": "3.12.14-r0",
+    "license": "PSF-2.0",
+    "source": "python3",
+    "url": "https://www.python.org/",
+    "size": "0"
+  },
+  {
+    "name": "python3-pycache-pyc0",
+    "version": "3.12.14-r0",
+    "license": "PSF-2.0",
+    "source": "python3",
+    "url": "https://www.python.org/",
+    "size": "10765413"
+  },
+  {
+    "name": "rclone",
+    "version": "1.72.1-r4",
+    "license": "MIT",
+    "source": "rclone",
+    "url": "https://rclone.org/",
+    "size": "105040120"
+  },
+  {
+    "name": "readline",
+    "version": "8.3.1-r0",
+    "license": "GPL-3.0-or-later",
+    "source": "readline",
+    "url": "https://tiswww.cwru.edu/php/chet/readline/rltop.html",
+    "size": "299476"
+  },
+  {
+    "name": "restic",
+    "version": "0.18.1-r7",
+    "license": "BSD-2-Clause",
+    "source": "restic",
+    "url": "https://restic.net/",
+    "size": "48080392"
+  },
+  {
+    "name": "ripgrep",
+    "version": "15.1.0-r0",
+    "license": "MIT OR Unlicense",
+    "source": "ripgrep",
+    "url": "https://github.com/BurntSushi/ripgrep",
+    "size": "3394136"
+  },
+  {
+    "name": "rsync",
+    "version": "3.5.0-r0",
+    "license": "GPL-3.0-or-later",
+    "source": "rsync",
+    "url": "https://rsync.samba.org/",
+    "size": "441865"
+  },
+  {
+    "name": "runuser",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "47152"
+  },
+  {
+    "name": "scanelf",
+    "version": "1.3.8-r2",
+    "license": "GPL-2.0-only",
+    "source": "pax-utils",
+    "url": "https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities",
+    "size": "67504"
+  },
+  {
+    "name": "setarch",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "18608"
+  },
+  {
+    "name": "setpriv",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "34712"
+  },
+  {
+    "name": "sfdisk",
+    "version": "2.41.6-r1",
+    "license": "GPL-1.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "84016"
+  },
+  {
+    "name": "skalibs-libs",
+    "version": "2.14.4.0-r0",
+    "license": "ISC",
+    "source": "skalibs",
+    "url": "https://skarnet.org/software/skalibs/",
+    "size": "195888"
+  },
+  {
+    "name": "sleuthkit",
+    "version": "4.14.0-r0",
+    "license": "custom",
+    "source": "sleuthkit",
+    "url": "http://www.sleuthkit.org/sleuthkit",
+    "size": "760708"
+  },
+  {
+    "name": "sleuthkit-libs",
+    "version": "4.14.0-r0",
+    "license": "custom",
+    "source": "sleuthkit",
+    "url": "http://www.sleuthkit.org/sleuthkit",
+    "size": "779128"
+  },
+  {
+    "name": "smartmontools",
+    "version": "7.5-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "smartmontools",
+    "url": "https://www.smartmontools.org/",
+    "size": "1608968"
+  },
+  {
+    "name": "socat",
+    "version": "1.8.1.3-r0",
+    "license": "GPL-2.0-only WITH OpenSSL-Exception",
+    "source": "socat",
+    "url": "http://www.dest-unreach.org/socat/",
+    "size": "545328"
+  },
+  {
+    "name": "sqlite-libs",
+    "version": "3.53.4-r0",
+    "license": "blessing",
+    "source": "sqlite",
+    "url": "https://www.sqlite.org/",
+    "size": "1640464"
+  },
+  {
+    "name": "ssl_client",
+    "version": "1.37.0-r30",
+    "license": "GPL-2.0-only",
+    "source": "busybox",
+    "url": "https://busybox.net/",
+    "size": "14384"
+  },
+  {
+    "name": "strace",
+    "version": "6.17-r0",
+    "license": "BSD-3-Clause",
+    "source": "strace",
+    "url": "https://strace.io",
+    "size": "1306867"
+  },
+  {
+    "name": "stress-ng",
+    "version": "0.19.03-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "stress-ng",
+    "url": "https://github.com/ColinIanKing/stress-ng",
+    "size": "5407056"
+  },
+  {
+    "name": "sysfsutils",
+    "version": "2.1.1-r3",
+    "license": "GPL-2.0-only AND LGPL-2.1-only",
+    "source": "sysfsutils",
+    "url": "https://github.com/linux-ras/sysfsutils",
+    "size": "65048"
+  },
+  {
+    "name": "tcpdump",
+    "version": "4.99.5-r1",
+    "license": "BSD-3-Clause",
+    "source": "tcpdump",
+    "url": "https://www.tcpdump.org/",
+    "size": "892840"
+  },
+  {
+    "name": "testdisk",
+    "version": "7.2-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "testdisk",
+    "url": "https://www.cgsecurity.org/wiki/TestDisk",
+    "size": "1122648"
+  },
+  {
+    "name": "tmux",
+    "version": "3.6-r0",
+    "license": "ISC",
+    "source": "tmux",
+    "url": "https://tmux.github.io",
+    "size": "824040"
+  },
+  {
+    "name": "tree-sitter",
+    "version": "0.25.10-r0",
+    "license": "MIT",
+    "source": "tree-sitter",
+    "url": "https://tree-sitter.github.io/",
+    "size": "149136"
+  },
+  {
+    "name": "tree-sitter-vimdoc",
+    "version": "4.0.0-r0",
+    "license": "Apache-2.0",
+    "source": "tree-sitter-vimdoc",
+    "url": "https://github.com/neovim/tree-sitter-vimdoc/",
+    "size": "174984"
+  },
+  {
+    "name": "ttyd",
+    "version": "1.7.7-r0",
+    "license": "MIT",
+    "source": "ttyd",
+    "url": "https://tsl0922.github.io/ttyd",
+    "size": "235080"
+  },
+  {
+    "name": "udev-init-scripts",
+    "version": "35-r1",
+    "license": "GPL-2.0-only",
+    "source": "udev-init-scripts",
+    "url": "https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-fs/udev-init-scripts",
+    "size": "0"
+  },
+  {
+    "name": "umount",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "30768"
+  },
+  {
+    "name": "unibilium",
+    "version": "2.1.1-r1",
+    "license": "LGPL-3.0-or-later",
+    "source": "unibilium",
+    "url": "https://github.com/neovim/unibilium",
+    "size": "50880"
+  },
+  {
+    "name": "unzip",
+    "version": "6.0-r16",
+    "license": "custom",
+    "source": "unzip",
+    "url": "http://www.info-zip.org/UnZip.html",
+    "size": "250537"
+  },
+  {
+    "name": "usbutils",
+    "version": "019-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "usbutils",
+    "url": "https://linux-usb.sourceforge.net/",
+    "size": "207913"
+  },
+  {
+    "name": "userspace-rcu",
+    "version": "0.15.3-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "userspace-rcu",
+    "url": "https://liburcu.org/",
+    "size": "211112"
+  },
+  {
+    "name": "utf8proc",
+    "version": "2.10.0-r0",
+    "license": "MIT custom",
+    "source": "utf8proc",
+    "url": "https://github.com/JuliaStrings/utf8proc",
+    "size": "353904"
+  },
+  {
+    "name": "util-linux",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "1"
+  },
+  {
+    "name": "util-linux-misc",
+    "version": "2.41.6-r1",
+    "license": "GPL-3.0-or-later AND GPL-2.0-or-later AND GPL-2.0-only AND GPL-1.0-only AND LGPL-2.1-or-later AND BSD-1-Clause AND BSD-3-Clause AND BSD-4-Clause-UC AND MIT AND Public-Domain",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "2287728"
+  },
+  {
+    "name": "utmps-libs",
+    "version": "0.1.3.1-r0",
+    "license": "ISC",
+    "source": "utmps",
+    "url": "https://skarnet.org/software/utmps/",
+    "size": "18024"
+  },
+  {
+    "name": "uuidgen",
+    "version": "2.41.6-r1",
+    "license": "GPL-1.0-only",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "18480"
+  },
+  {
+    "name": "wget",
+    "version": "1.25.0-r2",
+    "license": "GPL-3.0-or-later WITH OpenSSL-Exception",
+    "source": "wget",
+    "url": "https://www.gnu.org/software/wget/wget.html",
+    "size": "417457"
+  },
+  {
+    "name": "whois",
+    "version": "5.6.5-r0",
+    "license": "GPL-2.0-or-later",
+    "source": "whois",
+    "url": "https://github.com/rfc1036/whois",
+    "size": "82172"
+  },
+  {
+    "name": "wimlib",
+    "version": "1.14.4-r1",
+    "license": "GPL-3.0-or-later",
+    "source": "wimlib",
+    "url": "https://wimlib.net/",
+    "size": "436979"
+  },
+  {
+    "name": "wipefs",
+    "version": "2.41.6-r1",
+    "license": "GPL-2.0-or-later",
+    "source": "util-linux",
+    "url": "https://git.kernel.org/cgit/utils/util-linux/util-linux.git",
+    "size": "26672"
+  },
+  {
+    "name": "xfsprogs",
+    "version": "6.17.0-r0",
+    "license": "LGPL-2.1-or-later",
+    "source": "xfsprogs",
+    "url": "https://xfs.org/index.php/Main_Page",
+    "size": "1231566"
+  },
+  {
+    "name": "xz-libs",
+    "version": "5.8.4-r0",
+    "license": "GPL-2.0-or-later AND 0BSD AND Public-Domain AND LGPL-2.1-or-later",
+    "source": "xz",
+    "url": "https://tukaani.org/xz/",
+    "size": "227192"
+  },
+  {
+    "name": "zip",
+    "version": "3.0-r13",
+    "license": "Info-ZIP",
+    "source": "zip",
+    "url": "http://www.info-zip.org/pub/infozip/Zip.html",
+    "size": "381848"
+  },
+  {
+    "name": "zlib",
+    "version": "1.3.2-r0",
+    "license": "Zlib",
+    "source": "zlib",
+    "url": "https://zlib.net/",
+    "size": "108376"
+  },
+  {
+    "name": "zstd-libs",
+    "version": "1.5.7-r2",
+    "license": "BSD-3-Clause OR GPL-2.0-or-later",
+    "source": "zstd",
+    "url": "https://facebook.github.io/zstd/",
+    "size": "710336"
+  }
+]

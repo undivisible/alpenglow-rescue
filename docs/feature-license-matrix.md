@@ -6,6 +6,8 @@ Comparison source: `crmne/omarchy-rescue` main at
 `ae903cd63a43aa609a7b5493b45647aa53a7cf73`, MIT (notice in `licenses/`).
 Baseline: official `v2026.09.30.1`, source tag commit
 `2c52ef26fb2a5b6d2f9605dd61bef96c237e6494`.
+That release source predates the explicit LICENSE file added at current main;
+the current MIT notice is preserved here. No upstream helper code is copied.
 Upstream README estimates rescue-only ~1.8 GB, full installer ~6.6 GB.
 Those are upstream estimates, not this project's measurements.
 
@@ -32,3 +34,12 @@ This is a development candidate, not a validated equivalent. `build/` retains
 the package database and exact version/license inventory. Every missing package
 or failed smoke command must be listed in the measurement report. No binaries
 or releases are published without distribution review and verified claims.
+
+Measured current status: the core ISO contains 347 signed APK packages,
+including all linux-firmware dependencies. Claude/Codex/OpenCode and Oil were
+not downloaded/built after the resource stop. The fixture and full-client smoke
+recipe is prepared but unexecuted. `foremost`, clonezilla orchestration, sbctl,
+limine repair CLI in the guest, snapper, bcachefs repair tools, kmscon, impala,
+phone handoff, mount automation and several convenience tools are not included.
+The host packager uses Limine to boot the ISO, which is distinct from shipping
+Limine repair tools inside the rescue guest. Current ISO size is over 500 MB.

@@ -8,11 +8,31 @@ bytes and interactive rescue readiness in one-quarter the baseline time. These
 are **targets, not achieved measurements**. Broad drivers, firmware and essential
 rescue tools stay in the candidate, even if the image misses the size target.
 
-See [feature and license matrix](docs/feature-license-matrix.md) for scope and
-known gaps. Build/test recipes and benchmark evidence are being developed.
+The current **partial core ISO is 1,014,913,024 bytes**. It reaches the Linux
+kernel in BIOS QEMU, but interactive rescue readiness was not established.
+AI clients and Oil are absent after a disk-headroom stop. Neither goal has
+been met. See the [measurement report](docs/measurement-report.md),
+[feature and license matrix](docs/feature-license-matrix.md), and
+[benchmark protocol](docs/benchmark-method.md).
 No authentication, host-disk repair, USB flashing, binary release, or social
 announcement is part of this development run.
 
 The Alpenglow submodule is pinned to `2214bc159355522bbebc61e8e90ca78933a8e1ac`.
 Alpenglow-derived sources and this project use MPL-2.0. Image components retain
 their own licenses; Omarchy Rescue's MIT attribution is in `licenses/`.
+
+Full build, when adequate host and container headroom is available:
+
+```sh
+git submodule update --init
+sh scripts/build-toybox.sh
+sh scripts/build.sh
+python3 scripts/test-recipes.py
+```
+
+The source submodule is unchanged. Core packaging uses Alpenglow's shared
+rootfs assembly and Limine ISO layout, signed Alpine APK bootstrap with its
+dependency solver, dinit, musl, toybox and oksh. The normal Oil bootstrap is
+not yet used. The partial host packaging recipe is `scripts/pack-core-native.sh`;
+it requires workspace-local xorriso and Limine tools described in the report.
+Never interpret that partial artifact as a complete upstream equivalent.

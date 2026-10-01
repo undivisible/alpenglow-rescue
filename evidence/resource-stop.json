@@ -1,0 +1,11 @@
+{
+  "time_utc": "2026-10-01T10:00:11.556164+00:00",
+  "source_commit": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "project_commit": "37c272e59caeec7d7d6cdd06f820ec006e814b5a",
+  "status": "stopped-before-AI-and-Oil",
+  "container_available_kib": 19780896,
+  "threshold_kib": 20971520,
+  "host_df": "Filesystem   1024-blocks      Used Available Capacity  Mounted on\n/dev/disk3s5   971298980 888000000  24680000    98%    /System/Volumes/Data\n",
+  "packages_installed": 347,
+  "rootfs_mib_reported_by_apk": 1222.1
+}

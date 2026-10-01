@@ -1,0 +1,3 @@
+build/alpenglow-rescue-core-x86_64.iso 1014913024
+build/initramfs.cpio.zst 996492127
+build/native/vmlinuz 14541824

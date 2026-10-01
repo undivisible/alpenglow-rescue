@@ -24,7 +24,11 @@ headroom
 apk --root /project/build/rootfs --arch x86_64 --initdb \
   --keys-dir /etc/apk/keys --repositories-file /etc/apk/repositories \
   add --no-cache $(sed '/^#/d;/^$/d' packages.txt)
-cp build/rootfs/boot/vmlinuz-lts build/native/vmlinuz
+if [ -f build/rootfs/boot/vmlinuz-lts ]; then
+  cp build/rootfs/boot/vmlinuz-lts build/native/vmlinuz
+else
+  test -f build/native/vmlinuz
+fi
 dinit_bin=$(find build/rootfs -type f -name dinit | head -1)
 cp "$dinit_bin" build/native/dinit
 cp build/native/toybox build/rootfs/bin/toybox
@@ -37,6 +41,7 @@ toybox_has() { /project/build/native/toybox "$1" --help >/dev/null 2>&1; }
 . "$ROOT_DIR/scripts/lib/assemble-rootfs.sh"
 assemble_rootfs_config
 printf 'root:x:0:0:root:/root:/bin/oksh\n' > build/rootfs/etc/passwd
+ln -sf /usr/bin/oksh build/rootfs/bin/oksh
 ln -sf "${dinit_bin#build/rootfs}" build/rootfs/sbin/dinit
 cp -a overlay/. build/rootfs/
 chmod 755 build/rootfs/init build/rootfs/usr/local/bin/* build/rootfs/usr/share/udhcpc/default.script
@@ -56,7 +61,6 @@ CARGO_TARGET_DIR=/project/build/oil-target CARGO_BUILD_JOBS=2 \
 cp build/oil-target/release/oil build/rootfs/usr/local/bin/oil
 mkdir -p build/rootfs/usr/share/alpenglow-rescue/fixtures
 truncate -s 16M build/rootfs/usr/share/alpenglow-rescue/fixtures/ext4.img
-mkfs_bin=/project/build/rootfs/sbin/mkfs.ext4
 chroot /project/build/rootfs /sbin/mkfs.ext4 -q -F /usr/share/alpenglow-rescue/fixtures/ext4.img
 truncate -s 128M build/rootfs/usr/share/alpenglow-rescue/fixtures/btrfs.img
 chroot /project/build/rootfs /sbin/mkfs.btrfs -q -f /usr/share/alpenglow-rescue/fixtures/btrfs.img
@@ -66,6 +70,6 @@ chroot /project/build/rootfs /usr/local/bin/rescue-smoke > build/evidence/smoke-
 apk --root build/rootfs info -vv > build/evidence/packages.txt
 cp build/rootfs/lib/apk/db/installed build/evidence/apk-installed.txt
 find build/rootfs/lib/firmware -type f | wc -l > build/evidence/firmware-file-count.txt
-cp build/rootfs/boot/config-lts build/evidence/kernel.config
+cp build/rootfs/boot/config-*-lts build/evidence/kernel.config
 headroom
 sh scripts/pack.sh
