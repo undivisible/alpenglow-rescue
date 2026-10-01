@@ -1,0 +1,4 @@
+type = process
+command = /usr/libexec/iwd
+depends-on = networking
+restart = yes

@@ -1,0 +1,18 @@
+#!/bin/oksh
+set -eu
+case "${1:-help}" in
+help|--help)
+  cat <<'EOF'
+Alpenglow Rescue development candidate
+  alpenglow-rescue inspect  read-only block-device/filesystem inventory
+  iwctl                    Wi-Fi configuration (requires hardware)
+  cryptsetup --help        LUKS tools
+  btrfs --help             Btrfs rescue tools
+  chroot --help            run commands inside an explicitly mounted target
+  claude / codex / opencode  AI clients (authentication is manual)
+No target disks are mounted automatically. Diagnose read-only first.
+EOF
+  ;;
+inspect) lsblk -o NAME,SIZE,TYPE,FSTYPE,LABEL,UUID,MOUNTPOINTS; blkid ;;
+*) echo 'Use: alpenglow-rescue [help|inspect]' >&2; exit 2 ;;
+esac

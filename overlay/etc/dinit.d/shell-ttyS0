@@ -1,0 +1,4 @@
+type = process
+command = /sbin/agetty --autologin root --login-program /usr/local/bin/rescue-console --noclear -L ttyS0 115200 vt100
+restart = yes
+depends-on = mount-filesystems

@@ -1,0 +1,13 @@
+#!/bin/toybox sh
+# Alpenglow RAM-root/dinit path, with persistent-state mounts removed for rescue.
+/bin/toybox mount -t proc proc /proc
+/bin/toybox mount -t sysfs sysfs /sys
+/bin/toybox mount -t devtmpfs devtmpfs /dev
+exec </dev/ttyS0 >/dev/ttyS0 2>&1
+/bin/toybox mount -t tmpfs -o nosuid,nodev,mode=0755 tmpfs /run
+/bin/toybox mkdir -p /dev/shm /tmp /run/user/0
+/bin/toybox mount -t tmpfs -o nosuid,nodev,mode=1777 tmpfs /tmp
+/bin/toybox mount -t tmpfs -o nosuid,nodev,mode=1777 tmpfs /dev/shm
+/bin/toybox chmod 700 /run/user/0
+echo 'Alpenglow Rescue boot'
+exec /sbin/dinit -d /etc/dinit.d -s -t boot

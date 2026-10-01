@@ -61,7 +61,7 @@ chntpw
 os-prober
 wimlib
 sleuthkit
-foremost
+# foremost is unavailable in Alpine 3.23; see feature gap report.
 rclone
 restic
 borgbackup

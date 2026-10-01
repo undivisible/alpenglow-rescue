@@ -1,0 +1,4 @@
+#!/bin/oksh
+export HOME=/root TERM=xterm-256color PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+printf '\nAlpenglow Rescue: local console, no target disks mounted.\n'
+exec tmux -u new-session -A -s rescue /bin/oksh -l

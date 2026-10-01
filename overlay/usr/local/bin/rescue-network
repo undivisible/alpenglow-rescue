@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+mkdir -p /run/udev /run/dbus
+udevd --daemon
+udevadm trigger --action=add
+udevadm settle --timeout=10
+ip link set lo up
+for dev in /sys/class/net/*; do
+  iface=${dev##*/}
+  [ "$iface" != lo ] || continue
+  [ ! -d "$dev/wireless" ] || continue
+  ip link set "$iface" up
+  udhcpc -i "$iface" -q -n -t 3 -T 2 -s /usr/share/udhcpc/default.script && break
+done
+dbus-daemon --system

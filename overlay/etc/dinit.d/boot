@@ -1,0 +1,5 @@
+type = internal
+depends-on = shell-ttyS0
+depends-on = shell-tty1
+waits-for = networking
+waits-for = iwd
