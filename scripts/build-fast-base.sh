@@ -5,6 +5,7 @@ set -eu
 cd "$(dirname "$0")/.."
 fast_min_kib=37748736
 if [ "${ALPENGLOW_BOUNDED_FAST:-0}" = 1 ]; then fast_min_kib=33030144; fi
+if [ "${ALPENGLOW_FAST_CONTINUATION:-0}" = 1 ]; then fast_min_kib=22020096; fi
 [ "$(df -Pk . | awk 'END {print $4}')" -ge "$fast_min_kib" ] || { echo 'Stop: need 30 GiB floor plus 6 GiB build allowance' >&2; exit 1; }
 ZIG=${ZIG:-/opt/homebrew/Cellar/zig/0.16.0_1/bin/zig}
 [ -x "$ZIG" ] || { echo 'Need a compatible Zig 0.16 compiler for the pinned fast init' >&2; exit 1; }

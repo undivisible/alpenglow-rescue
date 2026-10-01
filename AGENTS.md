@@ -15,3 +15,9 @@ The specifically authorized 2026-10-01 native fast-base run has a 6 GiB
 temporary budget and a 30 GiB hard disk floor (early stop at 31.5 GiB).
 This exception does not authorize the full rescue build or publication of
 images/benchmarks. Keep other build recipes at the default reserve.
+
+The later explicitly authorized continuation of that cached native fast base
+uses a 20 GiB hard floor on both host and Docker, a 21 GiB early stop, and a
+4 GiB additional-allocation cap from its new continuation checkpoint. Preserve
+earlier monitoring controls and the existing kernel objects. This exception
+permits only kernel completion and native base boot proof, not full rescue.

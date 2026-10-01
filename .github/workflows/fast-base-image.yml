@@ -1,0 +1,54 @@
+name: Native fast-base image
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: native-fast-base-image
+  cancel-in-progress: false
+jobs:
+  image:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    env:
+      CARGO_BUILD_JOBS: '2'
+      MAKEFLAGS: -j2
+      ALPENGLOW_FAST_CONTINUATION: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          submodules: true
+          persist-credentials: false
+      - name: Install official build tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq cpio lz4 xorriso xz-utils build-essential curl python3
+          mkdir -p build/ci/zig
+          curl -fsSL https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz -o build/ci/zig.tar.xz
+          printf '%s\n' '70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00  build/ci/zig.tar.xz' | sha256sum -c -
+          tar -xf build/ci/zig.tar.xz -C build/ci/zig --strip-components=1
+          echo "ZIG=$PWD/build/ci/zig/zig" >> "$GITHUB_ENV"
+          docker pull alpine@sha256:ce64758a109eb420d874a118f87920e625e12d3634e03b4a5573fd9f6e5d3507
+          docker pull debian@sha256:3783cc01769c7b2b1b83a5c5ad96c815348e28ed7da68e2e3687004faa906251
+      - name: Validate source and guarded recipe
+        run: |
+          python3 scripts/prepare-fast-base.py --check
+          python3 scripts/test-fast-monitor.py
+          python3 scripts/prepare-fast-base.py
+      - name: Build native base and proof ISO with two jobs
+        run: python3 scripts/resume-fast-base.py --stage ci-fast-base -- sh scripts/build-ci-fast-base.sh
+      - name: Upload exact proof image and provenance
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: native-fast-base-x86_64
+          path: build/ci/output/*
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload bounded build evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: native-fast-base-build-evidence
+          path: build/evidence/*
+          if-no-files-found: ignore
+          retention-days: 14

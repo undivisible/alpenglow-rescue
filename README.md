@@ -8,7 +8,7 @@ bytes and interactive rescue readiness in one-quarter the baseline time. These
 are **targets, not achieved measurements**. Broad drivers, firmware and essential
 rescue tools stay in the candidate, even if the image misses the size target.
 
-The current **partial core ISO is 1,014,913,024 bytes**. It reaches the Linux
+The historical **partial core ISO is 1,014,913,024 bytes**. It reaches the Linux
 kernel in BIOS QEMU, but interactive rescue readiness was not established.
 AI clients and Oil are absent after a disk-headroom stop. Neither goal has
 been met. See the [measurement report](docs/measurement-report.md),
@@ -52,12 +52,20 @@ records essential driver restoration, installed-size proxies and the original
 40 GiB-reserve plan. A later exception permits only this 6 GiB fast-base run
 with a monitored 30 GiB floor; the complete rescue build remains deferred.
 
-Native compilation remains paused after a disk-supervisor repair. At the
-latest scoped-cleanup checkpoint, host free space was 31.47 GiB and Docker's
-separate overlay filesystem had 26.89 GiB. The guards require 30 GiB on both,
-plus capacity for the remaining bounded build. Removing only the replaced
-Alpine 3.23 toolchain recovered too little space; no attributable task build
-cache or stopped containers remain. Kernel objects and both ISOs are preserved.
-See [the exact cleanup and capacity evidence](evidence/scoped-docker-cleanup-20261001.json).
-No native boot readiness result exists yet. The supervisor tolerates
-disappearing compiler temporary files and stops owned jobs on unexpected errors.
+The local cached compile was stopped when the user requested a GitHub-built
+image as the primary test artifact. A later bounded continuation permits a
+20 GiB floor on host and Docker, with a 4 GiB additional-allocation cap and
+two build jobs; earlier disk and cleanup checkpoints remain preserved.
+
+The upstream GitHub artifact `alpenglow-potato-x86_64` from run `35064440253`
+was downloaded and its archive digest and ISO checksum verified. Its source
+is `373c29c2cbb992e93175c4eea227c228a12a05dd`, distinct from our pinned base.
+The **28,856,320-byte ISO** reached a BIOS serial login prompt in QEMU, but
+login failed because the root shell field is `/bin/toybox sh`. It has no
+rescue tools, AI clients or Oil, so its small size is not rescue equivalence.
+
+The manual `Native fast-base image` workflow builds our pinned native recipe
+with the `/bin/sh` correction, verified official toolchains and kernel archive,
+and produces a proof ISO plus exact provenance. It uploads Actions artifacts;
+it does not create a release. Boot/readiness results for that corrected image
+remain pending. The supervisor stops owned jobs on errors or capacity limits.

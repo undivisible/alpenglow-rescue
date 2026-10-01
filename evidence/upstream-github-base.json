@@ -1,0 +1,86 @@
+{
+  "repository": "tschk/alpenglow",
+  "run_id": 35064440253,
+  "run_url": "https://github.com/tschk/alpenglow/actions/runs/35064440253",
+  "overall_run_conclusion": "failure; aarch64 desktop job failed; x86_64 potato job succeeded",
+  "artifact_id": 10433897762,
+  "artifact_name": "alpenglow-potato-x86_64",
+  "artifact_bytes": 29795610,
+  "artifact_digest": "sha256:191b5ccb3b708fac51064ddc21c7fba564b9e7048a07386a72cb03015b4b51d9",
+  "verified_archive_sha256": "191b5ccb3b708fac51064ddc21c7fba564b9e7048a07386a72cb03015b4b51d9",
+  "artifact_source_sha": "373c29c2cbb992e93175c4eea227c228a12a05dd",
+  "project_pinned_alpenglow_sha": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "image_name": "alpenglow-v0.1.640-potato-x86_64.iso",
+  "image_bytes": 28856320,
+  "image_sha256": "58119c0bd0a41485b2127713c6191489388ce0429a0822322ee9887a7cb58629",
+  "image_checksum_verified": true,
+  "kernel_version_from_serial": "7.1.3",
+  "initramfs_magic": "Zstandard compressed; filename ends in .gz",
+  "content_inspection": {
+    "etc/passwd": {
+      "bytes": 84,
+      "sha256": "755f829686ae23d108016a7e601ddde4e757f644fdaf2abc763542c8e48f4f1e",
+      "text": "root:x:0:0:root:/root:/bin/toybox sh\nseatd:x:772:772:seatd:/var/empty:/sbin/nologin\n"
+    },
+    "etc/dinit.d/boot": {
+      "bytes": 105,
+      "sha256": "a96fed59678e80641a6c244b33c1f2b283b908949cabd613554c9ac48e664513",
+      "text": "type = scripted\ncommand = /bin/true\nrestart = no\ndepends-on = shell-ttyS0\ndepends-on = mount-filesystems\n"
+    },
+    "etc/dinit.d/shell-ttyS0": {
+      "bytes": 110,
+      "sha256": "92ecb3574e951a7d9029bec8ea83505e2616fc2427a39336d0b8cb3dd5cb1308",
+      "text": "type = process\ncommand = /bin/toybox getty -L 115200 ttyS0 vt100\nrestart = yes\ndepends-on = mount-filesystems\n"
+    },
+    "etc/dinit.d/mount-filesystems": {
+      "bytes": 245,
+      "sha256": "f097ff184ef43cdccf93c30e81b89e2916c027c8914173672df558ac417a3232",
+      "text": "type = scripted\ncommand = /bin/toybox sh -c \"/bin/toybox mount -t proc proc /proc; /bin/toybox mount -t sysfs sysfs /sys; /bin/toybox mount -t devtmpfs devtmpfs /dev; /bin/toybox mount -t tmpfs -o nosuid,nodev,mode=0755 tmpfs /run\"\nrestart = no\n"
+    },
+    "init": {
+      "bytes": 4912,
+      "sha256": "9158381585d2426cd214d7faf105c8b517024c9e5b7e06d19f986055dec8b4cc",
+      "magic_hex": "7f454c46"
+    }
+  },
+  "cold_run": {
+    "run": 1,
+    "command": [
+      "qemu-system-x86_64",
+      "-machine",
+      "q35,accel=tcg",
+      "-cpu",
+      "max",
+      "-m",
+      "4096",
+      "-smp",
+      "2",
+      "-display",
+      "none",
+      "-serial",
+      "stdio",
+      "-monitor",
+      "none",
+      "-no-reboot",
+      "-nic",
+      "none",
+      "-drive",
+      "file=workspace/alpenglow-v0.1.640-potato-x86_64.iso,media=cdrom,format=raw,readonly=on",
+      "-boot",
+      "order=d"
+    ],
+    "markers_seconds": {
+      "boot": 6.792686375003541,
+      "login": 6.889900125010172
+    },
+    "probe_attempts": 13,
+    "rescue_ready_seconds": null,
+    "network_ready_seconds": null,
+    "artifact_bytes": 28856320,
+    "artifact_sha256": "58119c0bd0a41485b2127713c6191489388ce0429a0822322ee9887a7cb58629",
+    "scope": "untouched ISO boot; BIOS console command proof only; network disabled; no full rescue comparison"
+  },
+  "failure_evidence": "login: exec shell '/bin/toybox sh': No such file or directory",
+  "missing_features": "Rescue tools, restored storage/WiFi drivers, firmware coverage, tmux, Oil, AI clients and rescue/phone workflows absent.",
+  "claim_limits": "Login prompt is not interactive readiness. No full rescue size or speed equivalence, network/UEFI readiness or baseline ratio claimed."
+}
