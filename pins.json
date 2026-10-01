@@ -1,0 +1,23 @@
+{
+  "alpenglow": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "alpine_image": "alpine:3.23@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0",
+  "toybox": "0.8.11",
+  "baseline": {
+    "tag": "v2026.09.30.1",
+    "commit": "2c52ef26fb2a5b6d2f9605dd61bef96c237e6494",
+    "iso_bytes": 1954578432,
+    "sha256": "b812a848e93bc5526094a8165fba8564e9211a7e86859faba2fd525b6bcd82f1"
+  },
+  "claude": {
+    "version": "2.1.286",
+    "license": "SEE LICENSE IN README.md"
+  },
+  "codex": {
+    "version": "0.159.3",
+    "license": "Apache-2.0"
+  },
+  "opencode": {
+    "version": "1.18.34",
+    "license": "MIT"
+  }
+}
