@@ -1,0 +1,52 @@
+{
+  "at_utc": "2026-10-01T12:26:09.427261+00:00",
+  "action": "Removed only superseded Alpine 3.23 task dependency through ordinary scoped Docker image removal.",
+  "removed_digest": "sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0",
+  "docker_reported_unique_size_before": "13.99 MB (rounded CLI report; not a measured compressed image or exact physical allocation)",
+  "docker_free_before_bytes": 28854714368,
+  "docker_free_after_bytes": 28867702784,
+  "docker_observed_free_increase_bytes": 12988416,
+  "host_free_before_bytes": 33811914752,
+  "host_free_after_bytes": 33790484480,
+  "attribution_note": "Docker delta observed immediately around removal. Host space changed concurrently; do not attribute its delta to this cleanup.",
+  "cache_records_inspected": 458,
+  "attributable_build_cache_records": 0,
+  "remaining_task_containers": [],
+  "task_volumes": [],
+  "other_resources_removed": [],
+  "preserved_native_tree_allocated_bytes": 2078826496,
+  "preserved_kernel_object_count": 993,
+  "preserved_native_artifacts": {
+    "toybox": {
+      "bytes": 857544,
+      "sha256": "adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+    },
+    "dinit": {
+      "bytes": 1727824,
+      "sha256": "977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+    },
+    "alpenglow-init": {
+      "bytes": 4920,
+      "sha256": "f9b54f4f7735ba96fb834a83f8b395859d1e0cb44911773dd955d0e0be908950"
+    },
+    "initramfs.cpio.lz4": {
+      "bytes": 1289689,
+      "sha256": "b1086b6e56d4b12a6877dced1ea705e0db6ef46c5aecea97225e03ce9136a454"
+    }
+  },
+  "preserved_iso_sha256": {
+    "partial_core": "6fe574f213acaccbc8eb99ef2387e1dbeedbb512bcd0a1b3a04cfac14fb2f528",
+    "official_baseline": "b812a848e93bc5526094a8165fba8564e9211a7e86859faba2fd525b6bcd82f1"
+  },
+  "floor_bytes": 32212254720,
+  "additional_docker_bytes_for_hard_floor_only": 3344551936,
+  "additional_host_bytes_for_hard_floor_only": 0,
+  "remaining_allowance_upper_bound_bytes": 4363624448,
+  "remaining_allowance_basis": "Conservative capacity allowance: original 6 GiB less retained native-tree allocation. This is not an estimate of exact remaining compile usage and does not subtract shared/toolchain storage.",
+  "docker_minimum_free_with_remaining_allowance_bytes": 36575879168,
+  "additional_docker_bytes_with_remaining_allowance": 7708176384,
+  "host_minimum_free_with_allowance_and_unchanged_observed_volume_guard_bytes": 39188283392,
+  "additional_host_bytes_with_allowance_and_unchanged_observed_volume_guard": 5397798912,
+  "guard_note": "Existing monitor observes shared host-volume growth from its original start; do not reset it to erase growth. Kernel jobs remain stopped because Docker is below 30 GiB and host is below the 31.5 GiB early-stop threshold.",
+  "status": "blocked; no native boot or readiness result"
+}

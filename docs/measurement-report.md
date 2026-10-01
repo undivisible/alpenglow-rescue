@@ -148,3 +148,26 @@ regression tests pass. Cached compilation is preserved. A subsequent entry
 check found Docker overlay free space below its current 30 GiB guard even
 though host free space remains above 30 GiB; no unmonitored job remains.
 No native readiness time or new ISO is claimed.
+
+## Scoped Docker cleanup follow-up
+
+The follow-up inspected 458 BuildKit cache records, the task's container and
+volume labels, and the pinned toolchain images. No cache records were
+attributable to this task or its prototype. Build containers used `--rm` and
+their writable layers are already absent. The superseded Alpine 3.23 image
+had no container references and was removed by its sole repository tag after
+checking its exact digest. Current toolchains and unrelated resources stayed.
+
+Docker reported 13.99 MB unique image storage before removal. Immediately
+observed Docker free space increased by 12,988,416 bytes, to 28,867,702,784
+bytes (26.89 GiB). Host free space measured 33,790,484,480 bytes (31.47 GiB);
+shared activity prevents attributing its decrease to this cleanup. Both ISO
+hashes were rechecked and match the earlier measurements. Native kernel
+objects, source and smaller artifacts are preserved.
+
+Docker needs 3,344,551,936 additional bytes just to reach the 30 GiB hard
+floor. That alone does not cover remaining work. The exact conservative
+remaining allowance and the unchanged monitor's shared-volume growth limit
+are recorded in `evidence/scoped-docker-cleanup-20261001.json`. The build
+was not resumed. No disk expansion, global prune, other-task cleanup or
+Docker security configuration change occurred.

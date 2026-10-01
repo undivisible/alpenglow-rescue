@@ -52,8 +52,12 @@ records essential driver restoration, installed-size proxies and the original
 40 GiB-reserve plan. A later exception permits only this 6 GiB fast-base run
 with a monitored 30 GiB floor; the complete rescue build remains deferred.
 
-Native compilation is currently paused after a disk-supervisor repair: the
-host has about 33.4 GiB free, while Docker's separate overlay filesystem has
-about 28.5 GiB. The current guards require 30 GiB on both. No native boot
-readiness result exists yet. The supervisor now tolerates disappearing
-compiler temporary files and stops owned jobs on unexpected errors.
+Native compilation remains paused after a disk-supervisor repair. At the
+latest scoped-cleanup checkpoint, host free space was 31.47 GiB and Docker's
+separate overlay filesystem had 26.89 GiB. The guards require 30 GiB on both,
+plus capacity for the remaining bounded build. Removing only the replaced
+Alpine 3.23 toolchain recovered too little space; no attributable task build
+cache or stopped containers remain. Kernel objects and both ISOs are preserved.
+See [the exact cleanup and capacity evidence](evidence/scoped-docker-cleanup-20261001.json).
+No native boot readiness result exists yet. The supervisor tolerates
+disappearing compiler temporary files and stops owned jobs on unexpected errors.
