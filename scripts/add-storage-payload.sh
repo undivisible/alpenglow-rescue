@@ -28,6 +28,7 @@ for dir in bin sbin lib usr; do
 done
 for applet in login getty; do ln -snf /bin/toybox "/out/rootfs/bin/$applet"; done
 ln -snf /usr/bin/oksh /out/rootfs/bin/sh
+for applet in uname chroot readlink; do ln -snf /bin/toybox "/out/rootfs/bin/$applet"; done
 cp -a /out/storage-payload/etc/terminfo /out/rootfs/etc/
 printf '%s\n' 'export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' > /out/rootfs/etc/profile
 ln -snf /bin/toybox /out/rootfs/sbin/getty

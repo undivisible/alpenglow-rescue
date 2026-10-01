@@ -5,6 +5,8 @@ export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin TERM=vt100
 case " $(cat /proc/cmdline) " in *' alpenglow.test-fixtures=1 '*) ;; *) echo 'Synthetic fixture VM required' >&2; exit 1;; esac
 test "$(uname -r)" = 7.1.3
 test "$(cat /proc/1/comm)" = dinit
+test "$(readlink /bin/sh)" = /usr/bin/oksh
+/bin/toybox chroot --help
 for tool in lsblk blkid mount umount chroot e2fsck btrfs xfs_repair fsck.fat fsck.exfat ntfsfix \
   cryptsetup lvm mdadm parted sgdisk modprobe ddrescue testdisk smartctl nvme tmux oksh; do
   command -v "$tool" >/dev/null

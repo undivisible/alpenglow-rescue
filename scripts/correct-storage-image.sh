@@ -32,6 +32,9 @@ docker run --rm --cpus=2 --memory=128m --pids-limit=128 \
   '
 tar -xf build/correction/terminfo.tar -C build/correction/root/etc
 ln -s /usr/bin/oksh build/correction/root/bin/sh
+for applet in uname chroot readlink; do
+  ln -s /bin/toybox "build/correction/root/bin/$applet"
+done
 printf '%s\n' 'export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' > build/correction/root/etc/profile
 cp scripts/smoke-storage.sh build/correction/root/usr/local/bin/rescue-smoke-storage
 chmod 755 build/correction/root/usr/local/bin/rescue-smoke-storage
