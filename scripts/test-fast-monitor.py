@@ -14,6 +14,15 @@ spec2=importlib.util.spec_from_file_location('continuation',Path(__file__).with_
 continuation=importlib.util.module_from_spec(spec2);spec2.loader.exec_module(continuation)
 
 class DiskMonitorTests(unittest.TestCase):
+    def test_live_container_missing_df_gets_fresh_immutable_probe(self):
+        def checked(args):
+            if args[1]=='ps':return 'owned-cid\n'
+            if args[1]=='inspect':return '1234\n'
+            raise AssertionError(args)
+        missing=subprocess.CalledProcessError(127,['docker','exec','owned-cid','df'])
+        with patch.object(continuation,'checked',side_effect=checked),patch.object(continuation,'docker_free',side_effect=[missing,28*1024**3]) as probe:
+            self.assertEqual(continuation.owned_usage(),(1234,28*1024**3))
+            self.assertEqual(probe.call_args_list[1].args,())
     def test_continuation_checks_both_floors_and_allocation_cap(self):
         g=1024**3
         self.assertIsNone(continuation.violation(28*g,25*g,3*g,0,0))

@@ -40,7 +40,12 @@ def owned_usage():
             available=current if available is None else min(available,current)
         except subprocess.CalledProcessError:
             # A --rm container can finish between ps, inspect and exec.
-            if cid in checked(['docker','ps','-q','--filter','label='+monitor.LABEL]).split(): raise
+            if cid in checked(['docker','ps','-q','--filter','label='+monitor.LABEL]).split():
+                # APK can temporarily replace BusyBox/df during an upgrade.
+                # A fresh immutable read-only container measures the same
+                # Docker backing filesystem; never reuse a stale reading.
+                current=docker_free()
+                available=current if available is None else min(available,current)
     return layer,available
 
 def violation(host,guest,allocation_growth,host_drop,guest_drop):
