@@ -80,7 +80,26 @@ jobs:
         run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --fixtures --runs 3 --timeout 120
       - name: Separate cold UEFI storage readiness (three runs)
         if: always() && inputs.increment == 'storage-1'
-        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --firmware uefi --fixtures --runs 3 --timeout 120
+        run: |
+          if [ -f build/ci/output/alpenglow-rescue-storage-1-x86_64.iso ] && [ -f build/fixtures/ext4.img ]; then
+            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --firmware uefi --fixtures --runs 3 --timeout 120
+          else
+            echo 'UEFI storage test not run: image or fixtures absent. Previous-base diagnosis retained.'
+          fi
+      - name: Preserve compiled native recovery bundle
+        if: always() && inputs.increment == 'storage-1'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-storage-1-recovery-bundle
+          path: |
+            build/fast-source/build/native/vmlinuz
+            build/fast-source/build/native/initramfs.cpio.lz4
+            build/fast-source/build/native/alpenglow-init
+            build/fast-source/build/native/toybox
+            build/fast-source/build/native/dinit
+            build/fast-source/build/native/storage-evidence/*
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Upload BIOS and UEFI test evidence
         if: always() && inputs.increment == 'storage-1'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

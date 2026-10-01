@@ -23,13 +23,20 @@ report={'scope':'Signed Alpine v3.23 package solution for storage-1; native kern
         'packages':packages,'licenses_without_metadata':[p['name'] for p in packages if not p['license']],
         'kernel_config_sha256':hashlib.sha256((evidence/'kernel.config').read_bytes()).hexdigest(),
         'source_repository_caveat':'First resolution uses the official v3.23 indexes at build time. Exact versions/build commits recorded; source archiving/distribution audit required before a final release.'}
-(evidence/'package-license-inventory.json').write_text(json.dumps(report,indent=2)+'\n')
-(evidence/'packages.lock').write_text(''.join(f"{p['name']}={p['version']}\n" for p in packages))
 output=root/'build/ci/output';output.mkdir(parents=True,exist_ok=True)
-for name in ['package-license-inventory.json','kernel.config','apk-installed.txt','packages.lock','native-core.sha256','repositories.txt']:
+report_text=json.dumps(report,indent=2)+'\n'
+# Container output is readable but owned by root. Generate new files in the
+# runner-owned packaging directory; never require writing into container dirs.
+(output/'package-license-inventory.json').write_text(report_text)
+(output/'packages.lock').write_text(''.join(f"{p['name']}={p['version']}\n" for p in packages))
+for name in ['kernel.config','apk-installed.txt','native-core.sha256','repositories.txt']:
     (output/name).write_bytes((evidence/name).read_bytes())
 iso=root/'build/ci/iso-root';iso.mkdir(parents=True,exist_ok=True)
-(iso/'PACKAGE-LICENSES.json').write_bytes((evidence/'package-license-inventory.json').read_bytes())
+(iso/'PACKAGE-LICENSES.json').write_text(report_text)
+small=root/'build/evidence'
+for path in output.iterdir():
+    if path.is_file() and path.suffix not in ('.iso',):
+        (small/('storage-'+path.name)).write_bytes(path.read_bytes())
 # Keep the actual license texts shipped by the pinned native source archives.
 licenses=iso/'licenses';licenses.mkdir(exist_ok=True)
 for name,source in [('linux-COPYING',native/'linux-7.1.3/COPYING'),
