@@ -1,0 +1,11 @@
+{
+  "repo": "undivisible/alpenglow-rescue",
+  "commit": "48d7e10c069e0d23a38fb6ef78ca025f53aa99e4",
+  "sha256": "21a530d0bc6ff510ff1d7d1e6576e3ed7e9ac2f3155cc14a3894dc3782abc45a",
+  "matches_local_committed_readme": true,
+  "discloses_partial_core": true,
+  "discloses_apk_bootstrap": true,
+  "discloses_oil_and_ai_absent": true,
+  "under500_or_4x_claim": false,
+  "needed_correction": "Explicitly state Alpine LTS and shell init rather than actual FAST custom kernel/Zig init; corrected local README and provenance report await direct source-push approval."
+}

@@ -37,13 +37,26 @@ for name in paths:
     assert '$(nproc)' not in text and '-T0' not in text
     assert '--cpus=2' in text and '41943040' in text
     subprocess.run(['sh', '-n'], input=text, text=True, check=True)
+    original = (source / name).read_text()
+    if name == paths[0]:
+        for begin, end in [('if [ "${FAST}" = "1" ]; then', 'for arg in "$@"; do'), ('# Compose rootfs', '# Oil (native package manager)')]:
+            assert original[original.index(begin):original.index(end)] == text[text.index(begin):text.index(end)]
+        assert 'KERNEL_PROFILE=fast sh' in text
+        assert 'ZIG_INIT=1' in text
+        assert 'lz4 -l -9 -c' in text
+    else:
+        assert 'CONFIG_INITRAMFS_SOURCE "/out/initramfs.cpio.lz4"' in text
+        assert 'INITRAMFS_COMPRESSION_LZ4' in text
+        begin = '# Profile-specific trimming'
+        end = 'make ARCH=x86_64 olddefconfig'
+        assert original[original.index(begin):original.index(end, original.index(begin))] == text[text.index(begin):text.index(end, text.index(begin))]
     adapted[name] = text
 
 if args.check:
     print('pinned Alpenglow fast recipe adaptation: passed (no files or build created)')
 else:
-    if shutil.disk_usage(root).free < 42 * 1024**3:
-        raise SystemExit('Stop: need 40 GiB reserve plus 2 GiB build allowance')
+    if shutil.disk_usage(root).free < 46 * 1024**3:
+        raise SystemExit('Stop: need 40 GiB reserve plus 6 GiB build allowance')
     dest = root / 'build/fast-source'
     # Reuse only our own source export; never delete another checkout or WIP.
     if dest.exists():

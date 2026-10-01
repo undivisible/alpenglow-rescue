@@ -1,0 +1,42 @@
+{
+  "reserve_bytes": 42949672960,
+  "current_free_bytes": 43417600000,
+  "tracked_source_export_logical_bytes": 17767268,
+  "existing_kernel_tree_read_only_reference": {
+    "path": "original Alpenglow build/legacy/linux-7.1",
+    "version": "7.1.0, not the required 7.1.3",
+    "du_allocated_kib": 2134892,
+    "regular_file_allocated_bytes": 2190462976,
+    "existing_object_metadata_allocated_bytes": 279953408
+  },
+  "fast_base_budget_bytes": 6442450944,
+  "full_rescue_budget_bytes": 17179869184,
+  "budget_basis": "Conservative planning allowances, not measured actual fast/rescue build peaks; no build started.",
+  "minimum_free_fast_base_bytes": 49392123904,
+  "minimum_free_full_rescue_bytes": 60129542144,
+  "additional_free_fast_base_bytes": 5974523904,
+  "additional_free_full_rescue_bytes": 16711942144,
+  "fast_base_phase_allowances_mib": {
+    "extracted_linux_source": 2304,
+    "kernel_objects_and_intermediates": 1280,
+    "container_toolchains_and_writable_layers": 1536,
+    "pinned_source_export_and_small_tool_sources": 256,
+    "download_archives": 256,
+    "kernel_and_lz4_root_artifacts": 64,
+    "contingency": 448
+  },
+  "full_rescue_additional_allowances_gib": {
+    "rescue_payload_staging": 2,
+    "client_and_package_archives": 1,
+    "Oil_Cargo_registry_and_target": 2.5,
+    "immutable_payload_and_ISO_outputs": 2,
+    "contingency_and_overlap": 2.5
+  },
+  "deferred": "No custom kernel objects, APK root install, AI payload downloads, Oil build, ISO packaging or VM start until reserve plus budget is available; measure per-phase actual size and re-budget before adding rescue modules/firmware.",
+  "last_recheck": {
+    "at_utc": "2026-10-01T10:59:58.723782+00:00",
+    "free_bytes": 42598400000,
+    "additional_fast_base_bytes": 6793723904,
+    "additional_full_rescue_bytes": 17531142144
+  }
+}

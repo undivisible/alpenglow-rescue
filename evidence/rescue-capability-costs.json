@@ -1,0 +1,111 @@
+{
+  "basis": "Historical APK installed size metadata; direct packages only, excludes unlisted/shared dependencies. Not compressed costs or custom-kernel predictions.",
+  "groups": {
+    "Boot/console": {
+      "included_packages": [
+        "dinit",
+        "oksh",
+        "tmux",
+        "eudev",
+        "kmod"
+      ],
+      "direct_package_installed_bytes": 2281149,
+      "missing_inventory_names": []
+    },
+    "Disk inventory/partitioning": {
+      "included_packages": [
+        "blkid",
+        "cfdisk",
+        "findmnt",
+        "gptfdisk",
+        "libblkid",
+        "libfdisk",
+        "libmount",
+        "libuuid",
+        "lsblk",
+        "mount",
+        "parted",
+        "partx",
+        "sfdisk",
+        "umount",
+        "util-linux"
+      ],
+      "direct_package_installed_bytes": 2376017,
+      "missing_inventory_names": []
+    },
+    "LUKS/LVM/MD RAID": {
+      "included_packages": [
+        "cryptsetup",
+        "cryptsetup-libs",
+        "device-mapper-event-libs",
+        "device-mapper-libs",
+        "lvm2",
+        "lvm2-libs",
+        "mdadm"
+      ],
+      "direct_package_installed_bytes": 6556549,
+      "missing_inventory_names": []
+    },
+    "Filesystems": {
+      "included_packages": [
+        "btrfs-progs",
+        "e2fsprogs",
+        "e2fsprogs-libs",
+        "xfsprogs",
+        "dosfstools",
+        "exfatprogs",
+        "ntfs-3g",
+        "ntfs-3g-libs"
+      ],
+      "direct_package_installed_bytes": 4671241,
+      "missing_inventory_names": []
+    },
+    "Recovery/diagnostics": {
+      "included_packages": [
+        "ddrescue",
+        "testdisk",
+        "smartmontools",
+        "nvme-cli",
+        "fsarchiver",
+        "partclone",
+        "rsync"
+      ],
+      "direct_package_installed_bytes": 6854604,
+      "missing_inventory_names": []
+    },
+    "Networking/Wi-Fi": {
+      "included_packages": [
+        "ca-certificates",
+        "curl",
+        "dbus",
+        "ethtool",
+        "iproute2",
+        "iw",
+        "iwd",
+        "mtr",
+        "nmap",
+        "openssh-client-common",
+        "openssh-client-default",
+        "tcpdump",
+        "wget"
+      ],
+      "direct_package_installed_bytes": 22969536,
+      "missing_inventory_names": []
+    },
+    "Optional backup clients": {
+      "included_packages": [
+        "rclone",
+        "restic",
+        "borgbackup"
+      ],
+      "direct_package_installed_bytes": 155273849,
+      "missing_inventory_names": []
+    },
+    "All firmware": {
+      "direct_package_installed_bytes": 762089168
+    },
+    "Historical Alpine kernel": {
+      "direct_package_installed_bytes": 150677193
+    }
+  }
+}

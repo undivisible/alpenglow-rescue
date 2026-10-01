@@ -1,0 +1,6 @@
+{
+  "reference": "local Linux 7.1.0 Kconfig, not pinned 7.1.3 effective config",
+  "settings": 139,
+  "missing_symbols": [],
+  "status": "source presence only; not dependency resolution, compile, coverage or boot validation"
+}

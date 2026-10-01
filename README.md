@@ -43,3 +43,7 @@ Never interpret that partial artifact as a complete upstream equivalent.
 Task-owned staging and packaging intermediates were removed after preserving
 small manifests, logs and both measured ISOs. Details and exact paths are in
 [evidence/cleanup-20261001.json](evidence/cleanup-20261001.json).
+
+The [native rescue capability and disk plan](docs/rescue-capability-and-disk-plan.md)
+records essential driver restoration, installed-size proxies and the 46 GiB
+fast-base / 56 GiB complete-build entry thresholds. Current space is insufficient.

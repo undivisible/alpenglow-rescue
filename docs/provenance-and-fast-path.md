@@ -61,8 +61,8 @@ The old recipe is explicitly retained as `build-hybrid.sh` for provenance.
 
 **The corrected fast base has not been built or booted here.** It is a base
 validation step, not a rescue ISO. Before building, account for kernel source,
-objects, container layers and export size; the 2 GiB entry allowance is a
-minimum gate, not a measured kernel-build budget. Keep 40 GiB host/container
+objects, container layers and export size; the current 6 GiB fast-base allowance is a
+conservative plan, not a measured peak. See `docs/rescue-capability-and-disk-plan.md`. Keep 40 GiB host/container
 reserve throughout and preserve Twenify's priority.
 
 The rescue integration needs matching custom-kernel storage/USB/Wi-Fi and

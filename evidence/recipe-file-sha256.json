@@ -1,4 +1,5 @@
 {
+  "kernel/rescue-x86_64.fragment": "73609460b30dbf4f96410f7776e626dcac3eda525462bc9b2cb5651c93a7526f",
   "overlay/etc/dinit.d/boot": "c4dd1d7f896ed86699ae0a7e57f020672ba6ad6768f19a7cf99f00b26882a196",
   "overlay/etc/dinit.d/iwd": "9ae31ae9eaf71fdae697a0e556a303c937c0f06c473723870980f765f7afbec2",
   "overlay/etc/dinit.d/mount-filesystems": "50fb1237481ad16c4f32e62380c43b76def93f91fd6fb22a7e21e2520a6e6ba2",
@@ -15,14 +16,14 @@
   "pins.json": "86ac29a9c373ad4df4809664199527eb06b537fb26148ce058bee618b0481afb",
   "scripts/bench.py": "127921e6c9c23aebdbb87b3a430c014700a2858a2c0332caa18e352f77c52a8d",
   "scripts/build-container.sh": "a2775b7ab50a020c63187a4372403286910448838bd2b3e40df12181ba70048d",
-  "scripts/build-fast-base.sh": "052e2cfb52184dab01979826b9ebefb801ee08a02ca5bc2960110957e45e32e3",
+  "scripts/build-fast-base.sh": "772ba85ec8840333088a845e7e2bd11d6ae9bfdeb2dc76775eb198390f2d1b37",
   "scripts/build-hybrid.sh": "4bcc5afb2cd43b9cc7329853e1b392ad9082edb365817430fcd00bf36ca8d121",
   "scripts/build-toybox.sh": "7298c6502b5d0fd56b3dae653e6f977f890864f6a261f15be830d016750287ee",
   "scripts/build.sh": "3bc02c0a1689e8e8e0464646994aa15f44b9f847d2f2f927e64d16c1956f307c",
   "scripts/install-clients.py": "e289e26c0055ea4fed2c0e13e7f70c900d7569c0f2030d7174795c61723e79b3",
   "scripts/pack-core-native.sh": "368bbdc729780c7dbaeebbdcdbff38db0333d6f22be1ad0621d3bdb5d451a52e",
   "scripts/pack.sh": "0f99d371d4b1ec10123affcb12c5e0c226eb34566bfaaea20fbb54b2403f5ec7",
-  "scripts/prepare-fast-base.py": "78ab7faef42f4369ab206a7f215115b71a82be5cb27cd8fa33ce605362eeacd8",
+  "scripts/prepare-fast-base.py": "09142cc6f0d0bd07d9871088acf65214c8b096490a17d86fad4ae06bd35bed2a",
   "scripts/smoke-core.sh": "f26b9d46b42aee6c9e64a0221d47b90cddeb509330eaef4f7119c49a517a820d",
   "scripts/smoke.sh": "70c74373957e3b475cdf3cf1644adadceb265d4cdad1d39580016d8e07f66a35",
   "scripts/test-recipes.py": "b2ab8bea53e7d42cc7d1ab9b39b3916ce930be59d1a25928b0157fe9314afdba"

@@ -133,3 +133,9 @@ provenance, component sizes and the corrected default fast-base route are in
 the corrected route; no large rebuild or new boot benchmark was started.
 The manifest `recipe-file-sha256-built-core.json` preserves recipe hashes from
 the measured build; `recipe-file-sha256.json` describes the current sources.
+
+A later local-only checkpoint independently audits the native FAST boot path,
+proposes essential rescue driver restoration and sets conservative 6 GiB
+fast-base / 16 GiB complete-rescue temporary budgets above the 40 GiB reserve.
+See `docs/rescue-capability-and-disk-plan.md`. No large build, new image, boot
+trial or further push attempt accompanied that checkpoint.
