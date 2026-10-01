@@ -70,7 +70,7 @@ for run in range(1,a.runs+1):
     else:cmd+=['-bios',str(firmware)]
     if a.fixtures:
         # All regular task-owned fixture files are read-only block backends.
-        fixture_types=[('ext4','virtio-blk-pci'),('btrfs','virtio-blk-pci'),('xfs','ide-hd'),
+        fixture_types=[('ext4','virtio-blk-pci'),('btrfs','virtio-blk-pci'),('xfs','ide-cd'),
                        ('exfat','nvme'),('ntfs','virtio-blk-pci'),('luks','virtio-blk-pci'),('fat','usb-storage')]
         cmd+=['-device','qemu-xhci,id=fixture-usb']
         for index,(name,device) in enumerate(fixture_types):

@@ -11,7 +11,9 @@ debugfs -w -R 'write build/fixtures/data/marker.txt marker.txt' build/fixtures/e
 truncate -s 256M build/fixtures/btrfs.img
 mkfs.btrfs -q -f -L AR_BTRFS -r build/fixtures/data build/fixtures/btrfs.img
 truncate -s 384M build/fixtures/xfs.img
-mkfs.xfs -q -f -L AR_XFS build/fixtures/xfs.img
+# QEMU ide-hd rejects read-only backends. A SATA CD fixture preserves the
+# read-only invariant; its filesystem sector size must match CD sectors.
+mkfs.xfs -q -f -s size=2048 -L AR_XFS build/fixtures/xfs.img
 truncate -s 32M build/fixtures/fat.img
 mkfs.fat -F 16 -n AR_FAT build/fixtures/fat.img
 truncate -s 32M build/fixtures/exfat.img

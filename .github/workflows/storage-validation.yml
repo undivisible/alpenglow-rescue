@@ -6,6 +6,11 @@ on:
         description: Run that uploaded native-storage-1-x86_64
         required: true
         type: string
+      probe:
+        description: Test the embedded helper or a recorded external probe
+        type: choice
+        default: embedded
+        options: [embedded, external]
 permissions:
   contents: read
   actions: read
@@ -48,13 +53,18 @@ jobs:
           PY
       - name: Create regular-file synthetic fixtures
         run: sh scripts/make-storage-fixtures.sh
-      - name: BIOS external storage probe (three cold processes)
-        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-external --fixtures --probe-script scripts/smoke-storage.sh --runs 3 --timeout 120
-      - name: UEFI external storage probe (three cold processes)
+      - name: Select test probe
+        env:
+          PROBE: ${{ inputs.probe }}
+        run: |
+          if [ "$PROBE" = external ]; then echo 'PROBE_ARGS=--probe-script scripts/smoke-storage.sh' >> "$GITHUB_ENV"; fi
+      - name: BIOS storage probe (three cold processes)
+        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
+      - name: UEFI storage probe (three cold processes)
         if: always()
         run: |
           if [ -f build/fixtures/ext4.img ]; then
-            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-external --firmware uefi --fixtures --probe-script scripts/smoke-storage.sh --runs 3 --timeout 120
+            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --firmware uefi --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
           fi
       - name: Preserve test evidence and external probe
         if: always()
