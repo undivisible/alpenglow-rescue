@@ -1,0 +1,25 @@
+{
+  "scope": "Separate source review pass by the implementing agent; not an independent human/agent review",
+  "checks": [
+    "native composition and original FAST trimming preserved by byte-span assertions",
+    "signed APK solver, no package scripts, no kernel replacement",
+    "no privileged host devices or loop mounts",
+    "test-only command-line guard; QEMU read-only backend plus guest read-only assertions",
+    "local serial services preserved; no remote or auth services",
+    "license/version/origin/build-commit inventory and native texts recorded; final corresponding-source audit remains"
+  ],
+  "files": {
+    "kernel/storage-x86_64.fragment": "46957b0c42a6fe89d3e05a5ad5cfc572a1f46ff154a553bc41f73605678151e8",
+    "packages-storage.txt": "76d3cae0fe0544e10b10c068d9f7b90fa30a7bb743918a7a7b08ca012350e5e6",
+    "scripts/prepare-fast-base.py": "ffb84dff58dd854e8a3c9fe998073cb7eeb5723a58319a84b72dc27a4cf3dec9",
+    "scripts/add-storage-payload.sh": "d2bcba9d497336d89ed791eb6d2b59f0f81f623c57c7dd8574a4c7a35e959311",
+    "scripts/make-storage-fixtures.sh": "e09880a5e5f254f74bbb5b7a15a2ab06a2e9014359d044be9ee01f890a96ad3e",
+    "scripts/smoke-storage.sh": "bcc7f391de189f6eb875c6fece0150548fc98ea23c99b1caa273c340209416dd",
+    "scripts/bench-fast-base.py": "db3a82896d8c2792e7958a43aa75d3422da8acc55d89db1d16c9fc9a80d26873",
+    ".github/workflows/fast-base-image.yml": "57fec900a1d6b2ed4fc4820e52d558664df185743b46658c9dc8935dc2fd1f0b",
+    "scripts/storage-evidence.py": "6fc3642ca86121be409de818d77c6bfec8f44b06d971bbb36b580bb65c5aa438"
+  },
+  "local_verification": "recipe checks, monitor regression suite and storage adaptation --check passed",
+  "ci_run": "36873856455",
+  "review_correction": "Use the exact aports source tree and origin; do not assume every package recipe is in main."
+}

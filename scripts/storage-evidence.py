@@ -15,7 +15,8 @@ for record in (evidence/'apk-installed.txt').read_text().strip().split('\n\n'):
                      'origin':fields.get('o'),'installed_bytes':int(fields.get('I',0)),
                      'apk_checksum':fields.get('C'),'aports_commit':fields.get('c'),
                      'homepage':fields.get('U'),
-                     'source_recipe':f"https://gitlab.alpinelinux.org/alpine/aports/-/tree/{fields.get('c')}/main/{fields.get('o')}"})
+                     'source_recipe_tree':f"https://gitlab.alpinelinux.org/alpine/aports/-/tree/{fields.get('c')}",
+                     'source_recipe_origin':fields.get('o')})
 packages.sort(key=lambda p:p['name'])
 report={'scope':'Signed Alpine v3.23 package solution for storage-1; native kernel/init retained; no AI clients/firmware',
         'signature_verification':'apk default verification; no --allow-untrusted; no package scripts',

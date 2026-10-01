@@ -1,0 +1,8 @@
+{
+  "at_utc": "2026-10-01T14:14:12.036450+00:00",
+  "host_free_bytes": 21872640000,
+  "docker_free_bytes": 13365522432,
+  "hard_floor_bytes": 21474836480,
+  "action": "Local heavy build/VM/download work remains stopped; CI remote runner only; small source/evidence edits allowed; no cleanup performed",
+  "ci_run": "36873856455"
+}
