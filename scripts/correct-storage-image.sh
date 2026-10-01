@@ -17,6 +17,8 @@ shutil.copyfile(p,'build/correction/base.iso')
 Path('build/correction/base-manifest.json').write_text(json.dumps(m,indent=2)+'\n')
 PY
 xorriso -osirrox on -indev build/correction/base.iso -extract / build/correction/iso-root
+# Rock Ridge -r directories are read-only; this isolated extraction is ours.
+chmod -R u+w build/correction/iso-root
 # Obtain only the missing terminal data, exact already-inventoried version,
 # through the same signature-verified official package source.
 docker run --rm --cpus=2 --memory=128m --pids-limit=128 \
