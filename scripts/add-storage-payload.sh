@@ -26,7 +26,10 @@ for dir in bin sbin lib usr; do
   done
   cp -a "/out/storage-payload/$dir/." "/out/rootfs/$dir/"
 done
-for applet in sh login getty; do ln -snf /bin/toybox "/out/rootfs/bin/$applet"; done
+for applet in login getty; do ln -snf /bin/toybox "/out/rootfs/bin/$applet"; done
+ln -snf /usr/bin/oksh /out/rootfs/bin/sh
+cp -a /out/storage-payload/etc/terminfo /out/rootfs/etc/
+printf '%s\n' 'export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' > /out/rootfs/etc/profile
 ln -snf /bin/toybox /out/rootfs/sbin/getty
 mkdir -p /out/rootfs/usr/local/bin /out/rootfs/usr/share/alpenglow-rescue
 cp /recipe/scripts/smoke-storage.sh /out/rootfs/usr/local/bin/rescue-smoke-storage

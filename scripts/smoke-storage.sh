@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/usr/bin/oksh
 # Explicit test only: refuses to touch disks unless the fixture VM flag exists.
 set -eu
-export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin TERM=vt100
+export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin TERM=vt100
 case " $(cat /proc/cmdline) " in *' alpenglow.test-fixtures=1 '*) ;; *) echo 'Synthetic fixture VM required' >&2; exit 1;; esac
 test "$(uname -r)" = 7.1.3
 test "$(cat /proc/1/comm)" = dinit
@@ -24,6 +24,7 @@ mount -t devpts devpts /dev/pts
 tmux -L rescue-smoke new-session -d 'sleep 30'
 tmux -L rescue-smoke list-sessions
 tmux -L rescue-smoke kill-server
+printf '%s\n' RESCUE_TMUX_PASS
 mkdir -p /mnt/fixture
 for entry in 'EXT4 ext4' 'BTRFS btrfs' 'XFS xfs' 'FAT vfat' 'EXFAT exfat' 'NTFS ntfs3'; do
   set -- $entry; label="AR_$1"; fs=$2
