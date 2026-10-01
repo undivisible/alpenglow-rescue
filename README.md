@@ -51,3 +51,9 @@ The [native rescue capability and disk plan](docs/rescue-capability-and-disk-pla
 records essential driver restoration, installed-size proxies and the original
 40 GiB-reserve plan. A later exception permits only this 6 GiB fast-base run
 with a monitored 30 GiB floor; the complete rescue build remains deferred.
+
+Native compilation is currently paused after a disk-supervisor repair: the
+host has about 33.4 GiB free, while Docker's separate overlay filesystem has
+about 28.5 GiB. The current guards require 30 GiB on both. No native boot
+readiness result exists yet. The supervisor now tolerates disappearing
+compiler temporary files and stops owned jobs on unexpected errors.

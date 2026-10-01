@@ -139,3 +139,12 @@ proposes essential rescue driver restoration and sets conservative 6 GiB
 fast-base / 16 GiB complete-rescue temporary budgets above the 40 GiB reserve.
 See `docs/rescue-capability-and-disk-plan.md`. No large build, new image, boot
 trial or further push attempt accompanied that checkpoint.
+
+The corrected source repository is now public, with visibility verified after
+the direct user approval. Native fast-base compilation produced static
+toybox/dinit/Zig init and an LZ4 root, but the kernel build was paused after
+a supervisor temporary-file race. The supervisor was repaired and four
+regression tests pass. Cached compilation is preserved. A subsequent entry
+check found Docker overlay free space below its current 30 GiB guard even
+though host free space remains above 30 GiB; no unmonitored job remains.
+No native readiness time or new ISO is claimed.

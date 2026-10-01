@@ -24,11 +24,12 @@
   "scripts/install-clients.py": "e289e26c0055ea4fed2c0e13e7f70c900d7569c0f2030d7174795c61723e79b3",
   "scripts/pack-core-native.sh": "368bbdc729780c7dbaeebbdcdbff38db0333d6f22be1ad0621d3bdb5d451a52e",
   "scripts/pack.sh": "0f99d371d4b1ec10123affcb12c5e0c226eb34566bfaaea20fbb54b2403f5ec7",
-  "scripts/prepare-fast-base.py": "2081badc121b4800364127532a24441a7e3803557dd703fd5da54ee003002b40",
+  "scripts/prepare-fast-base.py": "6e11d593d92976d0a0870f7c5f0b39095c2ffe24e31bc9965f8964e0daeba4fb",
   "scripts/resolve-rescue-config.py": "14c3804c698e6bf298ee9e9e5405518ea41042a112f0a8a0e33c8216637d673f",
   "scripts/resolve-rescue-config.sh": "f95c8fd5e4accfbb6bd68800faa9da81fa38da7cb7a53f6c45d3007100ee839c",
-  "scripts/run-bounded-fast.py": "82d8efbab153f0a646b898abd9bc4eac2d1d6ce8f748c1dd09bcaf3fb8fe442e",
+  "scripts/run-bounded-fast.py": "7958f5e349c04ee4020dccedd3dc42a84cd008951afef2ac374b0e4c991003ed",
   "scripts/smoke-core.sh": "f26b9d46b42aee6c9e64a0221d47b90cddeb509330eaef4f7119c49a517a820d",
   "scripts/smoke.sh": "70c74373957e3b475cdf3cf1644adadceb265d4cdad1d39580016d8e07f66a35",
-  "scripts/test-recipes.py": "b2ab8bea53e7d42cc7d1ab9b39b3916ce930be59d1a25928b0157fe9314afdba"
+  "scripts/test-fast-monitor.py": "c8ae89dcfc11966c91504cebaf3068cca2ccb00d80353ebb1008e5620eca7b59",
+  "scripts/test-recipes.py": "42e476d989c28c14e5f3e6ea790181a19234c4db711afcb3718817091475439a"
 }

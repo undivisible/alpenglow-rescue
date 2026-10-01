@@ -1,0 +1,10 @@
+{
+  "pinned_alpenglow": "2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "source_file": "scripts/lib/assemble-rootfs.sh",
+  "problem": "passwd root shell field contains /bin/toybox sh, which is not an executable pathname",
+  "correction": "/bin/sh, the existing symlink to source-built toybox",
+  "primary_evidence": "https://github.com/landley/toybox/blob/0.8.11/toys/other/login.c#L125",
+  "basis": "Toybox login directly execl()s pw_shell; it does not split command arguments",
+  "scope": "only generated task-owned source copy; upstream/WIP unchanged; native custom kernel/LZ4/Zig/dinit boot architecture retained",
+  "runtime_status": "pending native boot proof"
+}

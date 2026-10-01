@@ -16,10 +16,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--check', action='store_true', help='validate edits in memory only')
 args = parser.parse_args()
 assert subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip() == pins['alpenglow']
-paths = ['scripts/boot-native.sh', 'system/backends/appliance/scripts/build-kernel-fast.sh']
+paths = ['scripts/boot-native.sh', 'system/backends/appliance/scripts/build-kernel-fast.sh', 'scripts/lib/assemble-rootfs.sh']
 adapted = {}
 for name in paths:
     text = (source / name).read_text()
+    if name == paths[2]:
+        text = text.replace('root:x:0:0:root:/root:/bin/toybox sh', 'root:x:0:0:root:/root:/bin/sh')
+        assert '/root:/bin/toybox sh' not in text
+        subprocess.run(['sh', '-n'], input=text, text=True, check=True)
+        adapted[name] = text
+        continue
     if name == paths[0]:
         line = next(line for line in text.splitlines() if line.startswith('NPROC='))
         text = text.replace(line, 'NPROC="2"', 1)
