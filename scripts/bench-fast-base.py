@@ -12,6 +12,13 @@ import subprocess
 import threading
 import time
 
+def storage_accepts(log):
+    labels=('EXT4','BTRFS','XFS','FAT','EXFAT','NTFS','LUKS')
+    return (all(re.search(rb'\nRESCUE_FIXTURE_PASS AR_'+label.encode()+rb' /dev/\S+\r?\n',log) for label in labels)
+            and re.search(rb'\nRESCUE_TMUX_PASS\r?\n',log)
+            and re.search(rb'\nRESCUE_STORAGE_READY_OK\r?\n',log)
+            and re.search(rb'\nSTORAGE_SMOKE_EXIT=0\r?\n',log))
+
 root=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
 parser.add_argument('--runs',type=int,default=3)
@@ -81,7 +88,7 @@ for run in range(1,a.runs+1):
             if device=='nvme':options+=f',serial=AR_FIXTURE_NVME_{index}'
             if device=='usb-storage':options+=',bus=fixture-usb.0'
             cmd+=['-device',options]
-log=bytearray(); markers={}; start=time.monotonic()
+    log=bytearray(); markers={}; start=time.monotonic()
     p=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
     def reader():
         while True:
@@ -95,10 +102,7 @@ log=bytearray(); markers={}; start=time.monotonic()
             if 'shell_exec_failure' not in markers and b'login: exec shell' in log:
                 markers['shell_exec_failure']=elapsed
             if 'cli_smoke' not in markers and re.search(rb'\nCLI_SMOKE_OK\r?\n',log): markers['cli_smoke']=elapsed
-            fixture_labels=('EXT4','BTRFS','XFS','FAT','EXFAT','NTFS','LUKS')
-            fixtures_pass=all(re.search(rb'\nRESCUE_FIXTURE_PASS AR_'+label.encode()+rb' /dev/\S+\r?\n',log) for label in fixture_labels)
-            if ('storage_rescue' not in markers and fixtures_pass and b'\nRESCUE_TMUX_PASS\r\n' in log
-                and re.search(rb'\nRESCUE_STORAGE_READY_OK\r?\n',log) and re.search(rb'\nSTORAGE_SMOKE_EXIT=0\r?\n',log)):
+            if 'storage_rescue' not in markers and storage_accepts(log):
                 markers['storage_rescue']=elapsed
     t=threading.Thread(target=reader,daemon=True); t.start()
     logged_in=False; next_probe=0; probes=0;smoke_sent=False

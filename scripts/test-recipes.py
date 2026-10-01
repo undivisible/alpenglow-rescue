@@ -21,6 +21,7 @@ assert '41943040' in build
 assert 'build-fast-base.sh' in (root / 'scripts/build.sh').read_text()
 subprocess.run(['python3', str(root / 'scripts/prepare-fast-base.py'), '--check'], check=True)
 subprocess.run(['python3', str(root / 'scripts/test-fast-monitor.py')], check=True)
+subprocess.run(['python3', str(root / 'scripts/test-storage-acceptance.py')], check=True)
 pack = (root / 'scripts/pack.sh').read_text()
 assert '-T2' in pack and 'bios-install' in pack and '--efi-boot' in pack
 print('recipe checks: passed')
