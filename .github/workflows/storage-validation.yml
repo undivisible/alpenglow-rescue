@@ -34,7 +34,7 @@ jobs:
       - name: Install official fixture and VM tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq python3 qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup cpio xorriso curl build-essential
+          sudo apt-get install -y -qq luajit qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup cpio xorriso curl build-essential
           test "$(df -Pk . | awk 'END {print $4}')" -ge 25165824
       - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
         with:
@@ -42,19 +42,14 @@ jobs:
           path: build/ci/output
           github-token: ${{ github.token }}
           run-id: ${{ inputs.image_run }}
+      - name: Validate LuaJIT runtime and failure handling
+        run: |
+          luajit scripts/test-fast-monitor.lua
+          luajit scripts/test-storage-acceptance.lua
+          luajit scripts/test-luajit.lua
       - name: Verify exact image and source manifest
         run: |
-          python3 - <<'PY'
-          import hashlib,json
-          from pathlib import Path
-          p=Path('build/ci/output/alpenglow-rescue-storage-1-x86_64.iso')
-          m=json.loads(Path('build/ci/output/manifest.json').read_text())
-          assert hashlib.sha256(p.read_bytes()).hexdigest()==m['image_sha256']
-          assert p.stat().st_size==m['image_bytes']
-          print(json.dumps(m,indent=2))
-          Path('build/evidence').mkdir(parents=True,exist_ok=True)
-          Path('build/evidence/image-manifest.json').write_text(json.dumps(m,indent=2)+'\n')
-          PY
+          luajit scripts/image-evidence.lua verify
       - name: Apply small reviewed native correction
         if: inputs.correct_image
         run: sh scripts/correct-storage-image.sh
@@ -76,12 +71,12 @@ jobs:
         run: |
           if [ "$PROBE" = external ]; then echo 'PROBE_ARGS=--probe-script scripts/smoke-storage.sh' >> "$GITHUB_ENV"; fi
       - name: BIOS storage probe (three cold processes)
-        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
+        run: luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
       - name: UEFI storage probe (three cold processes)
         if: always()
         run: |
           if [ -f build/fixtures/ext4.img ]; then
-            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --firmware uefi --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
+            luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-validation --firmware uefi --fixtures ${PROBE_ARGS:-} --runs 3 --timeout 120
           fi
       - name: Preserve test evidence and external probe
         if: always()

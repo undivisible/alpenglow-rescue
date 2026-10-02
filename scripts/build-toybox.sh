@@ -3,7 +3,7 @@ set -eu
 cd "$(dirname "$0")/.."
 [ "$(df -Pk . | awk 'END {print $4}')" -ge 41943040 ]
 mkdir -p build/native build/downloads build/evidence
-docker run --rm --cpus=2 --pids-limit=128 --platform linux/amd64 \
+docker run --rm --cpus=1 --pids-limit=128 --platform linux/amd64 \
   -v "$PWD:/project" -w /project \
   alpine:3.21@sha256:ce64758a109eb420d874a118f87920e625e12d3634e03b4a5573fd9f6e5d3507 sh -c '
     apk add --no-cache build-base bash curl linux-headers >/dev/null
@@ -16,6 +16,6 @@ docker run --rm --cpus=2 --pids-limit=128 --platform linux/amd64 \
     make defconfig
     sed -i "s/# CONFIG_STATIC is not set/CONFIG_STATIC=y/;s/# CONFIG_SH is not set/CONFIG_SH=y/;s/# CONFIG_GETTY is not set/CONFIG_GETTY=y/" .config
     # The strncat macro precedes fortify headers; include declarations first.
-    CPUS=2 make -j2 CFLAGS="-D_GNU_SOURCE -include string.h" LDFLAGS=-static > /project/build/toybox-build.log 2>&1
+    CPUS=1 make -j1 CFLAGS="-D_GNU_SOURCE -include string.h" LDFLAGS=-static > /project/build/toybox-build.log 2>&1
     cp toybox ../native/toybox
   '

@@ -1,5 +1,9 @@
 # Current measurements, 2026-10-01
 
+The [2026-10-02 LuaJIT tooling migration](luajit-migration.md) is validated
+locally but has not produced a new image or boot measurement. All artifact
+hashes and times below describe the earlier commits explicitly identified here.
+
 The native storage increment produces a bootable **33,658,880-byte partial
 candidate**, with interactive command response under BIOS and UEFI. Storage
 rescue readiness is unproven: the latest strict probe exits 125 before the

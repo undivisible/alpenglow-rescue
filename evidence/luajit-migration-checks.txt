@@ -1,0 +1,46 @@
+pinned Alpenglow fast recipe adaptation: passed (no source export or build created)
+pinned Alpenglow fast recipe adaptation: passed (no source export or build created)
+PASS du race preserves valid stdout aggregate
+PASS missing du aggregate fails closed
+PASS both disk floors and all growth limits
+PASS live df exit127 uses fresh immutable probe
+PASS other live probe failure remains fatal
+{
+  "min_free_bytes":33285996544,
+  "max_source_allocated_bytes":0,
+  "stopped_reason":"Supervisor failure: scripts/test-fast-monitor.lua:29: test outage",
+  "stage":"failure",
+  "exit_code":-15,
+  "command":["owned-test-job"],
+  "cleanup_error":null,
+  "duration_seconds":6.5999978687614e-05
+}
+PASS unexpected error cleans up and persists report
+{
+  "min_free_bytes":33285996544,
+  "max_source_allocated_bytes":1024,
+  "stopped_reason":"6 GiB observed-volume growth budget exceeded",
+  "stage":"floor",
+  "exit_code":-15,
+  "command":["owned-test-job"],
+  "cleanup_error":null,
+  "duration_seconds":0.00012600002810359
+}
+PASS growth stop persists sample and cleans up
+7 LuaJIT monitor regression tests passed
+LuaJIT storage acceptance: LF/CRLF success, missing markers, exit1/125/126/127 and all retained failures checked
+PASS literal argv does not execute shell syntax
+PASS exit status125 and missing executable127 survive
+PASS timeout terminates and reaps child
+PASS binary stdin and SHA512 helper pipe preserve bytes
+PASS full duplex stdin exceeds pipe capacity without deadlock
+PASS SHA256 matches known digest and does not load large images
+PASS JSON null/false/empty arrays/objects and malformed data
+PASS all86 recorded package fields survive APK parsing equivalently
+PASS missing licenses stay null and invalid installed size fails
+PASS Kconfig builtins satisfy module requests; missing symbols fail
+PASS image verify rejects byte/hash mismatch before packaging
+PASS QMP Unix transport preserves keyboard and rejects protocol errors
+PASS SIGTERM makes supervisor clean up real child and preserve failure
+13 LuaJIT runtime/equivalence/error-path tests passed
+LuaJIT recipe checks: passed; no build or QEMU execution

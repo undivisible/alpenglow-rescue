@@ -24,9 +24,4 @@ truncate -s 64M build/fixtures/luks.img
 printf '%s\n' PUBLIC_SYNTHETIC_FIXTURE_KEY_NOT_A_SECRET > build/fixtures/fixture.key
 cryptsetup luksFormat --batch-mode --type luks2 --pbkdf pbkdf2 --iter-time 100 \
   --label AR_LUKS --key-file build/fixtures/fixture.key build/fixtures/luks.img
-python3 - <<'PY'
-import hashlib,json
-from pathlib import Path
-files={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in Path('build/fixtures').glob('*.img')}
-Path('build/evidence/fixture-manifest.json').write_text(json.dumps({'scope':'synthetic regular CI files; no host mounts; QEMU backend read-only','files':files},indent=2)+'\n')
-PY
+luajit scripts/image-evidence.lua fixtures

@@ -15,7 +15,7 @@ if [ "${ALPENGLOW_RESCUE_INCREMENT:-fast-base}" = storage-1 ]; then
   image_name=alpenglow-rescue-storage-1-x86_64
   image_title='Alpenglow Rescue STORAGE-1 TEST (partial; synthetic fixtures only)'
   test_flags='alpenglow.test-fixtures=1'
-  python3 scripts/storage-evidence.py
+  luajit scripts/storage-evidence.lua
 fi
 export ALPENGLOW_IMAGE_NAME="$image_name"
 curl -fsSL https://github.com/Limine-Bootloader/Limine/releases/download/v12.4.0/limine-binary.tar.xz -o build/ci/limine.tar.xz
@@ -50,23 +50,4 @@ xorriso -as mkisofs -o "build/ci/output/$image_name.iso" -V ALPENGLOW_BASE -r -J
   --efi-boot boot/limine/limine-uefi-cd.bin -efi-boot-part --efi-boot-image --protective-msdos-label build/ci/iso-root
 cc -O2 -o build/ci/limine/limine build/ci/limine/limine.c
 build/ci/limine/limine bios-install "build/ci/output/$image_name.iso"
-python3 - <<'PY'
-import hashlib,json,os,subprocess
-from pathlib import Path
-p=Path('build/ci/output')/(os.environ['ALPENGLOW_IMAGE_NAME']+'.iso')
-h=hashlib.sha256(p.read_bytes()).hexdigest()
-p.with_suffix('.iso.sha256').write_text(h+'  '+p.name+'\n')
-pins=json.loads(Path('pins.json').read_text())
-manifest={'scope':'Native FAST base proof only; rescue clients, payload, restored drivers and network readiness absent',
-          'project_commit':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
-          'alpenglow_commit':pins['alpenglow'],'kernel':pins['fast_native'],
-          'image_bytes':p.stat().st_size,'image_sha256':h,'tested_firmware':None,
-          'native_artifacts':{}}
-if os.environ.get('ALPENGLOW_RESCUE_INCREMENT')=='storage-1':
- manifest['scope']='Native storage-1 partial rescue: built-in storage/filesystems/EFI and signed APK tools; no network/firmware/AI parity claim'
- manifest['kernel_config_sha256']=hashlib.sha256(Path('build/ci/output/kernel.config').read_bytes()).hexdigest()
-for name in ['vmlinuz','initramfs.cpio.lz4','alpenglow-init','toybox','dinit']:
- a=Path('build/fast-source/build/native')/name
- manifest['native_artifacts'][name]={'bytes':a.stat().st_size,'sha256':hashlib.sha256(a.read_bytes()).hexdigest()}
-Path('build/ci/output/manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-PY
+luajit scripts/image-evidence.lua base

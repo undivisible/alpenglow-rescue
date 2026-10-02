@@ -11,7 +11,7 @@ cp build/rootfs/boot/config-*-lts build/evidence/kernel.config
 rm -f build/rootfs/boot/vmlinuz-lts build/rootfs/boot/initramfs-lts
 mkdir -p build/iso-root/boot/limine
 cp build/native/vmlinuz build/iso-root/boot/vmlinuz
-(cd build/rootfs; find . -print0 | LC_ALL=C sort -z | /usr/bin/cpio -0 -o -H newc -R 0:0 2>../evidence/core-cpio.txt | zstd -6 -T2 -f -o ../initramfs.cpio.zst)
+(cd build/rootfs; find . -print0 | LC_ALL=C sort -z | /usr/bin/cpio -0 -o -H newc -R 0:0 2>../evidence/core-cpio.txt | zstd -6 -T1 -f -o ../initramfs.cpio.zst)
 check_space 41943040
 rm -f build/iso-root/boot/initramfs.cpio.zst
 ln build/initramfs.cpio.zst build/iso-root/boot/initramfs.cpio.zst

@@ -18,8 +18,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 40
     env:
-      CARGO_BUILD_JOBS: '2'
-      MAKEFLAGS: -j2
+      CARGO_BUILD_JOBS: '1'
+      MAKEFLAGS: -j1
       ALPENGLOW_FAST_CONTINUATION: '1'
       ALPENGLOW_RESCUE_INCREMENT: ${{ inputs.increment }}
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Install official build tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq cpio lz4 xorriso xz-utils build-essential curl python3 qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup
+          sudo apt-get install -y -qq cpio lz4 xorriso xz-utils build-essential curl luajit qemu-system-x86 ovmf e2fsprogs btrfs-progs xfsprogs dosfstools exfatprogs ntfs-3g cryptsetup
           mkdir -p build/ci/zig
           curl -fsSL https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz -o build/ci/zig.tar.xz
           printf '%s\n' '70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00  build/ci/zig.tar.xz' | sha256sum -c -
@@ -43,9 +43,8 @@ jobs:
           fi
       - name: Validate source and guarded recipe
         run: |
-          python3 scripts/prepare-fast-base.py --check
-          python3 scripts/test-fast-monitor.py
-          python3 scripts/prepare-fast-base.py
+          luajit scripts/test-recipes.lua
+          luajit scripts/prepare-fast-base.lua
       - name: Obtain previous verified base for separate UEFI diagnosis
         if: inputs.increment == 'storage-1'
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
@@ -58,13 +57,13 @@ jobs:
         if: inputs.increment == 'storage-1'
         run: |
           printf '%s\n' 'f3ed7b265446c4d0a4af92352af61bed8ed0471da3fd7fa9d7300af7f806ba1a  build/ci/previous-base/alpenglow-fast-base-x86_64.iso' | sha256sum -c -
-          if python3 scripts/bench-fast-base.py --iso build/ci/previous-base/alpenglow-fast-base-x86_64.iso --name previous-base-diagnostic --firmware uefi --runs 1 --timeout 30; then
+          if luajit scripts/bench-fast-base.lua --iso build/ci/previous-base/alpenglow-fast-base-x86_64.iso --name previous-base-diagnostic --firmware uefi --runs 1 --timeout 30; then
             echo 'Previous base UEFI console passed on this CI firmware.'
           else
             echo 'Previous base UEFI console did not pass; raw log, command and screen retained.'
           fi
-      - name: Build native base and proof ISO with two jobs
-        run: python3 scripts/resume-fast-base.py --stage ci-fast-base -- sh scripts/build-ci-fast-base.sh
+      - name: Build native base and proof ISO with one job
+        run: luajit scripts/resume-fast-base.lua --stage ci-fast-base -- sh scripts/build-ci-fast-base.sh
       - name: Upload exact proof image and provenance
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
@@ -77,12 +76,12 @@ jobs:
         run: sh scripts/make-storage-fixtures.sh
       - name: Cold BIOS storage readiness (three runs)
         if: inputs.increment == 'storage-1'
-        run: python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --fixtures --runs 3 --timeout 120
+        run: luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --fixtures --runs 3 --timeout 120
       - name: Separate cold UEFI storage readiness (three runs)
         if: always() && inputs.increment == 'storage-1'
         run: |
           if [ -f build/ci/output/alpenglow-rescue-storage-1-x86_64.iso ] && [ -f build/fixtures/ext4.img ]; then
-            python3 scripts/bench-fast-base.py --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --firmware uefi --fixtures --runs 3 --timeout 120
+            luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name storage-1 --firmware uefi --fixtures --runs 3 --timeout 120
           else
             echo 'UEFI storage test not run: image or fixtures absent. Previous-base diagnosis retained.'
           fi

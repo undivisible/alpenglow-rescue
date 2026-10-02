@@ -11,7 +11,7 @@ fi
 cp build/native/vmlinuz build/iso-root/boot/vmlinuz
 # Sorted cpio, reproducible owners/mtime. Compression uses at most two threads.
 find build/rootfs -exec touch -h -d @1790812800 {} +
-(cd build/rootfs; find . -print0 | sort -z | cpio --null -o -H newc --reproducible --owner=0:0 2>/dev/null | zstd -6 -T2 -o ../initramfs.cpio.zst -f)
+(cd build/rootfs; find . -print0 | sort -z | cpio --null -o -H newc --reproducible --owner=0:0 2>/dev/null | zstd -6 -T1 -o ../initramfs.cpio.zst -f)
 rm -f build/iso-root/boot/initramfs.cpio.zst
 ln build/initramfs.cpio.zst build/iso-root/boot/initramfs.cpio.zst
 cp build/limine/limine-bios.sys build/limine/limine-bios-cd.bin build/limine/limine-uefi-cd.bin build/iso-root/boot/limine/

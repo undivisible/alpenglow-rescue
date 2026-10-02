@@ -7,21 +7,13 @@ cd "$(dirname "$0")/.."
 test "$(df -Pk . | awk 'END {print $4}')" -ge 25165824
 start_kib=$(du -sk build | awk '{print $1}')
 mkdir -p build/correction/root/bin build/correction/root/etc build/correction/root/usr/local/bin build/correction/limine
-python3 - <<'PY'
-import hashlib,json,shutil
-from pathlib import Path
-p=Path('build/ci/output/alpenglow-rescue-storage-1-x86_64.iso')
-m=json.loads(Path('build/ci/output/manifest.json').read_text())
-assert p.stat().st_size==m['image_bytes'] and hashlib.sha256(p.read_bytes()).hexdigest()==m['image_sha256']
-shutil.copyfile(p,'build/correction/base.iso')
-Path('build/correction/base-manifest.json').write_text(json.dumps(m,indent=2)+'\n')
-PY
+luajit scripts/image-evidence.lua correction-base
 xorriso -osirrox on -indev build/correction/base.iso -extract / build/correction/iso-root
 # Rock Ridge -r directories are read-only; this isolated extraction is ours.
 chmod -R u+w build/correction/iso-root
 # Obtain only the missing terminal data, exact already-inventoried version,
 # through the same signature-verified official package source.
-docker run --rm --cpus=2 --memory=128m --pids-limit=128 \
+docker run --rm --cpus=1 --memory=128m --pids-limit=128 \
   --label alpenglow-rescue.build=task15-fast-20261001 \
   -v "$PWD/build/correction:/out" \
   alpine@sha256:85fe1e81d6758c208f3e1eed4338a1997e19d4be002d4dd32d3100c9a8c010a0 sh -c '
@@ -58,23 +50,7 @@ xorriso -as mkisofs -o build/ci/output/alpenglow-rescue-storage-1-x86_64.iso -V 
   --efi-boot boot/limine/limine-uefi-cd.bin -efi-boot-part --efi-boot-image --protective-msdos-label build/correction/iso-root
 cc -O2 -o build/correction/limine/limine build/correction/limine/limine.c
 build/correction/limine/limine bios-install build/ci/output/alpenglow-rescue-storage-1-x86_64.iso
-python3 - <<'PY'
-import hashlib,json,subprocess
-from pathlib import Path
-def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
-m=json.loads(Path('build/correction/base-manifest.json').read_text())
-assert sha(Path('build/correction/iso-root/boot/vmlinuz'))==m['native_artifacts']['vmlinuz']['sha256']
-m['base_project_commit']=m['project_commit'];m['base_image_sha256']=m['image_sha256']
-m['project_commit']=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
-m['scope']='Native storage-1a partial rescue; exact embedded native kernel plus small supplemental shell/terminfo/probe initramfs. No networking/firmware/AI/full parity claim.'
-p=Path('build/ci/output/alpenglow-rescue-storage-1-x86_64.iso')
-m['image_sha256']=sha(p);m['image_bytes']=p.stat().st_size
-o=Path('build/correction/iso-root/boot/storage-correction.cpio.gz')
-m['supplemental_initramfs']={'bytes':o.stat().st_size,'sha256':sha(o),'shell':'/bin/sh -> /usr/bin/oksh','probe_sha256':sha(Path('scripts/smoke-storage.sh')),'terminfo_package':'ncurses-terminfo-base=6.5_p20251123-r0','terminfo_archive_sha256':sha(Path('build/correction/terminfo.tar'))}
-Path('build/ci/output/manifest.json').write_text(json.dumps(m,indent=2)+'\n')
-p.with_suffix('.iso.sha256').write_text(m['image_sha256']+'  '+p.name+'\n')
-print(json.dumps(m,indent=2))
-PY
+luajit scripts/image-evidence.lua correction
 test "$(df -Pk . | awk 'END {print $4}')" -ge 22020096
 end_kib=$(du -sk build | awk '{print $1}')
 test "$((end_kib-start_kib))" -le 4194304

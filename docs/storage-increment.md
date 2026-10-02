@@ -8,8 +8,10 @@ NVMe, VirtIO and USB controllers; ext4/Btrfs/XFS/FAT/exFAT/NTFS3/FUSE;
 MD/device mapper/cryptography, VT/HID and EFI stub support. Every requested
 setting must survive actual Kconfig resolution. No Alpine kernel is imported.
 
-The manual GitHub workflow selects `storage-1`, uses two build jobs/CPUs and
-retains the existing 20 GiB floor/21 GiB early stop/4 GiB allocation cap.
+The manual GitHub workflow selects `storage-1`. The 2026-10-02 LuaJIT migration
+changes orchestration to one job/CPU and a 14 GiB floor/15 GiB early stop with
+the existing 4 GiB growth cap. Earlier measurements used two CPUs and higher
+floors; future comparisons need a newly matched baseline.
 Local heavy jobs remain stopped. Only ordinary workspace files enter containers
 or QEMU; no host block devices, privileged containers, target host mounts,
 USB flashing, credentials, auth services or remote shells are involved.

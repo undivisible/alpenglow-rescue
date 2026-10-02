@@ -42,8 +42,10 @@ revised recipe still needs a successful image test.
 The manual `Native fast-base image` workflow selects `storage-1` to compile
 this increment. `Validate existing storage artifact` verifies and tests an
 exact CI image, optionally applying the small corrective layer. Build jobs/CPUs
-are bounded to two. Local heavy work remains stopped below the 20 GiB
-host/Docker floor; CI retains a 21 GiB early stop and 4 GiB growth cap.
+are now bounded to one. The authorized continuation uses a 14 GiB
+host/Docker floor, 15 GiB early stop and 4 GiB growth cap; its initial
+checkpoint requires 18 GiB on both filesystems. Historical recipes may
+retain higher reserves. Local heavy work remains paused.
 Tests use only task-owned regular-file fixtures attached read-only to
 network-disabled QEMU. No real host disks, USB flashing, authentication,
 credentials or remote root services are used.
@@ -52,9 +54,20 @@ Local source checks:
 
 ```sh
 git submodule update --init
-python3 scripts/prepare-fast-base.py --check
-python3 scripts/test-recipes.py
+luajit scripts/prepare-fast-base.lua --check
+luajit scripts/test-recipes.lua
 ```
+
+Owned orchestration, monitoring, metadata and benchmark programs use
+**LuaJIT 2.1 with Lua 5.1 syntax**. Shell rescue helpers remain shell scripts;
+vendored Alpenglow and other third-party software are unchanged. The native
+storage package inventory already has no Python. The redundant direct Python
+request was removed from the historical full-image recipe, but Borg can still
+pull Python transitively. Build-only LuaJIT tooling adds no runtime package to
+the native image. See [migration scope and tests](docs/luajit-migration.md).
+
+The Lua migration passes local tooling tests; Linux CI and a newly built image
+have not been run. Existing image sizes and boot observations above predate it.
 
 Project and Alpenglow-derived sources use MPL-2.0. Native binaries and signed
 APK dependencies retain their own licenses. Exact package versions, license

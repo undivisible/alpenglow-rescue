@@ -8,7 +8,7 @@ headroom() {
   done
 }
 headroom
-apk add --no-cache build-base bash curl xz cpio lz4 zstd xorriso python3 git
+apk add --no-cache build-base bash curl xz cpio lz4 zstd xorriso luajit libarchive-tools openssl git
 mkdir -p build/native build/downloads build/rootfs build/evidence
 if [ ! -f build/native/toybox ]; then
   curl -fL https://github.com/landley/toybox/archive/refs/tags/0.8.11.tar.gz -o build/downloads/toybox-0.8.11.tar.gz
@@ -52,11 +52,11 @@ VERSION_ID=0.1.0-dev
 PRETTY_NAME="Alpenglow Rescue development candidate"
 EOF
 headroom
-python3 scripts/install-clients.py
+luajit scripts/install-clients.lua
 headroom
 # Build Oil without changing core Rust sources or flags. Targets stay local.
 apk add --no-cache cargo rust
-CARGO_TARGET_DIR=/project/build/oil-target CARGO_BUILD_JOBS=2 \
+CARGO_TARGET_DIR=/project/build/oil-target CARGO_BUILD_JOBS=1 \
   cargo build --release --locked --manifest-path vendor/alpenglow/system/oil/Cargo.toml
 cp build/oil-target/release/oil build/rootfs/usr/local/bin/oil
 mkdir -p build/rootfs/usr/share/alpenglow-rescue/fixtures

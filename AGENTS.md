@@ -28,3 +28,12 @@ work, with the same two-job/CPU bound, 20 GiB hard floor, 21 GiB early stop and
 that floor again. Source pushes and temporary CI test artifacts are authorized;
 final binary releases and announcements remain unapproved. Fixture disks are
 task-owned regular CI files attached read-only in QEMU, never host devices.
+
+The explicit 2026-10-02 LuaJIT migration supersedes owned Python tooling:
+use LuaJIT 2.1 / Lua 5.1 for owned build, evidence and benchmark programs.
+Keep shell helpers and vendored third-party sources intact. Twenify has CPU
+priority: one build job/CPU, a 14 GiB minimum host/Docker floor, and a 15 GiB
+early stop for this continuation; retain the 4 GiB growth cap and earlier
+checkpoints. Other historical recipes may retain higher reserves. No retry of
+the blocked source publication is authorized by this migration. Do not edit
+`.gitattributes`; another task owns that change.

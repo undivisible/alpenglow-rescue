@@ -44,7 +44,6 @@ iperf3
 socat
 whois
 git
-python3
 ripgrep
 neovim
 lsof
