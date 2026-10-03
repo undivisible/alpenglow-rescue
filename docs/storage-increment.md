@@ -65,5 +65,5 @@ Earlier green markers were false positives from incomplete Toybox shell
 semantics; all reported rescue timings from that run are revoked. Current
 acceptance requires POSIX oksh, all seven exact fixture passes, tmux, READY
 and exit0. See the current measurement report and retained raw evidence.
-The source push is blocked by automatic approval review pending direct approval;
-no alternate publication route or additional local heavy work was attempted.
+The source fix and LuaJIT migration reached `main` at `57ea38e` on 2026-10-03.
+A fresh image, Linux CI integration and strict guest acceptance remain pending.

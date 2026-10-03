@@ -29,7 +29,7 @@ The latest tested artifact is from
 [run 36883059485](https://github.com/undivisible/alpenglow-rescue/actions/runs/36883059485)
 at source `4602cc54681f858e1388661f7aebda4754306ae1`; SHA-256
 `2dd28a8cc383ef347879887b4e97c99a1f7e434a63ef52333b246eca498c87af`.
-Its strict probe failed correctly at Toybox's help exit status. A local fix
+Its strict probe failed correctly at Toybox's help exit status. The source fix
 uses an actual guest chroot command; that fix has not been image-tested.
 
 The Alpenglow submodule stays at `2214bc159355522bbebc61e8e90ca78933a8e1ac`.

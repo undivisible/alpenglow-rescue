@@ -138,13 +138,14 @@ during this turn and later rose to 23,552,000,000 bytes. Docker remains at
 13,820,731,392 bytes, below the floor. Shared activity changes availability;
 no cleanup or reclamation is attributed to this task.
 
-Automatic approval review twice rejected pushing the concrete local chroot
-fix to public `main`: it enforced the original no-push instruction and treated
-the later direct authorization transcript returned by `read_thread` as
-untrusted. No alternate route was attempted. Fix/report/evidence remain local
-pending direct approval for source push and CI rerun. No final release/tweet.
-Next gate: strict three-cold-run storage suite for both firmware types, then
-networking/firmware and remaining rescue payloads.
+Automatic approval review initially rejected the source push. After the user
+directly authorized it, `main` advanced to `57ea38e3963559f9f36941d6c72e9f6bfea92f67`
+on 2026-10-03. That commit includes the guest chroot fix, evidence corrections
+and LuaJIT migration. No new image has been built from it. The next gate is a
+fresh native storage image and strict three-cold-run storage suite for both
+firmware types, then networking, firmware and remaining rescue payloads. The
+[validation handoff](next-validation.md) specifies the resource and acceptance
+checks. No final release or speed claim follows from the source push.
 
 Earlier checkpoints/reserve policies are preserved in
 [measurement-history.md](measurement-history.md) as historical observations.
