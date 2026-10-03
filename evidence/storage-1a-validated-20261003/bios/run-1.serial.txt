@@ -1,0 +1,168 @@
+Warning: unable to open an initial console.
+
+Alpenglow boot
+
+[  OK  ] mount-filesystems
+[  OK  ] shell-ttyS0
+[  OK  ] boot
+(none) login: root
+login[71]: root logged in on /dev/ttyS0  
+(none)# test "$(uname -r)" = 7.1.3 && test "$(cat /proc/1/comm)" = dinit && pr"$(cat /proc/1/comm)" = dinit && pr                                           <intf "%s%s\n" FAST_BASE_ READY_OK
+FAST_BASE_READY_OK
+/usr/local/bin/rescue-smoke-storage; printf "STORAGE_SMOKE_EXIT=%s\n" "$?"
+(none)# /usr/local/bin/rescue-smoke-storage; printf "STORAGE_SMOKE_EXIT=%s\n" ; printf "STORAGE_SMOKE_EXIT=%s\n"                                            <"$?"
+lsblk from util-linux 2.41.6
+cryptsetup 2.8.1 flags: UDEV BLKID KEYRING KERNEL_CAPI HW_OPAL 
+  LVM version:     2.03.35(2) (2025-09-09)
+  Library version: 1.02.209 (2025-09-09)
+  Driver version:  4.50.0
+  Configuration:   ./configure --build=x86_64-alpine-linux-musl --host=x86_64-alpine-linux-musl --prefix=/usr --sysconfdir=/etc --sbindir=/sbin --localstatedir=/var --enable-static_link --disable-dependency-tracking --disable-nls --disable-readline --enable-pkgconfig --with-thin=internal --enable-dmeventd --enable-cmdlib --with-thin-check=/usr/sbin/thin_check --disable-thin_check_needs_check --with-thin-dump=/usr/sbin/thin_dump --with-thin-repair=/usr/sbin/thin_repair --with-thin-restore=/usr/sbin/thin_restore --with-cache-check=/usr/sbin/cache_check --disable-cache_check_needs_check --with-cache-dump=/usr/sbin/cache_dump --with-cache-repair=/usr/sbin/cache_repair --with-cache-restore=/usr/sbin/cache_restore --with-dmeventd-path=/sbin/dmeventd --without-systemd-run --enable-udev_rules --enable-write_install --enable-lvmlockd-sanlock --disable-udev_sync CLDFLAGS=-Wl,--as-needed,-O1,--sort-common -Wl,-z,pack-relative-relocs
+mdadm - v4.3 - 2024-02-15
+GNU ddrescue 1.29.1
+Copyright (C) 2025 Antonio Diaz Diaz.
+License GPLv2+: GNU GPL version 2 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+TestDisk 7.2, Data Recovery Utility, February 2024
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+
+Version: 7.2
+Compiler: GCC 15.2
+ext2fs lib: 1.47.3, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.5
+iconv support: yes
+OS: Linux, kernel 7.1.3 (#1 SMP PREEMPT_DYNAMIC Sat Oct  3 19:54:33 UTC 2026) x86_64
+smartctl 7.5 2025-04-30 r5714 [x86_64-linux-7.1.3] (local build)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+smartctl comes with ABSOLUTELY NO WARRANTY. This is free
+software, and you are welcome to redistribute it under
+the terms of the GNU General Public License; either
+version 2, or (at your option) any later version.
+See https://www.gnu.org for further details.
+
+smartmontools release 7.5 dated 2025-04-30 at 07:42:55 UTC
+smartmontools SVN rev 5714 dated 2025-04-30 at 07:43:44
+smartmontools build host: x86_64-alpine-linux-musl
+smartmontools build with: C++11, GCC 15.2.0
+smartmontools configure arguments: [hidden in reproducible builds]
+reproducible build SOURCE_DATE_EPOCH: 1747214110 (2025-05-14 09:15:10)
+nvme version 2.16 (git 2.16)
+libnvme version 1.16.2 (git 1.16.2)
+tmux 3.6
+0: 1 windows (created Sat Oct  3 20:06:58 2026)
+RESCUE_TMUX_PASS
+e2fsck 1.47.3 (8-Jul-2025)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+AR_EXT4: 12/8192 files (8.3% non-contiguous), 1550/8192 blocks
+RESCUE_FIXTURE_PASS AR_EXT4 /dev/vda
+Opening filesystem to check...
+Checking filesystem on /dev/vdb
+UUID: 580499e1-2ab9-40c6-89ef-e5ef0dde8288
+[1/8] checking log skipped (none written)
+[2/8] checking root items
+[3/8] checking extents
+[4/8] checking free space tree
+[5/8] checking fs roots
+[6/8] checking only csums items (without verifying data)
+[7/8] checking root refs
+[8/8] checking quota groups skipped (not enabled on this FS)
+found 147456 bytes used, no error found
+total csum bytes: 0
+total tree bytes: 147456
+total fs tree bytes: 32768
+total extent tree bytes: 16384
+btree space waste bytes: 140230
+file data blocks allocated: 0
+ referenced 0
+RESCUE_FIXTURE_PASS AR_BTRFS /dev/vdb
+Phase 1 - find and verify superblock...
+Phase 2 - using internal log
+        - zero log...
+        - scan filesystem freespace and inode maps...
+        - found root inode chunk
+Phase 3 - for each AG...
+        - scan (but don't clear) agi unlinked lists...
+        - process known inodes and perform inode discovery...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+        - process newly discovered inodes...
+Phase 4 - check for duplicate blocks...
+        - setting up duplicate extent list...
+        - check for inodes claiming duplicate blocks...
+        - agno = 0
+        - agno = 1
+        - agno = 2
+        - agno = 3
+No modify flag set, skipping phase 5
+Phase 6 - check inode connectivity...
+        - traversing filesystem ...
+        - traversal finished ...
+        - moving disconnected inodes to lost+found ...
+Phase 7 - verify link counts...
+No modify flag set, skipping filesystem flush and exiting.
+RESCUE_FIXTURE_PASS AR_XFS /dev/sr1
+fsck.fat 4.2 (2021-01-31)
+/dev/sda: 1 files, 0/16343 clusters
+RESCUE_FIXTURE_PASS AR_FAT /dev/sda
+exfatprogs version : 1.3.0
+/dev/nvme0n1: clean. directories 1, files 0
+RESCUE_FIXTURE_PASS AR_EXFAT /dev/nvme0n1
+Mounting volume... OK
+Processing of $MFT and $MFTMirr completed successfully.
+Checking the alternate boot sector... OK
+NTFS volume version is 3.1.
+NTFS partition /dev/vdc was processed successfully.
+RESCUE_FIXTURE_PASS AR_NTFS /dev/vdc
+LUKS header information
+Version:       	2
+Epoch:         	3
+Metadata area: 	16384 [bytes]
+Keyslots area: 	16744448 [bytes]
+UUID:          	02438b6e-974a-457a-8a4e-280b35876c8d
+Label:         	AR_LUKS
+Subsystem:     	(no subsystem)
+Flags:       	(no flags)
+
+Data segments:
+  0: crypt
+	offset: 16777216 [bytes]
+	length: (whole device)
+	cipher: aes-xts-plain64
+	sector: 4096 [bytes]
+
+Keyslots:
+  0: luks2
+	Key:        512 bits
+	Priority:   normal
+	Cipher:     aes-xts-plain64
+	Cipher key: 512 bits
+	PBKDF:      pbkdf2
+	Hash:       sha256
+	Iterations: 168310
+	Salt:       a8 9d 4c 1b 33 b7 35 d5 fb 90 4c fd 0d 41 fc f4 
+	            86 76 e2 93 90 fe 03 92 f7 9f f3 86 b7 2a 5e 47 
+	AF stripes: 4000
+	AF hash:    sha256
+	Area offset:32768 [bytes]
+	Area length:258048 [bytes]
+	Digest ID:  0
+Tokens:
+Digests:
+  0: pbkdf2
+	Hash:       sha256
+	Iterations: 211747
+	Salt:       3c 05 c8 c3 80 75 78 d4 0d 4e 6b 93 38 12 7e 6a 
+	            ed 68 e7 bb e4 b9 6f ed 16 a0 4a d8 24 bd ae c5 
+	Digest:     96 45 04 6d 82 82 85 7e 62 28 e5 37 98 7d da b4 
+	            2f 69 4e dc 18 c2 6d 71 a7 f5 4b 13 07 df 29 17 
+RESCUE_FIXTURE_PASS AR_LUKS /dev/vdd
+RESCUE_STORAGE_READY_OK
+STORAGE_SMOKE_EXIT=0
+(none)# qemu-system-x86_64: terminating on signal 15 from pid 4444 (luajit)

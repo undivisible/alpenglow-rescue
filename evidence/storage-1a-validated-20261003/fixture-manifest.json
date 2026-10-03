@@ -1,0 +1,33 @@
+{
+  "files":{
+    "luks.img":{
+      "sha256":"d9b46f66c3dbfbe668fe9b81ca9f08f9ac819bc92b2331233aa2755ba563d2ea",
+      "bytes":67108864
+    },
+    "xfs.img":{
+      "sha256":"6ee66aa4b16ca34e75174b543a84d5481e7a5b93aea825683e988529a05f1af7",
+      "bytes":402653184
+    },
+    "ext4.img":{
+      "sha256":"11bcbcd779c947a17305e5d38e761045878c3333af3ad81863cbb39e058ac791",
+      "bytes":33554432
+    },
+    "btrfs.img":{
+      "sha256":"430e40517ddae006c55102609202cb66362739fc2e0cd673ca7b29cd14e41935",
+      "bytes":268435456
+    },
+    "ntfs.img":{
+      "sha256":"658a730298b295a75ca0c81a6d95227e01b00bb8b1df43bf00eb7f9263988686",
+      "bytes":67108864
+    },
+    "exfat.img":{
+      "sha256":"04d39fec1eece623401135552cb858c0088e95b6363a62bb83e653595ffbb0ce",
+      "bytes":33554432
+    },
+    "fat.img":{
+      "sha256":"82ad983a1385012643579b960e0a47450861d308ffcc9fd3508b7899004d27cb",
+      "bytes":33554432
+    }
+  },
+  "scope":"synthetic regular CI files; no host mounts; QEMU backend read-only"
+}

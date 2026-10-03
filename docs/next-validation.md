@@ -1,34 +1,35 @@
-# Next native storage acceptance
+# Next acceptance after native storage-1a
 
-Checkpoint: Rescue `main` `57ea38e3963559f9f36941d6c72e9f6bfea92f67`,
-Alpenglow `2214bc159355522bbebc61e8e90ca78933a8e1ac`. The latest tested
-33,658,880-byte ISO predates the guest chroot fix and LuaJIT migration. Its one
-BIOS and one UEFI interactive shell response are not storage readiness.
+The [2026-10-03 storage report](storage-1a-validated.md) establishes a bootable
+33,806,336-byte partial ISO (SHA-256
+`a21b7b407df7060d04647e88b2d588a5359d1b2ce7ededd3253344da2b0f5908`).
+The exact native base came from Rescue `a05898d`; the reviewed small correction
+and embedded probe came from `f9ade38`. Alpenglow remains pinned at
+`2214bc159355522bbebc61e8e90ca78933a8e1ac`. Three strict synthetic
+storage runs passed under BIOS and three under UEFI. This is not full Omarchy
+Rescue equivalence or evidence of a fourfold boot improvement.
 
-The next image run is the manual `Native fast-base image` workflow with
-`increment=storage-1` at this source commit. It validates LuaJIT on Linux,
-adapts the pinned Alpenglow source, builds the native kernel and signed APK
-storage payload with one build job/CPU, packages the whole BIOS/UEFI ISO, and
-records the exact ISO bytes, SHA-256, kernel/config/package licenses and raw
-build logs. The fresh recipe contains the real guest chroot command and shell,
-terminfo and Toybox links; it does not need the older supplemental correction
-workflow. The workflow's configured timeout is 40 minutes.
+The next functional increment needs networking and WiFi, audited firmware and
+physical storage/network/graphics driver coverage, a usable local graphical
+console with serial fallback, Oil and the three AI client executable launch
+checks, plus chroot, mount and phone helper parity. Credential enrollment,
+remote root service activation, real disk repair, USB flashing and real host
+disk mounts are outside synthetic validation. Preserve essential rescue
+features even if they raise the whole ISO above the size target. Finish the
+corresponding-source and license distribution audit before a binary release.
 
-Before dispatch, leave the currently active local jobs their CPU slot. Recheck
-host and Docker free space. The new continuation checkpoint needs at least
-18 GiB free on each filesystem, then stops at 15 GiB or after 4 GiB of
-additional growth; the package payload and ISO scripts have stricter 21 GiB
-guards. Treat the largest applicable guard as the minimum. No local heavy job
-or fixture VM is needed to prepare this run. Preserve all prior controls and
-raw evidence. Existing task-owned `build/` totals about 2.6 MiB, so it offers
-no useful disk reclamation; do not clean unrelated checkouts or caches.
+For heavy builds, keep Twenify's CPU priority, one Rescue build job/CPU, and
+the established 14 GiB host/Docker hard floor, 15 GiB early stop and 4 GiB
+additional-allocation cap; honor any higher step-specific guards. Recheck
+headroom and active jobs before starting a new run. Keep source and artifacts
+isolated from the original Alpenglow WIP checkout.
 
-Acceptance requires three fresh QEMU processes under BIOS and three under UEFI,
-each with a reset UEFI variable file, q35 TCG, one vCPU, 4096 MiB, no NIC, the
-same ISO and seven task-owned regular-file fixtures attached read-only. Record
-the command, firmware/image hashes, serial log, screen and elapsed markers for
-every run. A valid storage result needs all seven exact fixture PASS labels,
-tmux PASS, READY, and `STORAGE_SMOKE_EXIT=0`; failures stop the series and stay
-visible. Actual repair, hardware drivers, networking, AI clients and full
-upstream rescue parity are separate acceptance gates. No matched upstream
-three-run rescue-readiness baseline or fourfold boot claim exists yet.
+The official Omarchy Rescue `v2026.09.30.1` release is checksum-verified at
+1,954,578,432 bytes, SHA-256
+`b812a848e93bc5526094a8165fba8564e9211a7e86859faba2fd525b6bcd82f1`.
+Measure at least three **matched** cold upstream and candidate trials per
+firmware with identical QEMU version, CPU, memory, storage, network and a
+predefined interactive rescue-readiness endpoint. Keep shell, network and
+full readiness times separate. ARM-host emulation and CI x86 TCG results
+cannot be combined into a speed ratio. Only report an under-500-MB equivalent
+or fourfold speedup if the complete feature and matched benchmark gates pass.

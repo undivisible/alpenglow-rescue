@@ -1,4 +1,12 @@
-# Current measurements, 2026-10-01
+# Measurement history through 2026-10-02
+
+**Current accepted partial storage measurement:** the 2026-10-03
+[native storage-1a report](storage-1a-validated.md) records a 33,806,336-byte
+ISO and three strict cold BIOS plus three strict cold UEFI passes. The evidence
+and statements below are the preceding checkpoints; “latest” refers to the
+latest image at that earlier checkpoint.
+
+## Earlier checkpoint
 
 The [2026-10-02 LuaJIT tooling migration](luajit-migration.md) is validated
 locally but has not produced a new image or boot measurement. All artifact

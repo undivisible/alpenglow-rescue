@@ -1,5 +1,9 @@
 # Native storage increment 1
 
+The current partial storage-1a ISO passed three strict BIOS and three UEFI
+cold runs; see the [2026-10-03 validation report](storage-1a-validated.md).
+The checkpoint at the end of this page records the earlier failed image.
+
 This bounded increment preserves Alpenglow at
 `2214bc159355522bbebc61e8e90ca78933a8e1ac`: Linux 7.1.3 with embedded LZ4,
 Zig init, static Toybox and dinit. Signed Alpine 3.23 packages add storage
@@ -49,7 +53,7 @@ chroot/mount and phone helpers, and recovery/diagnostic gaps in the feature
 matrix. No complete-equivalence, under-500-MB or four-times-faster claim follows
 from the size or timing of this partial image.
 
-## Current test checkpoint
+## Previous failed test checkpoint
 
 The original native storage ISO was compiled in run 36877105791 at source
 `e4ef9d31516ed23a4610678d828dd7178b0e5a42`: 33,638,400 bytes. A reviewed

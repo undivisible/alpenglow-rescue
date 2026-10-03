@@ -1,0 +1,50 @@
+{
+  "image_bytes":33806336,
+  "image_sha256":"a21b7b407df7060d04647e88b2d588a5359d1b2ce7ededd3253344da2b0f5908",
+  "tested_firmware":null,
+  "native_artifacts":{
+    "vmlinuz":{
+      "bytes":29795328,
+      "sha256":"04c49ab77e00c57f5a3c70e0384c2beb8e4382a2a55e8cd73fcb4db04f9aee5c"
+    },
+    "initramfs.cpio.lz4":{
+      "bytes":19844393,
+      "sha256":"8d30de129faaf84c15fd008dbea98b210ed727ae26a8bdd187e57ccfb95f6efd"
+    },
+    "alpenglow-init":{
+      "bytes":4912,
+      "sha256":"c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b"
+    },
+    "toybox":{
+      "bytes":857544,
+      "sha256":"adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970"
+    },
+    "dinit":{
+      "bytes":1727824,
+      "sha256":"977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68"
+    }
+  },
+  "supplemental_initramfs":{
+    "terminfo_archive_sha256":"d5c3daebee9e4f64fc5ac5f9841e8fee617ae7835ad1d3ca52ec52a4434b6cb4",
+    "bytes":18566,
+    "sha256":"3b05a6895e3e26ffcf93184bb3c8d0226f3b821a908a7120eed0791c750abfd0",
+    "probe_sha256":"74b28b63ff97eebeea2b609a201c50db24c0603bb8d39e029a8823823d6a6882",
+    "terminfo_package":"ncurses-terminfo-base=6.5_p20251123-r0",
+    "shell":"/bin/sh -> /usr/bin/oksh"
+  },
+  "base_image_sha256":"c1a9e13947b95c8e8cf8420cc621032874a585ce0e7b3daa4db8fcef689f28fb",
+  "kernel_config_sha256":"16255df854a02b818f5f638f8b805832b14e298a7941e2835fc20433797560fb",
+  "project_commit":"f9ade38107b08fde6f6a427d3574a0f73366cc65",
+  "alpenglow_commit":"2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "base_project_commit":"a05898d435cacd3ea626ee1b94e060ef3077641f",
+  "kernel":{
+    "init":"pinned system/init/init.zig",
+    "kernel_sha256":"be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+    "kernel_url":"https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz",
+    "kernel_version":"7.1.3",
+    "base_firmware":"none; storage/EFI restoration recorded separately; broad physical coverage pending",
+    "dinit_version":"0.19.2",
+    "toybox_version":"0.8.11"
+  },
+  "scope":"Native storage-1a partial rescue; exact embedded native kernel plus small supplemental shell/terminfo/probe initramfs. No networking/firmware/AI/full parity claim."
+}
