@@ -15,6 +15,15 @@ R.main(function()
   for _,x in ipairs({{5*g,0,0},{0,5*g,0},{0,0,5*g}}) do assert(M.violation(18*g,18*g,unpack(x)):find('cap')) end
  end)
  local checked=function(a) if a[2]=='ps' then return 'owned-cid\n' elseif a[2]=='inspect' then return '1234\n' else error('unexpected call') end end
+ test('live inspect handles output and exit status separately',function()
+  patched(M,{checked=function(a)
+   if a[2]=='ps' then return 'owned-cid\n',0 end
+   if a[2]=='inspect' then return '1234\n',0 end
+   error('unexpected call')
+  end,docker_free=function(cid) assert(cid=='owned-cid');return 18*g end},function()
+   local layer,free=M.owned_usage();assert(layer==1234 and free==18*g)
+  end)
+ end)
  test('live df exit127 uses fresh immutable probe',function()
   local count=0
   patched(M,{checked=checked,docker_free=function(cid) count=count+1;if cid then error({code=127,argv={'docker','exec',cid,'df'}}) end;return 18*g end},function() local layer,free=M.owned_usage();assert(layer==1234 and free==18*g and count==2) end)

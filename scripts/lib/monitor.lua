@@ -15,7 +15,8 @@ function M.owned_usage()
  local list={'docker','ps','-q','--filter','label='..M.LABEL};local layer,available=0,nil
  for _,cid in ipairs(R.words(M.checked(list))) do
   local ok,e=pcall(function()
-   layer=layer+assert(tonumber(M.checked({'docker','inspect','--size','--format','{{.SizeRw}}',cid})))
+   local size_text=M.checked({'docker','inspect','--size','--format','{{.SizeRw}}',cid})
+   layer=layer+assert(tonumber(R.trim(size_text)),'invalid Docker layer size')
    local current=M.docker_free(cid);available=available and math.min(available,current) or current
   end)
   if not ok then
