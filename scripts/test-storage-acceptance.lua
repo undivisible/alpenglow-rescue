@@ -14,6 +14,7 @@ R.main(function()
   assert(not A.network_console(R.replace(net,marker,'missing')))
  end
  assert(not A.network_console(R.replace(net,'NETWORK_SMOKE_EXIT=0','NETWORK_SMOKE_EXIT=1')))
+ assert(not A.network_console(R.replace(net,'\nTTY1_COMMAND_OK\n','\n(none)# TTY1_COMMAND_OK\n')))
  for _,path in ipairs(R.files(R.root..'/evidence/storage-validation-strict-failed/build/bench')) do if path:match('%.serial%.txt$') then assert(not A.storage(R.read(path)),path) end end
  for _,path in ipairs(R.files(R.root..'/evidence/storage-validation-rejected/build/bench')) do if path:match('%.serial%.txt$') then assert(not A.storage(R.read(path)),path) end end
  print('LuaJIT storage acceptance: LF/CRLF success, missing markers, exit1/125/126/127 and all retained failures checked')
