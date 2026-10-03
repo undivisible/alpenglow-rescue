@@ -41,7 +41,7 @@ for entry in 'EXT4 ext4' 'BTRFS btrfs' 'XFS xfs' 'FAT vfat' 'EXFAT exfat' 'NTFS 
   test "$(blockdev --getro "$dev")" = 1
   case "$fs" in
     ext4) e2fsck -f -n "$dev"; opts=ro,noload ;;
-    btrfs) btrfs check --readonly "$dev"; opts=ro,nologreplay ;;
+    btrfs) btrfs check --readonly "$dev"; opts=ro,rescue=nologreplay ;;
     xfs) xfs_repair -n "$dev"; opts=ro,norecovery ;;
     vfat) fsck.fat -n "$dev"; opts=ro ;;
     exfat) fsck.exfat -n "$dev"; opts=ro ;;
