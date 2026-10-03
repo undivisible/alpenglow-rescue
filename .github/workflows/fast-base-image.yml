@@ -85,6 +85,22 @@ jobs:
           else
             echo 'UEFI storage test not run: image or fixtures absent. Previous-base diagnosis retained.'
           fi
+      - name: Cold BIOS virtual network and tty1 readiness (three runs)
+        if: always() && inputs.increment == 'storage-1'
+        run: |
+          if [ -f build/ci/output/alpenglow-rescue-storage-1-x86_64.iso ]; then
+            luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name virtual-network-1 --network-fixture --runs 3 --timeout 90
+          else
+            echo 'BIOS network test not run: image absent.'
+          fi
+      - name: Separate cold UEFI virtual network and tty1 readiness (three runs)
+        if: always() && inputs.increment == 'storage-1'
+        run: |
+          if [ -f build/ci/output/alpenglow-rescue-storage-1-x86_64.iso ]; then
+            luajit scripts/bench-fast-base.lua --iso build/ci/output/alpenglow-rescue-storage-1-x86_64.iso --name virtual-network-1 --firmware uefi --network-fixture --runs 3 --timeout 90
+          else
+            echo 'UEFI network test not run: image absent.'
+          fi
       - name: Preserve compiled native recovery bundle
         if: always() && inputs.increment == 'storage-1'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

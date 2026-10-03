@@ -80,7 +80,7 @@ docker run --rm --cpus=1 --pids-limit=512 --memory=2g \
  for name,t in pairs(adapted) do R.write(dest..'/'..name,t) end
  if increment=='storage-1' then
   local recipe=dest..'/rescue-recipe';R.mkdir(recipe..'/scripts');R.copy(root..'/packages-storage.txt',recipe..'/packages-storage.txt')
-  for _,name in ipairs({'add-storage-payload.sh','smoke-storage.sh'}) do R.copy(root..'/scripts/'..name,recipe..'/scripts/'..name) end
+  for _,name in ipairs({'add-storage-payload.sh','smoke-storage.sh','rescue-net-up.sh','rescue-udhcpc.sh','smoke-network.sh'}) do R.copy(root..'/scripts/'..name,recipe..'/scripts/'..name) end
   R.copy(root..'/kernel/storage-x86_64.fragment',dest..'/system/backends/appliance/kernel/storage-x86_64.fragment')
  end
  R.mkdir(root..'/build/evidence');local hashes={};for name,t in pairs(adapted) do hashes[name]=R.sha_text(t) end

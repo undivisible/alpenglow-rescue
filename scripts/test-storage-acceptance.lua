@@ -8,6 +8,12 @@ R.main(function()
  local good='\n'..table.concat(lines,'\n')..'\n';assert(A.storage(good));assert(A.storage(good:gsub('\n','\r\n')))
  for missing=1,#lines do local copy={};for i,l in ipairs(lines) do if i~=missing then copy[#copy+1]=l end end;assert(not A.storage('\n'..table.concat(copy,'\n')..'\n')) end
  for _,code in ipairs({1,125,126,127}) do assert(not A.storage(R.replace(good,'STORAGE_SMOKE_EXIT=0','STORAGE_SMOKE_EXIT='..code))) end
+ local net='\nRESCUE_VIRTUAL_DHCP_OK\nNETWORK_SMOKE_EXIT=0\nTTY1_COMMAND_OK\n'
+ assert(A.network_console(net) and A.network_console(net:gsub('\n','\r\n')))
+ for _,marker in ipairs({'RESCUE_VIRTUAL_DHCP_OK','NETWORK_SMOKE_EXIT=0','TTY1_COMMAND_OK'}) do
+  assert(not A.network_console(R.replace(net,marker,'missing')))
+ end
+ assert(not A.network_console(R.replace(net,'NETWORK_SMOKE_EXIT=0','NETWORK_SMOKE_EXIT=1')))
  for _,path in ipairs(R.files(R.root..'/evidence/storage-validation-strict-failed/build/bench')) do if path:match('%.serial%.txt$') then assert(not A.storage(R.read(path)),path) end end
  for _,path in ipairs(R.files(R.root..'/evidence/storage-validation-rejected/build/bench')) do if path:match('%.serial%.txt$') then assert(not A.storage(R.read(path)),path) end end
  print('LuaJIT storage acceptance: LF/CRLF success, missing markers, exit1/125/126/127 and all retained failures checked')

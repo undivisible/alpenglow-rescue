@@ -34,8 +34,21 @@ cp -a /out/storage-payload/etc/terminfo /out/rootfs/etc/
 printf '%s\n' 'export PATH=/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin' > /out/rootfs/etc/profile
 ln -snf /bin/toybox /out/rootfs/sbin/getty
 mkdir -p /out/rootfs/usr/local/bin /out/rootfs/usr/share/alpenglow-rescue
-cp /recipe/scripts/smoke-storage.sh /out/rootfs/usr/local/bin/rescue-smoke-storage
-chmod 755 /out/rootfs/usr/local/bin/rescue-smoke-storage
+for entry in 'smoke-storage.sh rescue-smoke-storage' 'rescue-net-up.sh rescue-net-up' \
+  'rescue-udhcpc.sh rescue-udhcpc' 'smoke-network.sh rescue-smoke-network'; do
+  set -- $entry
+  cp "/recipe/scripts/$1" "/out/rootfs/usr/local/bin/$2"
+  chmod 755 "/out/rootfs/usr/local/bin/$2"
+done
+# The native serial shell remains; expose a local VGA/keyboard rescue login.
+cat > /out/rootfs/etc/dinit.d/shell-tty1 <<'SERVICE'
+type = process
+command = /bin/toybox getty 38400 tty1 linux
+restart = yes
+depends-on = mount-filesystems
+SERVICE
+ln -s /etc/dinit.d/shell-tty1 /out/rootfs/etc/dinit.d/boot.d/shell-tty1
+printf '%s\n' 'depends-on = shell-tty1' >> /out/rootfs/etc/dinit.d/boot
 printf '%s\n' PUBLIC_SYNTHETIC_FIXTURE_KEY_NOT_A_SECRET > /out/rootfs/usr/share/alpenglow-rescue/fixture.key
 printf '%s\n' 'NAME="Alpenglow Rescue"' 'ID=alpenglow' 'VERSION_ID=storage-1-dev' \
   'PRETTY_NAME="Alpenglow Rescue storage increment (partial)"' > /out/rootfs/etc/os-release

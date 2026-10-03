@@ -1,0 +1,31 @@
+# Virtual Ethernet and tty1 increment
+
+The validated storage-1a ISO remains the 33,806,336-byte reference artifact.
+This source increment requires a fresh image and guest proof before it changes
+any measured claim. It remains a partial rescue system.
+
+The accepted kernel configuration has `CONFIG_NET=y` and `CONFIG_INET=y`, but
+`CONFIG_NETDEVICES` and `CONFIG_PACKET` are disabled. It already has built-in
+VT, VGA/framebuffer console, PS/2 keyboard, generic HID and USB HID support.
+The rootfs starts a serial getty only. This increment requests built-in packet
+sockets, VirtIO Ethernet and Intel e1000, and starts a separate local tty1
+getty. It does not add wireless, physical Ethernet families, DRM/kmscon or
+firmware; those remain required for broad hardware parity.
+
+The previously signed Alpine payload includes Busybox 1.37.0-r30 (813,480
+installed bytes as package metadata, GPL-2.0-only) with DHCP, `ip`, route and
+interface applets. The source change adds no APK package or firmware. Its
+additional payload is three short guest scripts and one dinit service; the
+kernel and whole-ISO byte deltas are pending a fresh build. The manual
+`rescue-net-up eth0` command configures the selected guest interface via DHCP
+and writes the guest resolver file. Nothing listens for remote access.
+
+The dedicated benchmark attaches a VirtIO NIC to QEMU user networking with
+`restrict=on` and no host forwarding, using the same one-vCPU, 4096 MiB,
+q35/TCG configuration as the storage suite. The guest probe requires the
+synthetic fixture boot flag and checks a 10.0.2.x DHCP address plus the
+virtual 10.0.2.2 route. QMP sends a command through the virtual keyboard at
+tty1; success requires its marker on the serial port as well as DHCP and a
+zero shell exit. BIOS and UEFI results are separate. This proves local virtual
+networking and console input only, not external reachability, WiFi, real
+hardware support or complete rescue readiness.
