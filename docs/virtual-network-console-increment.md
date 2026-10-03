@@ -22,10 +22,12 @@ and writes the guest resolver file. Nothing listens for remote access.
 
 The dedicated benchmark attaches a VirtIO NIC to QEMU user networking with
 `restrict=on` and no host forwarding, using the same one-vCPU, 4096 MiB,
-q35/TCG configuration as the storage suite. The guest probe requires the
-synthetic fixture boot flag and checks a 10.0.2.x DHCP address plus the
-virtual 10.0.2.2 route. QMP sends a command through the virtual keyboard at
+q35/TCG configuration as the storage suite. In the first fresh image,
+QEMU provided a 10.0.2.15 DHCP lease but no default router, and the original
+default-route assertion failed. The corrected probe requires the synthetic
+fixture boot flag and checks the 10.0.2.x DHCP address plus its connected
+10.0.2.0/24 route. QMP sends a command through the virtual keyboard at
 tty1; success requires its marker on the serial port as well as DHCP and a
 zero shell exit. BIOS and UEFI results are separate. This proves local virtual
-networking and console input only, not external reachability, WiFi, real
+DHCP on an isolated virtual subnet and console input only, not external reachability, WiFi, real
 hardware support or complete rescue readiness.

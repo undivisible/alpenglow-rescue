@@ -19,7 +19,7 @@ R.main(function()
   path='build/ci/output/'..name..'.iso';local pins=R.read_json('pins.json');local f=E.file(path,R)
   local m={scope='Native FAST base proof only; rescue clients, payload, restored drivers and network readiness absent',project_commit=revision(),alpenglow_commit=pins.alpenglow,kernel=pins.fast_native,image_bytes=f.bytes,image_sha256=f.sha256,tested_firmware=R.null,native_artifacts={}}
   if os.getenv('ALPENGLOW_RESCUE_INCREMENT')=='storage-1' then
-   m.scope='Native storage-1 partial rescue: built-in storage/filesystems/EFI and signed APK tools; no network/firmware/AI parity claim';m.kernel_config_sha256=R.sha('build/ci/output/kernel.config')
+   m.scope='Native storage-1 partial rescue: built-in storage/filesystems/EFI, virtual Ethernet, tty1 and signed APK tools; physical network/firmware/AI/full parity absent';m.kernel_config_sha256=R.sha('build/ci/output/kernel.config')
    m.kernel.base_firmware='none; storage/EFI restoration recorded separately; broad physical coverage pending'
   end
   for _,n in ipairs({'vmlinuz','initramfs.cpio.lz4','alpenglow-init','toybox','dinit'}) do m.native_artifacts[n]=E.file('build/fast-source/build/native/'..n,R) end
