@@ -1,0 +1,40 @@
+{
+  "tested_firmware":null,
+  "native_artifacts":{
+    "dinit":{
+      "sha256":"977b1c9907a3986d6baac93f8ff84878d64604279046b7669f4f4d6ea5934c68",
+      "bytes":1727824
+    },
+    "vmlinuz":{
+      "sha256":"e997cbdd5c3571c267c11918779ca177ed9830dd4165bd5ab8770c3efdfa0f3d",
+      "bytes":29963264
+    },
+    "initramfs.cpio.lz4":{
+      "sha256":"a42c49bef60f802c66646d36f5cf6c40335dd50186592c6e7ff94676f523d472",
+      "bytes":19844751
+    },
+    "alpenglow-init":{
+      "sha256":"c394b241face311d47721bf07c290a3f064aba0c71e493b76b0f1b979d8fa79b",
+      "bytes":4912
+    },
+    "toybox":{
+      "sha256":"adc927d1a41891f9f11a5e3de19dc297bbd35c5eff2f5f03c308e26c718ca970",
+      "bytes":857544
+    }
+  },
+  "kernel_config_sha256":"ef00fc38ce71a64f50100fcdc1ed52d05e3df07b6977f0992c717095410857dd",
+  "project_commit":"531db961d4bf3eb47ec912461d9e5e1448152d2b",
+  "alpenglow_commit":"2214bc159355522bbebc61e8e90ca78933a8e1ac",
+  "kernel":{
+    "kernel_sha256":"be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc",
+    "base_firmware":"none; storage/EFI restoration recorded separately; broad physical coverage pending",
+    "toybox_version":"0.8.11",
+    "dinit_version":"0.19.2",
+    "kernel_version":"7.1.3",
+    "init":"pinned system/init/init.zig",
+    "kernel_url":"https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz"
+  },
+  "scope":"Native storage-1 partial rescue: built-in storage/filesystems/EFI, virtual Ethernet, tty1 and signed APK tools; physical network/firmware/AI/full parity absent",
+  "image_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+  "image_bytes":33951744
+}

@@ -1,0 +1,73 @@
+[{
+    "artifact_bytes":33951744,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "external_probe_sha256":null,
+    "screen_error":null,
+    "firmware":"bios",
+    "markers_seconds":{
+      "boot":3.202391527,
+      "login":3.359703856,
+      "virtual_dhcp":4.436524667,
+      "base_console":3.905808835,
+      "network_console":4.734168548,
+      "tty1_command":4.734168548
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "run":1,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-7935tJ/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-bios","/usr/share/seabios/bios-256k.bin"],
+    "error":null,
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "network_ready_seconds":4.734168548,
+    "firmware_sha256":"1a9ea4f17bcfb27bda5728e2c21d9fa074cf7947b9b4910bb28213a735c96735",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)"
+  },{
+    "artifact_bytes":33951744,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "external_probe_sha256":null,
+    "screen_error":null,
+    "firmware":"bios",
+    "markers_seconds":{
+      "boot":3.086999762,
+      "login":3.242480028,
+      "virtual_dhcp":4.316732991,
+      "base_console":3.786442787,
+      "network_console":4.611916517,
+      "tty1_command":4.611916517
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "run":2,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-xhiCld/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-bios","/usr/share/seabios/bios-256k.bin"],
+    "error":null,
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "network_ready_seconds":4.611916517,
+    "firmware_sha256":"1a9ea4f17bcfb27bda5728e2c21d9fa074cf7947b9b4910bb28213a735c96735",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)"
+  },{
+    "artifact_bytes":33951744,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "external_probe_sha256":null,
+    "screen_error":null,
+    "firmware":"bios",
+    "markers_seconds":{
+      "boot":3.094372477,
+      "login":3.249103323,
+      "virtual_dhcp":4.325953187,
+      "base_console":3.795758983,
+      "network_console":4.61779914,
+      "tty1_command":4.61779914
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "run":3,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-7mPiIK/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-bios","/usr/share/seabios/bios-256k.bin"],
+    "error":null,
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "network_ready_seconds":4.61779914,
+    "firmware_sha256":"1a9ea4f17bcfb27bda5728e2c21d9fa074cf7947b9b4910bb28213a735c96735",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)"
+  }]

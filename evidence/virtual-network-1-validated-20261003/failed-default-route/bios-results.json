@@ -1,0 +1,22 @@
+[{
+    "firmware_sha256":"1a9ea4f17bcfb27bda5728e2c21d9fa074cf7947b9b4910bb28213a735c96735",
+    "benchmark_script_sha256":"c8c8aac2a6783ee52455cf9d6b06715d44fa415ee8b918cda8fdf172c8f25a36",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "error":null,
+    "firmware":"bios",
+    "external_probe_sha256":null,
+    "screen_error":null,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "markers_seconds":{
+      "login":3.291810878,
+      "base_console":3.8367269160001,
+      "boot":3.1313185240001
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "network_ready_seconds":null,
+    "artifact_bytes":33951744,
+    "run":1,
+    "artifact_sha256":"145597df1de3140f7699958951ea096f9bd59a684a7342a78fe3c0fa6a32e4c5",
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-nWqBed/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-bios","/usr/share/seabios/bios-256k.bin"]
+  }]

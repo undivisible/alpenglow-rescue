@@ -1,0 +1,67 @@
+[{
+    "error":null,
+    "scope":"storage increment with synthetic read-only fixtures; network disabled; no full rescue comparison",
+    "run":1,
+    "probe_attempts":1,
+    "rescue_ready_seconds":13.717012448,
+    "network_ready_seconds":null,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-ykTWMN/qmp.sock,server=on,wait=off","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/storage-1-uefi/run-1.vars.fd","-device","qemu-xhci,id=fixture-usb","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ext4.img,if=none,id=fixture0,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture0","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/btrfs.img,if=none,id=fixture1,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture1","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/xfs.img,if=none,id=fixture2,format=raw,readonly=on","-device","ide-cd,drive=fixture2","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/exfat.img,if=none,id=fixture3,format=raw,readonly=on","-device","nvme,drive=fixture3,serial=AR_FIXTURE_NVME_3","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ntfs.img,if=none,id=fixture4,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture4","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/luks.img,if=none,id=fixture5,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture5","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/fat.img,if=none,id=fixture6,format=raw,readonly=on","-device","usb-storage,drive=fixture6,bus=fixture-usb.0"],
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "firmware":"uefi",
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"c8c8aac2a6783ee52455cf9d6b06715d44fa415ee8b918cda8fdf172c8f25a36",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "markers_seconds":{
+      "storage_rescue":13.717012448,
+      "login":7.1399731469999,
+      "base_console":7.687174849,
+      "boot":6.9772823630001
+    },
+    "screen_error":null,
+    "external_probe_sha256":null
+  },{
+    "error":null,
+    "scope":"storage increment with synthetic read-only fixtures; network disabled; no full rescue comparison",
+    "run":2,
+    "probe_attempts":1,
+    "rescue_ready_seconds":13.812185789,
+    "network_ready_seconds":null,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-N5g0ET/qmp.sock,server=on,wait=off","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/storage-1-uefi/run-2.vars.fd","-device","qemu-xhci,id=fixture-usb","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ext4.img,if=none,id=fixture0,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture0","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/btrfs.img,if=none,id=fixture1,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture1","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/xfs.img,if=none,id=fixture2,format=raw,readonly=on","-device","ide-cd,drive=fixture2","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/exfat.img,if=none,id=fixture3,format=raw,readonly=on","-device","nvme,drive=fixture3,serial=AR_FIXTURE_NVME_3","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ntfs.img,if=none,id=fixture4,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture4","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/luks.img,if=none,id=fixture5,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture5","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/fat.img,if=none,id=fixture6,format=raw,readonly=on","-device","usb-storage,drive=fixture6,bus=fixture-usb.0"],
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "firmware":"uefi",
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"c8c8aac2a6783ee52455cf9d6b06715d44fa415ee8b918cda8fdf172c8f25a36",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "markers_seconds":{
+      "storage_rescue":13.812185789,
+      "login":7.2025866210001,
+      "base_console":7.7467270290001,
+      "boot":7.0500516130001
+    },
+    "screen_error":null,
+    "external_probe_sha256":null
+  },{
+    "error":null,
+    "scope":"storage increment with synthetic read-only fixtures; network disabled; no full rescue comparison",
+    "run":3,
+    "probe_attempts":1,
+    "rescue_ready_seconds":13.858082786,
+    "network_ready_seconds":null,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-5TiOCp/qmp.sock,server=on,wait=off","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/storage-1-uefi/run-3.vars.fd","-device","qemu-xhci,id=fixture-usb","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ext4.img,if=none,id=fixture0,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture0","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/btrfs.img,if=none,id=fixture1,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture1","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/xfs.img,if=none,id=fixture2,format=raw,readonly=on","-device","ide-cd,drive=fixture2","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/exfat.img,if=none,id=fixture3,format=raw,readonly=on","-device","nvme,drive=fixture3,serial=AR_FIXTURE_NVME_3","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/ntfs.img,if=none,id=fixture4,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture4","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/luks.img,if=none,id=fixture5,format=raw,readonly=on","-device","virtio-blk-pci,drive=fixture5","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/fixtures/fat.img,if=none,id=fixture6,format=raw,readonly=on","-device","usb-storage,drive=fixture6,bus=fixture-usb.0"],
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "firmware":"uefi",
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"c8c8aac2a6783ee52455cf9d6b06715d44fa415ee8b918cda8fdf172c8f25a36",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "markers_seconds":{
+      "storage_rescue":13.858082786,
+      "login":7.1654556679998,
+      "base_console":7.7080892209999,
+      "boot":7.0096345289999
+    },
+    "screen_error":null,
+    "external_probe_sha256":null
+  }]

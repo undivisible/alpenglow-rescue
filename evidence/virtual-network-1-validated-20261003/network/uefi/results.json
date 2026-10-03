@@ -1,0 +1,73 @@
+[{
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "error":null,
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "firmware":"uefi",
+    "external_probe_sha256":null,
+    "run":1,
+    "screen_error":null,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "markers_seconds":{
+      "login":6.183384827,
+      "virtual_dhcp":7.258193973,
+      "base_console":6.727423841,
+      "tty1_command":7.551742634,
+      "network_console":7.551742634,
+      "boot":6.030551864
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "network_ready_seconds":7.551742634,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-d0zg4E/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/virtual-network-validated-uefi/run-1.vars.fd"]
+  },{
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "error":null,
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "firmware":"uefi",
+    "external_probe_sha256":null,
+    "run":2,
+    "screen_error":null,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "markers_seconds":{
+      "login":6.227771356,
+      "virtual_dhcp":7.299764357,
+      "base_console":6.76890415,
+      "tty1_command":7.594837847,
+      "network_console":7.594837847,
+      "boot":6.076760828
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "network_ready_seconds":7.594837847,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-4cXtRl/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/virtual-network-validated-uefi/run-2.vars.fd"]
+  },{
+    "artifact_sha256":"37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef",
+    "error":null,
+    "firmware_sha256":"949bfa5389c4c48582737481e7d24f46b3a16b276ef44c4089a56858c6a0a446",
+    "benchmark_script_sha256":"4e51f0b12e6265e06fda77e4a1909f9fa3cd360f50f6a9b2302e56ca961b9fa1",
+    "qemu_version":"QEMU emulator version 8.2.2 (Debian 1:8.2.2+ds-0ubuntu1.18)",
+    "firmware":"uefi",
+    "external_probe_sha256":null,
+    "run":3,
+    "screen_error":null,
+    "scope":"virtual DHCP plus tty1 local command; QEMU restricted user network; no full rescue comparison",
+    "markers_seconds":{
+      "login":6.179579614,
+      "virtual_dhcp":7.252742738,
+      "base_console":6.721798189,
+      "tty1_command":7.542937332,
+      "network_console":7.542937332,
+      "boot":6.026021528
+    },
+    "probe_attempts":1,
+    "rescue_ready_seconds":null,
+    "network_ready_seconds":7.542937332,
+    "artifact_bytes":33951744,
+    "command":["qemu-system-x86_64","-machine","q35,accel=tcg","-cpu","max","-m","4096","-smp","1","-display","none","-serial","stdio","-monitor","none","-no-reboot","-qmp","unix:/tmp/ar-qmp-Yo1MSc/qmp.sock,server=on,wait=off","-netdev","user,id=rescue,restrict=on,ipv6=off","-device","virtio-net-pci,netdev=rescue","-drive","file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/ci/output/alpenglow-rescue-storage-1-x86_64.iso,media=cdrom,format=raw,readonly=on","-boot","order=d","-drive","if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.fd","-drive","if=pflash,format=raw,file=/home/runner/work/alpenglow-rescue/alpenglow-rescue/build/bench/virtual-network-validated-uefi/run-3.vars.fd"]
+  }]

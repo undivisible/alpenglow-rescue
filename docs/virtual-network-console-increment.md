@@ -1,10 +1,11 @@
 # Virtual Ethernet and tty1 increment
 
 The validated storage-1a ISO remains the 33,806,336-byte reference artifact.
-This source increment requires a fresh image and guest proof before it changes
-any measured claim. It remains a partial rescue system.
+This increment was built as a 33,951,744-byte ISO and passed separate strict
+storage and virtual DHCP/tty1 guest probes. It remains a partial rescue
+system; see the [validation report](virtual-network-console-validated.md).
 
-The accepted kernel configuration has `CONFIG_NET=y` and `CONFIG_INET=y`, but
+The preceding storage kernel had `CONFIG_NET=y` and `CONFIG_INET=y`, but
 `CONFIG_NETDEVICES` and `CONFIG_PACKET` are disabled. It already has built-in
 VT, VGA/framebuffer console, PS/2 keyboard, generic HID and USB HID support.
 The rootfs starts a serial getty only. This increment requests built-in packet
@@ -16,7 +17,8 @@ The previously signed Alpine payload includes Busybox 1.37.0-r30 (813,480
 installed bytes as package metadata, GPL-2.0-only) with DHCP, `ip`, route and
 interface applets. The source change adds no APK package or firmware. Its
 additional payload is three short guest scripts and one dinit service; the
-kernel and whole-ISO byte deltas are pending a fresh build. The manual
+native vmlinuz grew 167,936 bytes and the whole ISO grew 145,408 bytes over
+the validated storage-1a artifact. The manual
 `rescue-net-up eth0` command configures the selected guest interface via DHCP
 and writes the guest resolver file. Nothing listens for remote access.
 
@@ -29,5 +31,5 @@ fixture boot flag and checks the 10.0.2.x DHCP address plus its connected
 10.0.2.0/24 route. QMP sends a command through the virtual keyboard at
 tty1; success requires its marker on the serial port as well as DHCP and a
 zero shell exit. BIOS and UEFI results are separate. This proves local virtual
-DHCP on an isolated virtual subnet and console input only, not external reachability, WiFi, real
-hardware support or complete rescue readiness.
+DHCP on an isolated virtual subnet and console input only, not external
+reachability, WiFi, real hardware support or complete rescue readiness.

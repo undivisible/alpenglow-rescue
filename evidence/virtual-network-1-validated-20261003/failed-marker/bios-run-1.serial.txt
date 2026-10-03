@@ -1,0 +1,25 @@
+Warning: unable to open an initial console.
+
+Alpenglow boot
+
+[  OK  ] mount-filesystems
+[  OK  ] shell-tty1
+[  OK  ] shell-ttyS0
+(none) login: root
+[  OK  ] boot
+login[67]: root logged in on /dev/ttyS0  
+(none)# test "$(uname -r)" = 7.1.3 && test "$(cat /proc/1/comm)" = dinit && pr"$(cat /proc/1/comm)" = dinit && pr                                           <intf "%s%s\n" FAST_BASE_ READY_OK
+FAST_BASE_READY_OK
+/usr/local/bin/rescue-smoke-network; printf "NETWORK_SMOKE_EXIT=%s\n" "$?"
+(none)# /usr/local/bin/rescue-smoke-network; printf "NETWORK_SMOKE_EXIT=%s\n" ; printf "NETWORK_SMOKE_EXIT=%s\n"                                            <"$?"
+login[66]: root logged in on /dev/tty1  
+udhcpc: started, v1.37.0
+udhcpc: broadcasting discover
+udhcpc: broadcasting select for 10.0.2.15, server 10.0.2.2
+udhcpc: lease of 10.0.2.15 obtained from 10.0.2.2, lease time 86400
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global eth0
+10.0.2.0/24 dev eth0 scope link  src 10.0.2.15 
+RESCUE_VIRTUAL_DHCP_OK
+NETWORK_SMOKE_EXIT=0
+(none)# TTY1_COMMAND_OK
+qemu-system-x86_64: terminating on signal 15 from pid 59161 (luajit)

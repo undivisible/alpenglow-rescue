@@ -8,20 +8,21 @@ LICENSE file at current main; its current MIT notice is preserved in `licenses/`
 No upstream helper code is copied. Upstream estimates ~1.8 GB rescue-only and
 ~6.6 GB installer; the separately verified release measures 1,954,578,432 bytes.
 
-Current image: native storage-1a, 33,806,336 bytes, compiled base source
-`a05898d`, correction source `f9ade38`. It is a **partially validated candidate**,
-not a functional equivalent. Three BIOS and three UEFI cold boots passed the
-strict synthetic storage suite. Earlier green timings from a faulty probe were
-revoked. [Current measurements and raw evidence](storage-1a-validated.md).
+Current image: native storage plus virtual Ethernet/tty1, 33,951,744 bytes,
+image source `531db96`, strict benchmark source `923e243`. It is a
+**partially validated candidate**, not a functional equivalent. Three BIOS and
+three UEFI cold boots passed the strict synthetic storage suite; six separate
+cold boots passed restricted virtual DHCP and tty1 command response.
+[Current measurements and raw evidence](virtual-network-console-validated.md).
 
 | Capability | Omarchy Rescue | Current native candidate / evidence | License / remaining work |
 | --- | --- | --- | --- |
-| Kernel and storage drivers | Arch/Omarchy kernel with broad drivers | Custom Linux 7.1.3; all 106 requested storage/EFI settings compiled; builtin SATA/SCSI/NVMe/VirtIO/USB | GPL-2.0-only; no Alpine kernel; full physical-device coverage unverified |
-| Network/GPU drivers and firmware | Broad kernel/firmware | No audited broad network/WiFi/GPU/firmware restoration yet | Per-file firmware licenses need review; essential coverage must be retained before equivalence |
+| Kernel and storage drivers | Arch/Omarchy kernel with broad drivers | Custom Linux 7.1.3; requested storage/EFI settings compiled; built-in SATA/SCSI/NVMe/VirtIO/USB and packet sockets, VirtIO-net/e1000 | GPL-2.0-only; no Alpine kernel; full physical-device coverage unverified |
+| Network/GPU drivers and firmware | Broad kernel/firmware | Virtual Ethernet works in QEMU; no audited broad physical network/WiFi/GPU/firmware restoration yet | Per-file firmware licenses need review; essential coverage must be retained before equivalence |
 | Init and libc | systemd/glibc | Native Zig init, dinit 0.19.2, musl; PID1 and kernel checked in guest | MPL-2.0 / Apache-2.0 / MIT; native core unchanged by payload |
 | Shell and package tools | Omarchy shell/pacman | Toybox 0.8.11, oksh 7.8; interactive BIOS/UEFI command response; signed APK build bootstrap | 0BSD; Alpine oksh metadata Public-Domain; Oil absent, runtime updates unproven |
-| Console and tmux | kmscon plus fallback, tmux | Serial console boots; VT/HID compiled; tmux 3.6 starts, lists and closes a guest session in six cold runs | tmux ISC; kmscon/physical VT integration missing |
-| Ethernet and WiFi | Automatic Ethernet, iwd/impala | No networking in current candidate tests; no iwd/DHCP integration | Required increment; physical WiFi and firmware cannot be inferred from VM results |
+| Console and tmux | kmscon plus fallback, tmux | Serial and tty1 text consoles boot; QMP typed a local tty1 command in six cold runs; tmux 3.6 starts, lists and closes a guest session in six storage runs | tmux ISC; kmscon absent and physical VT hardware untested |
+| Ethernet and WiFi | Automatic Ethernet, iwd/impala | Manual Busybox DHCP gets QEMU 10.0.2.15 and connected route in six cold restricted-network runs; this isolated backend supplied no default route and outside reachability was not tested | Busybox GPL-2.0-only; automatic physical Ethernet, iwd/WiFi and firmware remain missing |
 | ext4/Btrfs/XFS/FAT/exFAT/NTFS | Rescue filesystem tools | All six synthetic files passed non-writing checks and read-only mounts in six cold runs; ext4/Btrfs marker content read | e2fsprogs mixed GPL/LGPL/BSD/MIT; Btrfs/exFAT GPL-2.0-or-later; XFS LGPL-2.1-or-later; dosfstools GPL-3.0-or-later; NTFS GPL-2.0-only |
 | LUKS, LVM and MD RAID | cryptsetup/lvm2/mdadm | Synthetic LUKS opened and closed read-only in six runs; LVM/RAID tools launch but real recovery is untested | cryptsetup GPL-2.0-or-later with OpenSSL exception; LVM mixed GPL/LGPL/BSD; mdadm GPL-2.0-only |
 | Recovery and diagnostics | ddrescue/TestDisk/SMART/NVMe and more | ddrescue 1.29.1, TestDisk 7.2, SMART 7.5, nvme-cli 2.16 staged; version/help launches observed | GPL-3.0-or-later ddrescue; GPL-2.0-or-later others; real recovery untested |
@@ -33,7 +34,7 @@ revoked. [Current measurements and raw evidence](storage-1a-validated.md).
 | Phone login/root sharing | QR/paste helper and opt-in ttyd | Absent; no remote root service activated | Helper integration and licenses pending; tests require no credentials or activation |
 | Installer | Optional full installer | Rescue-only scope; no installer | No installer equivalence claimed |
 | Presentation and other tools | Fonts/starship/zoxide/eza/bat and extra TUIs | Mostly absent | kmscon, impala, foremost, clonezilla orchestration, snapper, bcachefs repair, sbctl and guest Limine repair still missing |
-| BIOS and UEFI | Both | Three cold strict synthetic storage passes in each mode; BIOS 10.445 s and UEFI 13.126 s median | Limine 12.4.0 BSD-2-Clause; physical machines and full rescue readiness untested |
+| BIOS and UEFI | Both | Three strict storage passes per mode, median 10.323 s BIOS / 13.812 s UEFI; three separate virtual DHCP plus tty1 passes per mode, median 4.618 s BIOS / 7.552 s UEFI | Limine 12.4.0 BSD-2-Clause; physical machines and full rescue readiness untested |
 
 The signed solver resolved 87 APK package records; exact versions, checksums,
 licenses, origin/build commits and source recipe links are in

@@ -1,17 +1,19 @@
-# Next acceptance after native storage-1a
+# Next acceptance after virtual Ethernet and tty1
 
-The [2026-10-03 storage report](storage-1a-validated.md) establishes a bootable
-33,806,336-byte partial ISO (SHA-256
-`a21b7b407df7060d04647e88b2d588a5359d1b2ce7ededd3253344da2b0f5908`).
-The exact native base came from Rescue `a05898d`; the reviewed small correction
-and embedded probe came from `f9ade38`. Alpenglow remains pinned at
+The [2026-10-03 virtual network/console report](virtual-network-console-validated.md)
+establishes a bootable 33,951,744-byte partial ISO (SHA-256
+`37b4bd27d59993b5842698734d7b8ce09fe1344d0195a45e847615d9258e02ef`).
+The image source is Rescue `531db96` and the strict benchmark source is
+`923e243`. Alpenglow remains pinned at
 `2214bc159355522bbebc61e8e90ca78933a8e1ac`. Three strict synthetic
-storage runs passed under BIOS and three under UEFI. This is not full Omarchy
-Rescue equivalence or evidence of a fourfold boot improvement.
+storage runs passed under BIOS and three under UEFI; six separate cold boots
+passed isolated virtual DHCP plus tty1 command response. This is not full
+Omarchy Rescue equivalence or evidence of a fourfold boot improvement.
 
-The next functional increment needs networking and WiFi, audited firmware and
-physical storage/network/graphics driver coverage, a usable local graphical
-console with serial fallback, Oil and the three AI client executable launch
+The next functional increment needs automatic physical Ethernet and WiFi,
+audited firmware and physical storage/network/graphics driver coverage, a
+usable local graphical console/kmscon with serial fallback, Oil and the three
+AI client executable launch
 checks, plus chroot, mount and phone helper parity. Credential enrollment,
 remote root service activation, real disk repair, USB flashing and real host
 disk mounts are outside synthetic validation. Preserve essential rescue
