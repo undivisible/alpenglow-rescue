@@ -52,7 +52,7 @@ R.main(function()
     end
     if a.network_fixture and markers.base_console and not console_sent then
      console_q=QMP(R,qmp);console_q.tick=function() ingest(p:read(0)) end
-     console_q:type('root\n');R.sleep(.5);console_q:type('printf TTY1_COMMAND_OK >/dev/ttyS0\n');console_sent=true
+     console_q:type('root\n');R.sleep(.5);console_q:type('echo TTY1_COMMAND_OK >/dev/ttyS0\n');console_sent=true
     end
     if markers[required] or (a.fixtures and A.line(log,'STORAGE_SMOKE_EXIT=%d+')) or (a.network_fixture and A.line(log,'NETWORK_SMOKE_EXIT=%d+') and markers.tty1_command) then break end
    end
