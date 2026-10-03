@@ -12,6 +12,8 @@ R.main(function()
  local packages=R.read('packages.txt')
  for _,name in ipairs({'linux-lts','linux-firmware','btrfs-progs','cryptsetup','lvm2','mdadm','ddrescue','testdisk','iwd','tmux','borgbackup'}) do assert(('\n'..packages):find('\n'..name..'\n',1,true),'missing essential '..name) end
  assert(not ('\n'..packages):find('\npython3\n',1,true))
+ local storage_packages=R.read('packages-storage.txt')
+ assert(('\n'..storage_packages):find('\nsgdisk\n',1,true),'sgdisk is a separate Alpine package from gptfdisk')
  for _,path in ipairs(R.files('scripts')) do if path:match('%.sh$') then
   local text=R.read(path);assert(not text:find('python3',1,true),path);assert(not text:find('--cpus=2',1,true),path);assert(not text:find('CPUS=2',1,true),path)
  end end

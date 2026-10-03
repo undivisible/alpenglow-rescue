@@ -11,7 +11,7 @@ test "$(readlink /bin/sh)" = /usr/bin/oksh
 /bin/toybox chroot / /bin/toybox true
 for tool in lsblk blkid mount umount chroot e2fsck btrfs xfs_repair fsck.fat fsck.exfat ntfsfix \
   cryptsetup lvm mdadm parted sgdisk modprobe ddrescue testdisk smartctl nvme tmux oksh; do
-  command -v "$tool" >/dev/null
+  command -v "$tool" >/dev/null || { printf 'RESCUE_MISSING_TOOL %s\n' "$tool"; exit 1; }
 done
 lsblk --version
 cryptsetup --version
