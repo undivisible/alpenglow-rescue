@@ -1,3 +1,3 @@
 [submodule "vendor/alpenglow"]
 	path = vendor/alpenglow
-	url = https://github.com/tschk/alpenglow.git
+	url = https://github.com/softwarecorporation/alpenglow.git

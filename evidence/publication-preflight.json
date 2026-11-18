@@ -7,7 +7,7 @@
   ],
   "secret_pattern_findings": [],
   "binary_history_paths": [],
-  "public_submodule": "https://github.com/tschk/alpenglow.git",
+  "public_submodule": "https://github.com/softwarecorporation/alpenglow.git",
   "license_files": [
     "LICENSE",
     "licenses/omarchy-rescue-MIT.txt"
@@ -16,7 +16,7 @@
   "author_metadata_public_verification": [
     {
       "identity_already_public": true,
-      "public_commit_url": "https://github.com/tschk/alpenglow/commit/2214bc159355522bbebc61e8e90ca78933a8e1ac",
+      "public_commit_url": "https://github.com/softwarecorporation/alpenglow/commit/2214bc159355522bbebc61e8e90ca78933a8e1ac",
       "email_domain": "vk.com"
     }
   ],

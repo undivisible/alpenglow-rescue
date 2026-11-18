@@ -64,7 +64,7 @@ are mixed or compared with the unmatched Omarchy trials.
 
 ## Existing upstream GitHub image
 
-[Upstream run 35064440253](https://github.com/tschk/alpenglow/actions/runs/35064440253)
+[Upstream run 35064440253](https://github.com/softwarecorporation/alpenglow/actions/runs/35064440253)
 built potato x86_64 successfully, although its aarch64 desktop job failed and
 release publication was skipped. Artifact `10433897762` used source
 `373c29c2cbb992e93175c4eea227c228a12a05dd`, distinct from our Alpenglow pin.

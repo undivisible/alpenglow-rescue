@@ -10,7 +10,7 @@ See [the GitHub image test](github-image-test.md) for this completed milestone.
 
 ## Sources and isolation
 
-- Alpenglow: `tschk/alpenglow`, verified remotely at
+- Alpenglow: `softwarecorporation/alpenglow`, verified remotely at
   `2214bc159355522bbebc61e8e90ca78933a8e1ac` (MPL-2.0).
 - Omarchy Rescue current documentation: `ae903cd63a43aa609a7b5493b45647aa53a7cf73`.
 - Official baseline: `v2026.09.30.1`, tag commit

@@ -1,7 +1,7 @@
 # Alpenglow Rescue
 
 A separate rescue-image project based on pinned
-[Alpenglow](https://github.com/tschk/alpenglow), inspired by
+[Alpenglow](https://github.com/softwarecorporation/alpenglow), inspired by
 [Omarchy Rescue](https://github.com/crmne/omarchy-rescue).
 
 The current **partial storage, virtual Ethernet and tty1 candidate is

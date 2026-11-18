@@ -1,7 +1,7 @@
 {
-  "repository": "tschk/alpenglow",
+  "repository": "softwarecorporation/alpenglow",
   "run_id": 35064440253,
-  "run_url": "https://github.com/tschk/alpenglow/actions/runs/35064440253",
+  "run_url": "https://github.com/softwarecorporation/alpenglow/actions/runs/35064440253",
   "overall_run_conclusion": "failure; aarch64 desktop job failed; x86_64 potato job succeeded",
   "artifact_id": 10433897762,
   "artifact_name": "alpenglow-potato-x86_64",
